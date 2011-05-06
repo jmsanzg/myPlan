@@ -1,0 +1,20 @@
+h1. Descripción
+
+Control de gasto en llamadas y sms, calculando el importe en función del plan contratado, fecha, hora, duración y el operador del destinatario.
+Sólo incluye planes de contrato personales, quedando fuera del ámbito del programa los planes para empresas o autónomos y los planes prepago.
+
+h1. Planes incluidos
+
+Jazztel - Jazzmovil 10, Tarifa plana 100 minutos, 200 minutos, 300 minutos, 400 minutos, 500 minutos.
+Movistar - Contrato moviles, Contrato simple, Contrato tiempo libre, Planazo Móviles Movistar, Planazo Tiempo Libre, Movistar 8.
+Orange - Delfín 20, Delfín 32, Delfín 42, Delfín 59, Delfín 79, Leon 25, Leon 30, Leon 49, Panda 15, Panda 20, Panda 22, Panda 26, Ardilla 6, Ardilla 8, Ardilla 9, Ardilla 12, Pingüino.
+PepePhone - Tarifa 6cent, Tarifa 7cent, Movilonia 9, Movilonia VIP, Pulpo Pepe, Ratoncito&Elefante, Lobo&Cordero.
+Simyo - Tarifa 0 y 8 céntimos, Tarifa 3 céntimos, Tarifa 5 céntimos.
+Vodafone - A mi Aire 90x1 24h, A mi Aire 90x1 a Todos, A mi Aire Simple, Contrato 1, Diminuto 8, Mini 24h, Mini a Todos, Plana 24h, Plana a Todos, Super Plana Mini, Super Tarifa Plana, L, M, S, XL, XS, @L, @M, @S, @XL, @XS.
+Yoigo - La del 0, La del 4, La del 6, La del 8.
+
+h1. Permisos necesarios
+
+"LEER SMS O MMS": para contabilizar los mensajes enviados
+"LEER LOS DATOS DE CONTACTO": para contabilizar las llamadas realizadas.
+"LEER LA IDENTIDAD Y ESTADO DEL TELÉFONO": para mostrar la ventana de importe al finalizar una llamada.
