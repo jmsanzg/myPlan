@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.admob.android.ads.AdManager;
 import com.conzebit.myplan.R;
 import com.conzebit.myplan.android.util.Settings;
 
@@ -40,10 +39,6 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (Settings.isTestMode(this)) {
-        	AdManager.setTestDevices( new String[] {AdManager.TEST_EMULATOR});
-        }
-        
         String termsShown = Settings.getTermsShown(this);
         
         if ("no".equals(termsShown)) {
@@ -90,14 +85,6 @@ public class MainActivity extends Activity {
 			
 			public void onClick(View v) {
 				startActivityForResult(new Intent(activity, SettingsActivity.class), 3);
-			}
-		});
-    	
-    	this.findViewById(R.id.paypal).setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				Intent i = new Intent(Intent.ACTION_VIEW);
-				i.setData(Uri.parse("http://www.conzebit.com/?page_id=121"));
-				activity.startActivity(i);
 			}
 		});
     	

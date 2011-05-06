@@ -21,11 +21,6 @@
                 <action android:name="android.intent.action.PHONE_STATE" />
             </intent-filter>
         </receiver>
-        <activity android:name="com.admob.android.ads.AdMobActivity" 
-              android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-              android:configChanges="orientation|keyboard|keyboardHidden"
-              />
-        <meta-data android:value="a14bb2033479b49" android:name="ADMOB_PUBLISHER_ID"/>
     </application>
     <supports-screens
           android:largeScreens="true"

@@ -15,6 +15,7 @@ public class PlanImpl implements IPlan {
 		this.planName = planName;
 	}
 	
+
 	
 	public String getCountryISO() {
 		return "";
@@ -51,4 +52,8 @@ public class PlanImpl implements IPlan {
 	public PlanConfig getPlanConfig() {
 		return null;
 	}
+
+	public boolean hasInternetFee() {
+	    return false;
+    }
 }

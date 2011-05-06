@@ -5,7 +5,6 @@
     <string name="main_viewstats">Statistics</string>
     <string name="main_settings">Settings</string>
     <string name="main_accept_button">Accept</string>
-    <string name="main_support">Support myPlan development</string>
     <string name="main_toast_settings">You must config Operator and Plan</string>
     
     <string name="plan_month_fee">Month fee</string>

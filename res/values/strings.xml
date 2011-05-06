@@ -7,7 +7,6 @@
     <string name="main_viewstats">Estadísticas</string>
     <string name="main_settings">Ajustes</string>
     <string name="main_accept_button">Aceptar</string>
-    <string name="main_support">Apoya el desarrollo de myPlan</string>
     <string name="main_toast_settings">Debes configurar operadora y plan</string>
 
     <string name="plan_month_fee">Cuota mensual</string>
