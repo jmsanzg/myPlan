@@ -169,7 +169,7 @@ class CallLogStore {
 		Contact bob = new Contact("602000000", "Bob", msisdnTypeService.getMsisdnType("602000000", "ES"));
 		Contact charly = new Contact("603000000", "Charly", msisdnTypeService.getMsisdnType("603000000", "ES"));
 		Contact daniel = new Contact("604000000", "Daniel", msisdnTypeService.getMsisdnType("604000000", "ES"));
-		Contact ebano = new Contact("605000000", "Ebano", msisdnTypeService.getMsisdnType("605000000", "ES"));
+		Contact ebano = new Contact("605000000", "Esteban", msisdnTypeService.getMsisdnType("605000000", "ES"));
 		Contact free = new Contact("123", null, msisdnTypeService.getMsisdnType("123", "ES"));
 		Contact land = new Contact("910000000", null, msisdnTypeService.getMsisdnType("910000000", "ES"));
 		
