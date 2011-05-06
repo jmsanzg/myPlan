@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:admob="http://schemas.android.com/apk/res/com.conzebit.myplan"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingTop="10px"
+    android:background="@color/conzebit_background_dark">
+
+    <ImageView
+        android:src="@drawable/myplan"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        />
+    
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15px">
+        <TextView
+            android:text="@string/disclaimer_text"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"/>
+    </ScrollView>
+    <Button
+        android:id="@+id/accept_button"
+        android:text="@string/main_accept_button"
+        android:gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

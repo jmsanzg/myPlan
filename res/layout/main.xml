@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:admob="http://schemas.android.com/apk/res/com.conzebit.myplan"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingTop="40px"
+    android:background="@color/conzebit_background_dark"
+    android:id="@+id/main">
+
+    <ImageView
+        android:src="@drawable/myplan"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:text="@string/app_version"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60px"
+        android:gravity="center_vertical|center_horizontal"
+        />
+    
+    <Button android:id="@+id/viewplans_button"
+        android:text="@string/main_comparePlans"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_width="150px"
+        android:layout_height="wrap_content"/>
+
+    <Button android:id="@+id/viewstats_button"
+        android:text="@string/main_viewstats"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_width="150px"
+        android:layout_height="wrap_content"/>
+
+    <Button android:id="@+id/settings_button"
+        android:text="@string/main_settings"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_width="150px"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10px"/>
+        
+    <TextView
+        android:text="@string/main_support"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginTop="50px"
+        android:layout_marginBottom="5px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        />
+
+    <ImageView
+        android:id="@+id/paypal"
+        android:src="@drawable/paypal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_gravity="center_horizontal|bottom"
+        />
+
+</LinearLayout>

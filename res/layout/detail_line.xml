@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5px"
+    android:layout_marginTop="5px"
+    android:layout_marginRight="10px"
+    android:layout_marginBottom="5px">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ImageView android:id="@+id/detail_line_operatorlogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0px"
+            android:layout_marginTop="0px"
+            android:layout_marginRight="10px"
+            android:layout_marginBottom="0px"/>
+                   
+        <TextView android:id="@+id/detail_line_contactname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/conzebit_text_light"/>
+                   
+        <TextView android:id="@+id/detail_line_msisdn"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center|right"
+            android:textSize="10sp"
+            android:textColor="@color/conzebit_text_medium"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0px"
+        android:layout_marginTop="5px"
+        android:layout_marginRight="0px"
+        android:layout_marginBottom="0px">
+
+        <TextView android:id="@+id/detail_line_dateandduration"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="top"
+            android:textSize="10sp"
+            android:textColor="#aaaaaa"/>
+
+        <TextView android:id="@+id/detail_line_totalamount"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/conzebit_text_light"
+            android:gravity="right"/>
+                   
+    </LinearLayout>
+
+ </LinearLayout>

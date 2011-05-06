@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5px"
+    android:layout_marginTop="5px"
+    android:layout_marginRight="10px"
+    android:layout_marginBottom="5px">
+
+    <ImageView android:id="@+id/summary_line_operatorlogo"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="0px"
+        android:layout_marginTop="0px"
+        android:layout_marginRight="10px"
+        android:layout_marginBottom="0px"/>
+                   
+    <TextView android:id="@+id/summary_line_planname"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:textSize="15sp"
+        android:textColor="@color/conzebit_text_light"/>
+                   
+    <TextView android:id="@+id/summary_line_totalamount"
+        android:layout_width="fill_parent"
+        android:layout_height="30sp"
+        android:textSize="15sp"
+        android:textColor="@color/conzebit_text_light"
+        android:gravity="bottom|right"/>
+        
+ </LinearLayout>

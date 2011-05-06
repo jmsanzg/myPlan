@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:admob="http://schemas.android.com/apk/res/com.conzebit.myplan"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingTop="40px"
+    android:background="@color/conzebit_background_dark"
+    android:id="@+id/main">
+
+    <ImageView
+        android:src="@drawable/myplan"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30px"
+        />
+
+    <TextView
+        android:text="@string/aftercall_lastcallbill"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2px"
+        android:gravity="center_vertical|center_horizontal"
+        />
+
+    <TextView
+        android:id="@+id/lastcallcost"
+        android:textSize="18sp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10px"
+        android:gravity="center_vertical|center_horizontal"
+        />
+
+    <TextView
+        android:text="@string/aftercall_totalbill"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2px"
+        android:gravity="center_vertical|center_horizontal"
+        />
+
+    <TextView
+        android:id="@+id/total_cost"
+        android:textSize="18sp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10px"
+        android:gravity="center_vertical|center_horizontal"
+        />
+
+    <TextView
+        android:text="@string/aftercall_operator"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2px"
+        android:gravity="center_vertical|center_horizontal"
+        />
+        
+    <TextView
+        android:id="@+id/operator"
+        android:textSize="18sp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10px"
+        android:gravity="center_vertical|center_horizontal"
+        />
+
+    <TextView
+        android:text="@string/aftercall_planname"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2px"
+        android:gravity="center_vertical|center_horizontal"
+        />
+
+    <TextView
+        android:id="@+id/planname"
+        android:textSize="18sp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        />
+
+</LinearLayout>

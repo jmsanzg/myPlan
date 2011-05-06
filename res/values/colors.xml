@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="conzebit_background_dark">#232220</color>
+    <color name="conzebit_background_ligth">#292826</color>
+    <color name="conzebit_background_white">#ffffff</color>
+    <color name="conzebit_text_light">#ffffff</color>
+    <color name="conzebit_text_medium">#cccccc</color>
+    <color name="conzebit_text_dark">#aaaaaa</color>
+    <color name="conzebit_highlight">#f19231</color>
+    <color name="conzebit_separator">#f19231</color>
+</resources>
