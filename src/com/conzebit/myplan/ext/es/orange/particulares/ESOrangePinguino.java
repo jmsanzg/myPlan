@@ -75,6 +75,7 @@ public class ESOrangePinguino extends ESOrange {
 							insidePlan = totalSeconds <= maxSecondsMonth;
 						}
 						if (insidePlan) {
+							callPrice = initialPrice;
 							break;
 						}
 						duration = (totalSeconds > maxSecondsMonth) && (totalSeconds - call.getDuration() <= maxSecondsMonth)? totalSeconds - maxSecondsMonth : call.getDuration();  
