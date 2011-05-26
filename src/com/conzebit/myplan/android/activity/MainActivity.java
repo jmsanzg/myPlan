@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
 		switch(item.getItemId()) {
 			case MENU_ABOUT:
 				Intent i = new Intent(Intent.ACTION_VIEW);
-				i.setData(Uri.parse("http://www.conzebit.com/"));
+				i.setData(Uri.parse("http://www.geeksphone.com/"));
 				this.startActivity(i);
 		}
         return true;
@@ -84,18 +84,21 @@ public class MainActivity extends Activity {
     	this.setContentView(R.layout.main);
     	
     	final Activity activity = this;
-    	
+
+    	//this.findViewById(R.id.viewplans_button).getBackground().setColorFilter(0xFF31aec6, Mode.MULTIPLY);
     	this.findViewById(R.id.viewplans_button).setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
+				//v.getBackground().setColorFilter(0xFF31aec6, Mode.MULTIPLY);
 				startActivity(new Intent(activity, PlanSummaryActivity.class));
 			}
 		});
+    	
 
-    	this.findViewById(R.id.viewstats_button).setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				startActivity(new Intent(activity, StatisticsSummaryActivity.class));
-			}
-		});
+//    	this.findViewById(R.id.viewstats_button).setOnClickListener(new View.OnClickListener() {
+//			public void onClick(View v) {
+//				startActivity(new Intent(activity, StatisticsSummaryActivity.class));
+//			}
+//		});
     	
     	this.findViewById(R.id.settings_button).setOnClickListener(new View.OnClickListener() {
 			

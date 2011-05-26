@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:paddingTop="40px"
-    android:background="@color/conzebit_background_dark"
+    android:background="@color/conzebit_background_black"
     android:id="@+id/main">
 
     <ImageView
@@ -29,14 +29,15 @@
         android:layout_gravity="center_horizontal|bottom"
         android:layout_width="150dp"
         android:layout_height="wrap_content"/>
-
+<!-- 
     <Button android:id="@+id/viewstats_button"
         android:text="@string/main_viewstats"
         android:gravity="center_vertical|center_horizontal"
         android:layout_gravity="center_horizontal|bottom"
         android:layout_width="150dp"
         android:layout_height="wrap_content"/>
-
+ -->
+ 
     <Button android:id="@+id/settings_button"
         android:text="@string/main_settings"
         android:gravity="center_vertical|center_horizontal"
@@ -44,5 +45,12 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10px"/>
+
+    <ImageView
+        android:src="@drawable/geeksphone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="40px"
+        />
         
 </LinearLayout>
