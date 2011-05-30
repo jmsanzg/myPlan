@@ -14,15 +14,14 @@
  * You should have received a copy of the GNU General Public License
  * along with myPlan.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.conzebit.myplan.ext.es.movistar;
+package com.conzebit.myplan.ext.es.masmovil;
 
 import com.conzebit.myplan.core.msisdn.MsisdnType;
 import com.conzebit.myplan.ext.es.ESPlan;
 
-public abstract class ESMovistar extends ESPlan {
+public abstract class ESMasMovil extends ESPlan {
 
 	public String getOperator() {
-		return MsisdnType.ES_MOVISTAR.toString();
+		return MsisdnType.ES_MASMOVIL.toString();
 	}
-
 }

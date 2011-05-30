@@ -12,7 +12,7 @@
  * GNU General Public License for more details.
 
  * You should have received a copy of the GNU General Public License
- * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ * along with myPlan.  If not, see <http://www.gnu.org/licenses/>.
  */
 package com.conzebit.myplan.android.util;
 
@@ -25,6 +25,8 @@ public class AndroidResourcesUtil {
 		switch (msisdnType) {
 			case ES_JAZZTEL:
 				return R.drawable.logo_jazztel;
+			case ES_MASMOVIL:
+				return R.drawable.logo_masmovil;
 			case ES_MOVISTAR:
 				return R.drawable.logo_movistar;
 			case ES_ORANGE:

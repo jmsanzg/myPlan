@@ -12,7 +12,7 @@
  * GNU General Public License for more details.
 
  * You should have received a copy of the GNU General Public License
- * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ * along with myPlan.  If not, see <http://www.gnu.org/licenses/>.
  */
 package com.conzebit.myplan.core.plan;
 
@@ -31,6 +31,10 @@ import com.conzebit.myplan.ext.es.jazztel.particulares.ESJazztelTarifaPlana200;
 import com.conzebit.myplan.ext.es.jazztel.particulares.ESJazztelTarifaPlana300;
 import com.conzebit.myplan.ext.es.jazztel.particulares.ESJazztelTarifaPlana400;
 import com.conzebit.myplan.ext.es.jazztel.particulares.ESJazztelTarifaPlana500;
+import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifa3;
+import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifa5;
+import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifa8;
+import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaTotal;
 import com.conzebit.myplan.ext.es.movistar.particulares.ESMovistar8;
 import com.conzebit.myplan.ext.es.movistar.particulares.ESMovistarContratoMoviles;
 import com.conzebit.myplan.ext.es.movistar.particulares.ESMovistarContratoSimple;
@@ -106,7 +110,6 @@ public class PlanService {
 	private PlanService() {
 		this.plans = new ArrayList<IPlan>();
 
-		// Jazztel particulares
 		this.plans.add(new ESJazztelJazzmovil10());
 		this.plans.add(new ESJazztelTarifaPlana100());
 		this.plans.add(new ESJazztelTarifaPlana200());
@@ -114,7 +117,11 @@ public class PlanService {
 		this.plans.add(new ESJazztelTarifaPlana400());
 		this.plans.add(new ESJazztelTarifaPlana500());
 		
-		// Movistar particulares
+		this.plans.add(new ESMasMovilTarifa3());
+		this.plans.add(new ESMasMovilTarifa5());
+		this.plans.add(new ESMasMovilTarifa8());
+		this.plans.add(new ESMasMovilTarifaTotal());
+		
 		this.plans.add(new ESMovistarContratoMoviles());
 		this.plans.add(new ESMovistarContratoSimple());
 		this.plans.add(new ESMovistarContratoTiempoLibre());
@@ -122,7 +129,6 @@ public class PlanService {
 		this.plans.add(new ESMovistarPlanazoTiempoLibre());
 		this.plans.add(new ESMovistar8());
 		
-		// Orange particulares
 		this.plans.add(new ESOrangeDelfin20());
 		this.plans.add(new ESOrangeDelfin32());
 		this.plans.add(new ESOrangeDelfin42());
@@ -141,7 +147,6 @@ public class PlanService {
 		this.plans.add(new ESOrangeArdilla9());
 		this.plans.add(new ESOrangePinguino());
 
-		// PepePhone
 		this.plans.add(new ESPepePhone6());
 		this.plans.add(new ESPepePhone7());
 		this.plans.add(new ESPepePhoneMovilonia9());
@@ -150,12 +155,10 @@ public class PlanService {
 		this.plans.add(new ESPepePhoneRatoncitoElefante());
 		this.plans.add(new ESPepePhoneLoboCordero());
 
-		// Simyo
 		this.plans.add(new ESSimyo0y8centimos());
 		this.plans.add(new ESSimyo3centimos());
 		this.plans.add(new ESSimyo5centimos());
 
-		// Vodafone particulares
 		this.plans.add(new ESVodafoneAire90x124h());
 		this.plans.add(new ESVodafoneAire90x1ATodos());
 		this.plans.add(new ESVodafoneAireSimple());
@@ -178,12 +181,9 @@ public class PlanService {
 		this.plans.add(new ESVodafoneAtXL());
 		this.plans.add(new ESVodafoneAtXS());
 		
-		
-		// Vodafone empresas
 		this.plans.add(new ESVodafoneConectaVozInternet());
 		this.plans.add(new ESVodafoneSencillo());
 
-		// Yoigo
 		this.plans.add(new ESYoigoLaDel0());
 		this.plans.add(new ESYoigoLaDel4());
 		this.plans.add(new ESYoigoLaDel6());

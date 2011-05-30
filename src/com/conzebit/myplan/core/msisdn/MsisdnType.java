@@ -12,13 +12,14 @@
  * GNU General Public License for more details.
 
  * You should have received a copy of the GNU General Public License
- * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ * along with myPlan.  If not, see <http://www.gnu.org/licenses/>.
  */
 package com.conzebit.myplan.core.msisdn;
 
 
 public enum MsisdnType {
 	ES_JAZZTEL ("Jazztel", true),
+	ES_MASMOVIL ("Más movil", true),
     ES_MOVISTAR ("Movistar", true),
     ES_PEPEPHONE ("PepePhone", true),
     ES_ORANGE ("Orange", true),
