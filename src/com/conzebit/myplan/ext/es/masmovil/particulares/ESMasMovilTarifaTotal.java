@@ -36,6 +36,7 @@ import com.conzebit.myplan.ext.es.masmovil.ESMasMovil;
 public class ESMasMovilTarifaTotal extends ESMasMovil {
     
 	private double monthFee = 6.9;
+	private double minimumMonthFee = 7;
 	private double initialPrice = 0.15;
 	private double pricePerSecond = 0.03 / 60;
 	private double smsPrice = 0.08;
@@ -52,6 +53,7 @@ public class ESMasMovilTarifaTotal extends ESMasMovil {
 	public PlanSummary process(ArrayList<Chargeable> data) {
 		PlanSummary ret = new PlanSummary(this);
 		ret.addPlanCall(new PlanChargeable(new ChargeableMessage(ChargeableMessage.MESSAGE_MONTH_FEE), monthFee, this.getCurrency()));
+		double globalPrice = 0;
 		for (Chargeable chargeable : data) {
 			if (chargeable.getChargeableType() == Chargeable.CHARGEABLE_TYPE_CALL) {
 				Call call = (Call) chargeable;
@@ -67,14 +69,19 @@ public class ESMasMovilTarifaTotal extends ESMasMovil {
 				} else {
 					callPrice = initialPrice + (call.getDuration() * pricePerSecond);
 				}
+				globalPrice += callPrice;
 				ret.addPlanCall(new PlanChargeable(call, callPrice, this.getCurrency()));
 			} else if (chargeable.getChargeableType() == Chargeable.CHARGEABLE_TYPE_SMS) {
 				Sms sms = (Sms) chargeable;
 				if (sms.getType() == Sms.SMS_TYPE_RECEIVED) {
 					continue;
 				}
+				globalPrice += smsPrice;
 				ret.addPlanCall(new PlanChargeable(chargeable, smsPrice, this.getCurrency()));
 			}
+		}
+		if (globalPrice < minimumMonthFee) {
+			ret.addPlanCall(new PlanChargeable(new ChargeableMessage(ChargeableMessage.MESSAGE_MINIMUM_MONTH_FEE), minimumMonthFee - globalPrice, this.getCurrency()));
 		}
 		return ret;
 	}
