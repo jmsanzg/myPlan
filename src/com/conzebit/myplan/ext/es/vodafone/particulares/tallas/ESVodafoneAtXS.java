@@ -39,7 +39,7 @@ public class ESVodafoneAtXS extends ESVodafone {
     
 	private double monthFee = 24.9;
 	private double initialPrice = 0.15;
-	private double pricePerSecond = 0.19 / 60;
+	private double pricePerSecond = 0.199 / 60;
 	private double smsPrice = 0.15;
 	private int maxSecondsMonth = 350 * 60;
     
