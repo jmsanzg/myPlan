@@ -93,12 +93,11 @@ public class MainActivity extends Activity {
 			}
 		});
     	
-
-//    	this.findViewById(R.id.viewstats_button).setOnClickListener(new View.OnClickListener() {
-//			public void onClick(View v) {
-//				startActivity(new Intent(activity, StatisticsSummaryActivity.class));
-//			}
-//		});
+    	this.findViewById(R.id.viewstats_button).setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				startActivity(new Intent(activity, StatisticsSummaryActivity.class));
+			}
+		});
     	
     	this.findViewById(R.id.settings_button).setOnClickListener(new View.OnClickListener() {
 			

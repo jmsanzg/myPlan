@@ -29,14 +29,13 @@
         android:layout_gravity="center_horizontal|bottom"
         android:layout_width="150dp"
         android:layout_height="wrap_content"/>
-<!-- 
+
     <Button android:id="@+id/viewstats_button"
         android:text="@string/main_viewstats"
         android:gravity="center_vertical|center_horizontal"
         android:layout_gravity="center_horizontal|bottom"
         android:layout_width="150dp"
         android:layout_height="wrap_content"/>
- -->
  
     <Button android:id="@+id/settings_button"
         android:text="@string/main_settings"
