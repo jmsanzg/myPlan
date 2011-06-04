@@ -101,7 +101,7 @@ public class ESYoigoLaDel0 extends ESYoigo {
 			}
 		}
 		if (globalPrice < minimumMonthFee) {
-			ret.addPlanCall(new PlanChargeable(new ChargeableMessage(ChargeableMessage.MESSAGE_MONTH_FEE), minimumMonthFee - globalPrice, this.getCurrency()));
+			ret.addPlanCall(new PlanChargeable(new ChargeableMessage(ChargeableMessage.MESSAGE_MINIMUM_MONTH_FEE), minimumMonthFee - globalPrice, this.getCurrency()));
 		}
 		return ret;
 	}
