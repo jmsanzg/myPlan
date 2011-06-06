@@ -35,6 +35,7 @@ import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifa3;
 import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifa5;
 import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifa8;
 import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaTotal;
+import com.conzebit.myplan.ext.es.movistar.particulares.ESMovistar6;
 import com.conzebit.myplan.ext.es.movistar.particulares.ESMovistar8;
 import com.conzebit.myplan.ext.es.movistar.particulares.ESMovistarContratoMoviles;
 import com.conzebit.myplan.ext.es.movistar.particulares.ESMovistarContratoSimple;
@@ -128,6 +129,7 @@ public class PlanService {
 		this.plans.add(new ESMovistarPlanazoMovilesMovistar());
 		this.plans.add(new ESMovistarPlanazoTiempoLibre());
 		this.plans.add(new ESMovistar8());
+		this.plans.add(new ESMovistar6());
 		
 		this.plans.add(new ESOrangeDelfin20());
 		this.plans.add(new ESOrangeDelfin32());
