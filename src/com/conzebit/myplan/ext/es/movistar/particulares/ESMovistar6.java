@@ -45,7 +45,7 @@ public class ESMovistar6 extends ESMovistar {
 	
     
 	public String getPlanName() {
-		return "Tarifa 8";
+		return "Tarifa 6";
 	}
 
 	public String getPlanURL() {
