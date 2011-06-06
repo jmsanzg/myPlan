@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      android:installLocation="auto"
       package="com.conzebit.myplan"
       android:versionCode="144"
       android:versionName="@string/app_version">
@@ -27,7 +28,7 @@
           android:normalScreens="true"
           android:smallScreens="true"
           android:anyDensity="true" />    
-    <uses-sdk android:minSdkVersion="4" />
+    <uses-sdk android:minSdkVersion="7" />
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.READ_SMS"/>
