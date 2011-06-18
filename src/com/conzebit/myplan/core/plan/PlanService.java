@@ -46,6 +46,7 @@ import com.conzebit.myplan.ext.es.orange.particulares.ESOrangeArdilla12;
 import com.conzebit.myplan.ext.es.orange.particulares.ESOrangeArdilla6;
 import com.conzebit.myplan.ext.es.orange.particulares.ESOrangeArdilla8;
 import com.conzebit.myplan.ext.es.orange.particulares.ESOrangeArdilla9;
+import com.conzebit.myplan.ext.es.orange.particulares.ESOrangeBasico6;
 import com.conzebit.myplan.ext.es.orange.particulares.ESOrangeDelfin20;
 import com.conzebit.myplan.ext.es.orange.particulares.ESOrangeDelfin32;
 import com.conzebit.myplan.ext.es.orange.particulares.ESOrangeDelfin42;
@@ -54,6 +55,7 @@ import com.conzebit.myplan.ext.es.orange.particulares.ESOrangeDelfin79;
 import com.conzebit.myplan.ext.es.orange.particulares.ESOrangeLeon25;
 import com.conzebit.myplan.ext.es.orange.particulares.ESOrangeLeon30;
 import com.conzebit.myplan.ext.es.orange.particulares.ESOrangeLeon49;
+import com.conzebit.myplan.ext.es.orange.particulares.ESOrangeMiniBasico;
 import com.conzebit.myplan.ext.es.orange.particulares.ESOrangePanda15;
 import com.conzebit.myplan.ext.es.orange.particulares.ESOrangePanda20;
 import com.conzebit.myplan.ext.es.orange.particulares.ESOrangePanda22;
@@ -150,6 +152,8 @@ public class PlanService {
 		this.plans.add(new ESOrangeArdilla8());
 		this.plans.add(new ESOrangeArdilla9());
 		this.plans.add(new ESOrangePinguino());
+		this.plans.add(new ESOrangeMiniBasico());
+		this.plans.add(new ESOrangeBasico6());
 
 		this.plans.add(new ESPepePhone6());
 		this.plans.add(new ESPepePhone7());
