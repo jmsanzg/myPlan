@@ -92,6 +92,8 @@ import com.conzebit.myplan.ext.es.vodafone.particulares.tallas.ESVodafoneM;
 import com.conzebit.myplan.ext.es.vodafone.particulares.tallas.ESVodafoneS;
 import com.conzebit.myplan.ext.es.vodafone.particulares.tallas.ESVodafoneXL;
 import com.conzebit.myplan.ext.es.vodafone.particulares.tallas.ESVodafoneXS;
+import com.conzebit.myplan.ext.es.vodafone.particulares.tallas.ESVodafoneXS6;
+import com.conzebit.myplan.ext.es.vodafone.particulares.tallas.ESVodafoneXS8;
 import com.conzebit.myplan.ext.es.yoigo.particulares.ESYoigoLaDel0;
 import com.conzebit.myplan.ext.es.yoigo.particulares.ESYoigoLaDel4;
 import com.conzebit.myplan.ext.es.yoigo.particulares.ESYoigoLaDel6;
@@ -182,6 +184,8 @@ public class PlanService {
 		this.plans.add(new ESVodafoneAtS());
 		this.plans.add(new ESVodafoneAtXL());
 		this.plans.add(new ESVodafoneAtXS());
+		this.plans.add(new ESVodafoneXS6());
+		this.plans.add(new ESVodafoneXS8());
 		
 		this.plans.add(new ESVodafoneConectaVozInternet());
 		this.plans.add(new ESVodafoneSencillo());
