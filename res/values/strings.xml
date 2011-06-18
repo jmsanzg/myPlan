@@ -57,27 +57,10 @@
         anteriormente expuesto.
     </string>
     
-    <string name="aftercall_lastcallbill">Importe última llamada</string>
-    <string name="aftercall_totalbill">Importe total acumulado</string>
-    <string name="aftercall_operator">Operadora</string>
-    <string name="aftercall_planname">Plan contratado</string>
-    
     <string name="menu_about">Acerca de</string>
     <string name="menu_previous_period">Periodo Anterior</string>
     <string name="menu_following_period">Periodo Siguiente</string>
     <string name="menu_planurl">Web del plan</string>
 
     <string name="es.orange.ardilla9.hour">Hora ini. franja reducida</string>
-
-    <!--
-    <string name="crash_notif_ticker_text">Error inesperado, por favor envía el informe...</string>
-    <string name="crash_notif_title">¡Vaya!, la aplicación se ha parado...</string>
-    <string name="crash_notif_text">Por favor, pincha aquí para ayudarme a solucionarlo.</string>
-    <string name="crash_dialog_text">
-        Parece que no soy tan buen programador...y la aplicación se ha parado. ¡Ayúdame a solucionarlo
-        enviando un informe de error!. No se enviarán datos personales.
-    </string>
-    <string name="crash_dialog_comment_prompt">Quizá quieras añadir algún comentario al informe:</string>
-    <string name="crash_dialog_ok_toast">¡Gracias por ayudarme a mejorar la aplicación!</string>
-    -->    
 </resources>

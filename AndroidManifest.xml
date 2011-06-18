@@ -16,7 +16,6 @@
         <activity android:name=".android.activity.PlanDetailActivity"/>
         <activity android:name=".android.activity.StatisticsSummaryActivity"/>
         <activity android:name=".android.activity.StatisticsDetailActivity"/>
-        <activity android:name=".android.activity.AfterCallActivity"/>
         <receiver android:name=".android.receiver.AfterCallReceiver" android:exported="true">
             <intent-filter android:priority="0">
                 <action android:name="android.intent.action.PHONE_STATE" />

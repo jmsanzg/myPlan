@@ -53,11 +53,6 @@
         anteriormente expuesto.
     </string>
     
-    <string name="aftercall_lastcallbill">Last call bill</string>
-    <string name="aftercall_totalbill">Total bill</string>
-    <string name="aftercall_operator">Operator</string>
-    <string name="aftercall_planname">Plan</string>
-    
     <string name="menu_about">About</string>
     <string name="menu_previous_period">Previous Period</string>
     <string name="menu_following_period">Following Period</string>
@@ -65,15 +60,4 @@
     
     <string name="es.orange.ardilla9.hour">Start time of reduced price</string>
     
-    <!--
-    <string name="crash_notif_ticker_text">Unexpected error, please send a report...</string>
-    <string name="crash_notif_title">The application has crashed...</string>
-    <string name="crash_notif_text">Please click here and help me to fix this.</string>
-    <string name="crash_dialog_text">
-        Unexpected error, the application has crashed. Help me to fix this by sending a report.
-        No personal data will be sent
-    </string>
-    <string name="crash_dialog_comment_prompt">Maybe you want to add a comment to the report:</string>
-    <string name="crash_dialog_ok_toast">¡Thank you for helping me to improve the application!</string>
-    -->
 </resources>
