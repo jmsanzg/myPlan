@@ -16,10 +16,10 @@
  */
 package com.conzebit.myplan.ext.es;
 
-import com.conzebit.myplan.core.plan.IPlan;
+import com.conzebit.myplan.core.plan.AbstractPlan;
 import com.conzebit.myplan.core.plan.PlanConfig;
 
-public abstract class ESPlan implements IPlan {
+public abstract class ESPlan extends AbstractPlan {
 
 	public String getCountryISO() {
 		return "ES";

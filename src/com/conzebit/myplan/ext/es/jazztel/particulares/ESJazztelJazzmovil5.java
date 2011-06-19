@@ -24,50 +24,35 @@ import com.conzebit.myplan.ext.es.jazztel.ESJazztel;
 
 
 /**
- * Jazztel Tarifa plana 100.
- *
+ * Jazztel Jazzmovil 5.
+ * 
  * @author jmsanzg@gmail.com
  */
-public class ESJazztelTarifaPlana100 extends ESJazztel {
+public class ESJazztelJazzmovil5 extends ESJazztel {
     
-	private final String ACCUMULATED_DATA_SECONDS = "SECONDS";
-	
+	private double minimumMonthFee = 3.0;
 	private double initialPrice = 0.15;
-	private double pricePerSecond = 0.10 / 60;
-	private double smsPrice = 0.12;
-	private int maxSecondsMonth = 100 * 60;
+	private double pricePerSecond = 0.05 / 60;
+	private double smsPrice = 0.10;
     
 	public String getPlanName() {
-		return "Tarifa Plana 100";
+		return "Jazzmovil 5";
 	}
 	
 	public String getPlanURL() {
 		return "http://www.jazztelsemueve.com/telefonia_tarifas.html";
 	}
 	
-	public Double getMonthFee() {
-		return 15.95;
+	public Double getMinimumMonthFee() {
+		return minimumMonthFee;
 	}
 	
 	public Double processCall(Call call, Map<String, Object> accumulatedData) {
 		if (call.getType() != Call.CALL_TYPE_SENT) {
 			return null;
 		}
-		
-		Long secondsTotal = (Long) accumulatedData.get(ACCUMULATED_DATA_SECONDS);
-		if (secondsTotal == null) {
-			secondsTotal = new Long(0);
-		}
-		secondsTotal += call.getDuration();
-		accumulatedData.put(ACCUMULATED_DATA_SECONDS, secondsTotal);
-		
-		double callPrice = 0;
-		boolean insidePlan =  secondsTotal <= maxSecondsMonth; 
-		if (!insidePlan) {
-			long duration = (secondsTotal > maxSecondsMonth) && (secondsTotal - call.getDuration() <= maxSecondsMonth)? secondsTotal - maxSecondsMonth : call.getDuration();  
-			callPrice += initialPrice + (duration * pricePerSecond);
-		}
-		return callPrice;
+
+		return initialPrice + (call.getDuration() * (pricePerSecond / 60));
 	}
 
 	public Double processSms(Sms sms, Map<String, Object> accumulatedData) {

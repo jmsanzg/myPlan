@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 import com.conzebit.myplan.core.Chargeable;
 
-public class PlanImpl implements IPlan {
+public class PlanImpl extends AbstractPlan {
 
 	String operator;
 	

@@ -21,16 +21,16 @@ import java.util.ArrayList;
 public class PlanSummary implements Comparable<PlanSummary> {
 	
 	private double total = 0;
-	private IPlan plan = null;
+	private AbstractPlan plan = null;
 	
 	private ArrayList<PlanChargeable> planCalls;
 	
-	public PlanSummary(IPlan plan) {
+	public PlanSummary(AbstractPlan plan) {
 		this.plan = plan;
 		this.planCalls = new ArrayList<PlanChargeable>();
 	}
 	
-	public IPlan getPlan() {
+	public AbstractPlan getPlan() {
 		return this.plan;
 	}
 

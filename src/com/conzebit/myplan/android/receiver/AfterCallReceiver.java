@@ -28,7 +28,7 @@ import android.os.Bundle;
 import android.telephony.TelephonyManager;
 
 import com.conzebit.myplan.R;
-import com.conzebit.myplan.android.activity.MainActivity;
+import com.conzebit.myplan.android.activity.PlanDetailActivity;
 import com.conzebit.myplan.android.store.AndroidMsisdnTypeStore;
 import com.conzebit.myplan.android.store.LogStoreService;
 import com.conzebit.myplan.android.util.Settings;
@@ -95,7 +95,12 @@ public class AfterCallReceiver extends BroadcastReceiver {
 		String text = lastCallPrice + " / " + totalPrice;
 		Notification notification = new Notification(R.drawable.app_icon, text, System.currentTimeMillis());
 		
-		Intent notificationIntent = new Intent(context, MainActivity.class);
+		Intent notificationIntent = new Intent(context, PlanDetailActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("operator", operator);
+        bundle.putString("planname", planName);
+        notificationIntent.putExtras(bundle);
+		
 		PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, 0);
 		notification.setLatestEventInfo(context, context.getString(R.string.app_name), text, contentIntent);
 		notificationManager.notify(NOTIFICATION_ID, notification);

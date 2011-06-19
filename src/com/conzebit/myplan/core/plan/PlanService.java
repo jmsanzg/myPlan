@@ -25,7 +25,7 @@ import java.util.HashMap;
 import com.conzebit.myplan.core.Chargeable;
 import com.conzebit.myplan.core.call.Call;
 import com.conzebit.myplan.core.msisdn.MsisdnType;
-import com.conzebit.myplan.ext.es.jazztel.particulares.ESJazztelJazzmovil10;
+import com.conzebit.myplan.ext.es.jazztel.particulares.ESJazztelJazzmovil5;
 import com.conzebit.myplan.ext.es.jazztel.particulares.ESJazztelTarifaPlana100;
 import com.conzebit.myplan.ext.es.jazztel.particulares.ESJazztelTarifaPlana200;
 import com.conzebit.myplan.ext.es.jazztel.particulares.ESJazztelTarifaPlana300;
@@ -104,7 +104,7 @@ import com.conzebit.myplan.ext.es.yoigo.particulares.ESYoigoLaDel8;
 
 public class PlanService {
 
-	private ArrayList<IPlan> plans;
+	private ArrayList<AbstractPlan> plans;
 	
 	private ArrayList<Chargeable> data;
 	
@@ -113,9 +113,9 @@ public class PlanService {
 	private static PlanService planService = null;
 	
 	private PlanService() {
-		this.plans = new ArrayList<IPlan>();
+		this.plans = new ArrayList<AbstractPlan>();
 
-		this.plans.add(new ESJazztelJazzmovil10());
+		this.plans.add(new ESJazztelJazzmovil5());
 		this.plans.add(new ESJazztelTarifaPlana100());
 		this.plans.add(new ESJazztelTarifaPlana200());
 		this.plans.add(new ESJazztelTarifaPlana300());
@@ -215,7 +215,7 @@ public class PlanService {
 	}
 	
 	public PlanSummary process(ArrayList<Chargeable> data, String operator, String planName) {
-		for (IPlan plan : this.plans) {
+		for (AbstractPlan plan : this.plans) {
 			if (plan.getOperator().equals(operator) &&
 			    plan.getPlanName().equals(planName)) {
 				return plan.process(data);
@@ -240,7 +240,7 @@ public class PlanService {
 	private void process() {
 		this.processedData = new HashMap<String, PlanOperator>();
 		
-		for (IPlan plan : this.plans) {
+		for (AbstractPlan plan : this.plans) {
 			String operator = plan.getOperator();
 			if (!this.processedData.containsKey(operator)) {
 				this.processedData.put(operator, new PlanOperator(operator));
@@ -289,7 +289,7 @@ public class PlanService {
 	}
 
 	public PlanConfig getPlanConfig(String operator, String planName) {
-		for (IPlan plan : this.plans) {
+		for (AbstractPlan plan : this.plans) {
 			if (plan.getOperator().equals(operator) && plan.getPlanName().equals(planName)) {
 				return plan.getPlanConfig();
 			}
@@ -306,7 +306,7 @@ public class PlanService {
 		return this.getPlanSummary(operator, planName).getPlanCalls();
 	}
 	
-	public ArrayList<IPlan> getPlans() {
+	public ArrayList<AbstractPlan> getPlans() {
 		return this.plans;
 	}
 	
@@ -320,7 +320,7 @@ public class PlanService {
 
 	public String[] getPlansAsStringArray(String operator) {
 		ArrayList<String> aux = new ArrayList<String>();
-		for (IPlan plan : this.plans) {
+		for (AbstractPlan plan : this.plans) {
 			if (operator.equals(plan.getOperator())) {
 				aux.add(plan.getPlanName());
 			}
@@ -334,7 +334,7 @@ public class PlanService {
 	}
 
 	public void setUserConfig(HashMap<String, Object> allConfig) {
-	    for (IPlan plan : this.plans) {
+	    for (AbstractPlan plan : this.plans) {
 	    	PlanConfig planConfig = plan.getPlanConfig();
 	    	if (planConfig != null) {
 	    		planConfig.setUserConfig(allConfig);

@@ -25,6 +25,7 @@ public abstract class Chargeable implements Comparable<Chargeable> {
 	public static final int CHARGEABLE_TYPE_CALL = 0;
 	public static final int CHARGEABLE_TYPE_SMS = 1;
 	public static final int CHARGEABLE_TYPE_MESSAGE = 2;
+	public static final int CHARGEABLE_TYPE_BANDWIDTH = 3;
 	
     public abstract int getChargeableType();
     
