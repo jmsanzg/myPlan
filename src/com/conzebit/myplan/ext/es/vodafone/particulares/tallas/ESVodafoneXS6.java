@@ -57,7 +57,7 @@ public class ESVodafoneXS6 extends ESVodafone {
 		ret.addPlanCall(new PlanChargeable(new ChargeableMessage(ChargeableMessage.MESSAGE_MONTH_FEE), monthFee, this.getCurrency()));
 
 		long secondsTotal = 0;
-		double globalPrice = 0;
+		double globalPrice = monthFee;
 		for (Chargeable chargeable : data) {
 			if (chargeable.getChargeableType() == Chargeable.CHARGEABLE_TYPE_CALL) {
 				Call call = (Call) chargeable;
