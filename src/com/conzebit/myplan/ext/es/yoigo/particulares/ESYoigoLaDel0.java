@@ -58,6 +58,9 @@ public class ESYoigoLaDel0 extends ESYoigo {
 		}
 		
 		String dateCallYoigo = (String) accumulatedData.get(ACCUMULATED_DATA_DATE_CALL_YOIGO);
+		if (dateCallYoigo == null) {
+			dateCallYoigo = "";
+		}
 		Long yoigoSeconds = (Long) accumulatedData.get(ACCUMULATED_DATA_YOIGO_SECONDS);
 		if (yoigoSeconds == null) {
 			yoigoSeconds = new Long(0);
