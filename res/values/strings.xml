@@ -2,7 +2,6 @@
 <resources>
     <string name="app_name">myPlan</string>
     <string name="app_version">2.0.8</string>
-    <string name="version_code">149</string>
 
     <string name="main_comparePlans">Ver planes</string>
     <string name="main_viewstats">Estadísticas</string>
