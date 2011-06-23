@@ -37,8 +37,8 @@ import com.conzebit.myplan.ext.es.vodafone.ESVodafone;
  */
 public class ESVodafoneXS6 extends ESVodafone {
     
-	private double minimumMonthFee = 6;
-	private double monthFee = 9;
+	private double minimumMonthFee = 9;
+	private double monthFee = 6;
 	private double initialPrice = 0.15;
 	private double pricePerSecond = 0.08 / 60;
 	private double smsPrice = 0.15;
