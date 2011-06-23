@@ -55,7 +55,7 @@ public class ESPepePhoneLoboCordero extends ESPepePhone {
 	}
 
 	public Double processSms(Sms sms, Map<String, Object> accumulatedData) {
-		if (sms.getType() == Sms.SMS_TYPE_RECEIVED) {
+		if (sms.getType() != Sms.SMS_TYPE_SENT) {
 			return null;
 		}
 		return smsPrice;
