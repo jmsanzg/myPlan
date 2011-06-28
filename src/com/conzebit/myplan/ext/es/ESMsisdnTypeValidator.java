@@ -35,6 +35,8 @@ public class ESMsisdnTypeValidator implements IMsisdnTypeValidator {
 		this.add("1565"); // jazztel customer care
 		this.add("669"); // movistar customer care
 		this.add("470"); // orange customer care
+		this.add("1470"); // orange customer care
+		this.add("1414"); // orange customer care
 		this.add("1212"); // pepephone customer care
 		this.add("121"); // simyo customer care
 		this.add("123"); // vodafone customer care personal
