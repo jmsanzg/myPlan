@@ -39,10 +39,10 @@ public class ESVodafoneL extends ESVodafone {
     
 	private double monthFee = 59.90;
 	private double initialPrice = 0.15;
-	private double pricePerSecond = 0.1990 / 60;
+	private double pricePerSecond = 0.199 / 60;
 	private double smsPrice = 0.15;
-	private int maxSecondsMorningMonth = 1000 * 60;
-	private int maxSecondsEveningMonth = 350 * 60;
+	private int maxSecondsMorningMonth = 350 * 60;
+	private int maxSecondsEveningMonth = 1000 * 60;
     
 	public String getPlanName() {
 		return "L";
