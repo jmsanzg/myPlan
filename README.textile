@@ -3,6 +3,8 @@ h1. Descripción
 Control de gasto en llamadas y sms, calculando el importe en función del plan contratado, fecha, hora, duración y el operador del destinatario.
 Sólo incluye planes de contrato personales, quedando fuera del ámbito del programa los planes para empresas o autónomos y los planes prepago.
 
+"!http://www.android.com/images/brand/60_avail_market_logo2.png(Available in Android Market)!":http://market.android.com/details?id=com.conzebit.myplan
+
 h1. Planes incluidos
 
 * **Jazztel** - Jazzmovil 10, Tarifa plana 100 minutos, 200 minutos, 300 minutos, 400 minutos, 500 minutos.
