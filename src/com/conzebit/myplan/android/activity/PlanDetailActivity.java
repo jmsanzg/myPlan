@@ -59,6 +59,7 @@ public class PlanDetailActivity extends ListActivity {
 			MenuItem menuItem = menu.add(0, MENU_VIEW_PLAN_DATA, 0, R.string.menu_planurl);
 			menuItem.setIcon(R.drawable.menu_globe);
 		}
+		MenuItem menuItem = menu.add(1,2,1,R.string.settings_plan_settings);
 
 		return true;
     }
@@ -70,6 +71,10 @@ public class PlanDetailActivity extends ListActivity {
 				Intent i = new Intent(Intent.ACTION_VIEW);
 				i.setData(Uri.parse(planURL));
 				this.startActivity(i);
+				break;
+			case  2:
+				startActivity(new Intent(this, SettingsActivity.class));
+			
 		}
         return true;
     }

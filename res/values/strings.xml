@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">myPlan</string>
-    <string name="app_version">2.0.10</string>
+    <string name="app_version">2.0.8</string>
 
     <string name="main_comparePlans">Ver planes</string>
     <string name="main_viewstats">Estadísticas</string>
@@ -63,4 +63,5 @@
     <string name="menu_planurl">Web del plan</string>
 
     <string name="es.orange.ardilla9.hour">Hora ini. franja reducida</string>
+    <string name="es.movistar.migente.favourites">Números Mi Gente</string>
 </resources>
