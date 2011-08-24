@@ -50,7 +50,12 @@ public class PlanConfig {
 			if (allConfig.containsKey(pce.getId())) {
 				Object value = allConfig.get(pce.getId());
 				String sValue = value.toString();
-				pce.setValue(Integer.valueOf(sValue)); // TODO no tiene por qué ser Integer				
+				try {
+					Integer valor = Integer.valueOf(sValue);
+					pce.setValue(valor);
+				} catch (NumberFormatException e) {
+					pce.setValue(sValue);//OJO:Si no es num�rico es cadena
+				} // TODO no tiene por qué ser Integer				
 			}
 		}
     }

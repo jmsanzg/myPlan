@@ -16,22 +16,27 @@
  */
 package com.conzebit.myplan.android.activity;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Iterator;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
-import android.preference.Preference.OnPreferenceChangeListener;
 
 import com.conzebit.myplan.R;
 import com.conzebit.myplan.android.MyPlanApp;
+import com.conzebit.myplan.android.store.ContactStore;
 import com.conzebit.myplan.android.util.Settings;
+import com.conzebit.myplan.core.contact.Contact;
 import com.conzebit.myplan.core.plan.PlanConfig;
 import com.conzebit.myplan.core.plan.PlanConfigElement;
 import com.conzebit.myplan.core.plan.PlanService;
@@ -143,7 +148,7 @@ public class SettingsActivity extends PreferenceActivity {
 			  	preference.setSummary(newValue.toString());
 			  	ListPreference operatorPrefrence = (ListPreference) preference.getPreferenceManager().findPreference(Settings.Setting.OPERATOR.toString());			  	
 			  	PreferenceScreen myPlanRoot = (PreferenceScreen) preference.getPreferenceManager().findPreference(Settings.Setting.PLAN_CONFIG.toString());
-		        populatePlanPreferences(myPlanApp.getPlanService(), myPlanRoot, operatorPrefrence.getSummary().toString(), newValue.toString());
+		        populatePlanPreferences(myPlanApp.getPlanService(), myPlanRoot, operatorPrefrence.getSummary().toString(), newValue.toString(),activity);
 		        Settings.setShowPlan(activity, operatorPrefrence.getSummary().toString(), newValue.toString());
 		        PreferenceScreen showPlansRoot = (PreferenceScreen) preference.getPreferenceManager().findPreference(Settings.Setting.SHOW_PLANS_CONFIG.toString());
 		        populateShowPlansPreferences(myPlanApp.getPlanService(), showPlansRoot, operatorPrefrence.getSummary().toString(), newValue.toString());
@@ -157,7 +162,7 @@ public class SettingsActivity extends PreferenceActivity {
         PreferenceScreen myPlanRoot = getPreferenceManager().createPreferenceScreen(this);
         myPlanRoot.setKey(Settings.Setting.PLAN_CONFIG.toString());
         myPlanRoot.setTitle(R.string.settings_plan_settings);
-        populatePlanPreferences(myPlanApp.getPlanService(), myPlanRoot, Settings.getOperator(this), Settings.getMyPlan(this));
+        populatePlanPreferences(myPlanApp.getPlanService(), myPlanRoot, Settings.getOperator(this), Settings.getMyPlan(this),this);
         preferenceCategory.addPreference(myPlanRoot);
 
         // General Preferences
@@ -228,7 +233,8 @@ public class SettingsActivity extends PreferenceActivity {
     }
     
     @SuppressWarnings("unchecked")
-    private void populatePlanPreferences(final PlanService planService, PreferenceScreen myPlanRoot, final String operator, final String planName) {
+    private void populatePlanPreferences(final PlanService planService, PreferenceScreen myPlanRoot, final String operator, final String planName,Context context) {
+    	//TODO Como cargar todos los contactos?????
     	myPlanRoot.removeAll();
     	final PlanConfig planConfig = planService.getPlanConfig(operator, planName);
     	myPlanRoot.setEnabled(planConfig != null);
@@ -260,7 +266,37 @@ public class SettingsActivity extends PreferenceActivity {
     		        });
     		        myPlanRoot.addPreference(listPreference);
     			} else if (valueObject instanceof String) {
+    				String value="";//recoger el valor
     				// TODO ver cuando es String
+    				ArrayList<Contact> todosContactos =ContactStore.getInstance().getContacts(context);
+    				String[]elementValueList=new String[todosContactos.size()];
+    				String[]elementList=new String[todosContactos.size()];
+    				int i=0;
+    				for (Contact contact : todosContactos) {
+    					elementValueList[i]=contact.getMsisdn();
+    					elementList[i]=contact.getContactName();
+						i++;
+					}
+    				ListPreferenceMultiSelect listPreference = new ListPreferenceMultiSelect(this);
+    				//ListPreference listPreference = new ListPreference(this); 
+    				int resourceID = getResources().getIdentifier(pce.getId(), "string", getPackageName());
+    		        listPreference.setDialogTitle(resourceID);
+    		        listPreference.setKey(pce.getId());
+    		        listPreference.setTitle(resourceID);
+    		        listPreference.setEntries(elementList);
+    		        listPreference.setEntryValues(elementValueList);
+    		        String sValue = getPreferenceManager().getSharedPreferences().getString(pce.getId(), String.valueOf(value));
+    		        listPreference.setSummary(sValue.replaceAll("xxx", ","));
+    		        listPreference.setValue(sValue);
+    		        listPreference.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+    					public boolean onPreferenceChange(Preference preference, Object newValue) {
+    						preference.setSummary(newValue.toString().replaceAll("xxx", ","));
+    				        PlanConfigElement pce = planConfig.getPlanConfigElement(preference.getKey());
+    				        pce.setValue(newValue.toString());
+    						return true;
+    					}
+    		        });
+    		        myPlanRoot.addPreference(listPreference);
     			}
     		}
     	}

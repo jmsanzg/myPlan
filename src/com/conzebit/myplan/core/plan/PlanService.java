@@ -40,6 +40,7 @@ import com.conzebit.myplan.ext.es.movistar.particulares.ESMovistar8;
 import com.conzebit.myplan.ext.es.movistar.particulares.ESMovistarContratoMoviles;
 import com.conzebit.myplan.ext.es.movistar.particulares.ESMovistarContratoSimple;
 import com.conzebit.myplan.ext.es.movistar.particulares.ESMovistarContratoTiempoLibre;
+import com.conzebit.myplan.ext.es.movistar.particulares.ESMovistarMiGente;
 import com.conzebit.myplan.ext.es.movistar.particulares.ESMovistarPlanazoMovilesMovistar;
 import com.conzebit.myplan.ext.es.movistar.particulares.ESMovistarPlanazoTiempoLibre;
 import com.conzebit.myplan.ext.es.orange.particulares.ESOrangeArdilla12;
@@ -68,7 +69,6 @@ import com.conzebit.myplan.ext.es.pepephone.particulares.ESPepePhoneMovilonia9;
 import com.conzebit.myplan.ext.es.pepephone.particulares.ESPepePhoneMoviloniaVIP;
 import com.conzebit.myplan.ext.es.pepephone.particulares.ESPepePhonePulpo;
 import com.conzebit.myplan.ext.es.pepephone.particulares.ESPepePhoneRatoncitoElefante;
-import com.conzebit.myplan.ext.es.pepephone.particulares.ESPepePhoneTarifaMenguante;
 import com.conzebit.myplan.ext.es.simyo.particulares.ESSimyo0y8centimos;
 import com.conzebit.myplan.ext.es.simyo.particulares.ESSimyo3centimos;
 import com.conzebit.myplan.ext.es.simyo.particulares.ESSimyo5centimos;
@@ -135,6 +135,7 @@ public class PlanService {
 		this.plans.add(new ESMovistarPlanazoTiempoLibre());
 		this.plans.add(new ESMovistar8());
 		this.plans.add(new ESMovistar6());
+		this.plans.add(new ESMovistarMiGente());
 		
 		this.plans.add(new ESOrangeDelfin20());
 		this.plans.add(new ESOrangeDelfin32());
@@ -163,7 +164,6 @@ public class PlanService {
 		this.plans.add(new ESPepePhonePulpo());
 		this.plans.add(new ESPepePhoneRatoncitoElefante());
 		this.plans.add(new ESPepePhoneLoboCordero());
-		this.plans.add(new ESPepePhoneTarifaMenguante());
 
 		this.plans.add(new ESSimyo0y8centimos());
 		this.plans.add(new ESSimyo3centimos());
