@@ -9,7 +9,6 @@ import android.provider.Contacts.Phones;
 
 import com.conzebit.myplan.android.util.Settings;
 import com.conzebit.myplan.core.contact.Contact;
-import com.conzebit.myplan.core.msisdn.MsisdnType;
 import com.conzebit.myplan.core.msisdn.MsisdnTypeService;
 
 public class ContactStore {
@@ -32,6 +31,7 @@ public class ContactStore {
 			Contact charly = new Contact("603000000", "Charly", msisdnTypeService.getMsisdnType("603000000", "ES"));
 			Contact daniel = new Contact("604000000", "Daniel", msisdnTypeService.getMsisdnType("604000000", "ES"));
 			Contact ebano = new Contact("605000000", "Esteban", msisdnTypeService.getMsisdnType("605000000", "ES"));
+			Contact ana = new Contact("605000004", "Ana", msisdnTypeService.getMsisdnType("605000004", "ES"));
 			Contact free = new Contact("123", null, msisdnTypeService.getMsisdnType("123", "ES"));
 			Contact land = new Contact("910000000", null, msisdnTypeService.getMsisdnType("910000000", "ES"));
 			todosContactos.add(alice);
@@ -40,10 +40,11 @@ public class ContactStore {
 			todosContactos.add(daniel);
 			todosContactos.add(ebano);
 			todosContactos.add(free);
+			todosContactos.add(ana);
 			todosContactos.add(land);
 		}else{
 			final String[] PHONE_PROJECTION = new String[] {Phones.PERSON_ID, People.NAME, Phones.NUMBER};
-			Cursor phoneCursor = context.getContentResolver().query(Phones.CONTENT_URI, PHONE_PROJECTION, null, null, null);
+			Cursor phoneCursor = context.getContentResolver().query(Phones.CONTENT_URI, PHONE_PROJECTION, null, null, People.NAME);
 			try {
 				if (phoneCursor.moveToFirst()) {
 					do {
