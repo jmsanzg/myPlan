@@ -65,9 +65,11 @@ public class ESMovistarContratoTiempoLibre extends ESMovistar {
 				double callPrice = 0;
 	
 				int hourOfDay = call.getDate().get(Calendar.HOUR_OF_DAY);
+				int dayOfWeek = call.getDate().get(Calendar.DAY_OF_WEEK);
+
 				if (call.getContact().getMsisdnType() == MsisdnType.ES_SPECIAL_ZER0) {
 					callPrice = 0;
-				} else if (hourOfDay < 7 || hourOfDay >= 17) {
+				} else if (hourOfDay < 7 || hourOfDay >= 17 || dayOfWeek == Calendar.SATURDAY || dayOfWeek == Calendar.SUNDAY) {
 					callPrice = initialPrice + call.getDuration() * pricePerSecondRedux;
 				} else {
 					callPrice = initialPrice + call.getDuration() * pricePerSecond;
