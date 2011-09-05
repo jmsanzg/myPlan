@@ -30,7 +30,7 @@ import com.conzebit.myplan.ext.es.pepephone.ESPepePhone;
  */
 public class ESPepePhoneMovilonia9 extends ESPepePhone {
     
-	private double pricePerSecond = 0.09 / 60;
+	private double pricePerSecond = 0.085 / 60;
 	private double smsPrice = 0.09;
     
 	public String getPlanName() {
