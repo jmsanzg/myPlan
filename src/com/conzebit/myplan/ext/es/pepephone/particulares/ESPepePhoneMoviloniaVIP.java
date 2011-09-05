@@ -31,7 +31,7 @@ import com.conzebit.myplan.ext.es.pepephone.ESPepePhone;
 public class ESPepePhoneMoviloniaVIP extends ESPepePhone {
     
 	private double pricePerSecond = 0.12 / 60;
-	private double pricePerSecond2 = 0.07 / 60;
+	private double pricePerSecond2 = 0.06 / 60;
 	private double smsPrice = 0.09;
 	private int maxSeconds = (3 * 60) + 30;
     
