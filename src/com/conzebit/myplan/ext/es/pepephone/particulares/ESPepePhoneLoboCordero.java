@@ -30,6 +30,7 @@ import com.conzebit.myplan.ext.es.pepephone.ESPepePhone;
  */
 public class ESPepePhoneLoboCordero extends ESPepePhone {
     
+	private double monthFee = 8.5;
 	private double initialPrice = 0.15;
 	private double pricePerSecond = 0.024 / 60;
 	private double smsPrice = 0.09;
@@ -43,7 +44,7 @@ public class ESPepePhoneLoboCordero extends ESPepePhone {
 	}
 	
 	public Double getMonthFee() {
-		return 8.5;
+		return monthFee;
 	}
 	
 	public Double processCall(Call call, Map<String, Object> accumulatedData) {
