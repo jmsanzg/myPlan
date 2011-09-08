@@ -34,7 +34,7 @@ import com.conzebit.myplan.ext.es.masmovil.ESMasMovil;
  */
 public class ESMasMovilTarifa3 extends ESMasMovil {
     
-	private double minimumMonthFee = 19;
+	private double minimumMonthFee = 9.9;
 	private double initialPrice = 0.15;
 	private double pricePerSecond = 0.03 / 60;
 	private double smsPrice = 0.08;
