@@ -14,36 +14,35 @@
  * You should have received a copy of the GNU General Public License
  * along with myPlan.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.conzebit.myplan.ext.es.yoigo.particulares;
+package com.conzebit.myplan.ext.es.masmovil.particulares;
 
 import java.util.Map;
 
 import com.conzebit.myplan.core.call.Call;
 import com.conzebit.myplan.core.sms.Sms;
-import com.conzebit.myplan.ext.es.yoigo.ESYoigo;
+import com.conzebit.myplan.ext.es.masmovil.ESMasMovil;
 
 
 /**
- * Yoigo La del 6.
+ * Masmovil Tarifa  SIN + BONO 500 MB
  * @author sanz
  */
-public class ESYoigoLaDel6 extends ESYoigo {
+public class ESMasMovilTarifaSIN500 extends ESMasMovil {
     
-	private double minimumMonthFee = 19.0;
-	private double initialPrice = 0.15;
-	private double pricePerSecond = 0.06 / 60;
-	private double smsPrice = 0.10;
+	private double monthFee = 6.9;
+	private double pricePerSecond = 0.085 / 60;
+	private double smsPrice = 0.08;
     
 	public String getPlanName() {
-		return "La del 6";
+		return "Tarifa @SIN + BONO 500MB";
 	}
 	
 	public String getPlanURL() {
-		return "http://www.yoigo.com/tarifas/index.php";
+		return "http://www.masmovil.es/promocion-tarifa-sin-moviltoday";
 	}
 	
-	public Double getMinimumMonthFee() {
-		return minimumMonthFee;
+	public Double getMonthFee() {
+		return monthFee;
 	}
 	
 	public Double processCall(Call call, Map<String, Object> accumulatedData) {
@@ -51,7 +50,7 @@ public class ESYoigoLaDel6 extends ESYoigo {
 			return null;
 		}
 
-		return initialPrice + (call.getDuration() * pricePerSecond);
+		return (call.getDuration() * pricePerSecond);
 	}
 
 	public Double processSms(Sms sms, Map<String, Object> accumulatedData) {
@@ -59,5 +58,5 @@ public class ESYoigoLaDel6 extends ESYoigo {
 			return null;
 		}
 		return smsPrice;
-	}	
+	}
 }

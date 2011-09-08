@@ -35,6 +35,7 @@ public class ESYoigoLaDel0 extends ESYoigo {
 	private final String ACCUMULATED_DATA_DATE_CALL_YOIGO = "DATE_CALL_YOIGO";
 	private final String ACCUMULATED_DATA_YOIGO_SECONDS = "YOIGO_SECONDS";
     
+	private double minimumMonthFee = 6.0;
 	private double initialPrice = 0.15;
 	private double pricePerSecond = 0.12 / 60;
 	private double smsPrice = 0.10;
@@ -49,7 +50,7 @@ public class ESYoigoLaDel0 extends ESYoigo {
 	}
 	
 	public Double getMinimumMonthFee() {
-		return 6.0;
+		return minimumMonthFee;
 	}
 	
 	public Double processCall(Call call, Map<String, Object> accumulatedData) {
