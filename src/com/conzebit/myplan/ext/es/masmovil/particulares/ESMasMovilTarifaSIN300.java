@@ -25,7 +25,7 @@ import com.conzebit.myplan.ext.es.masmovil.ESMasMovil;
 
 /**
  * Masmovil Tarifa SIN + BONO 300 MB
- * @author sanz
+ * @author DarkEagle82 aka Sergi (sergi at nucl3ar dot net)
  */
 public class ESMasMovilTarifaSIN300 extends ESMasMovil {
     
