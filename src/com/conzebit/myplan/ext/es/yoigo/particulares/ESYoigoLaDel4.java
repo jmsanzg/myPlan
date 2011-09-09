@@ -29,6 +29,7 @@ import com.conzebit.myplan.ext.es.yoigo.ESYoigo;
  */
 public class ESYoigoLaDel4 extends ESYoigo {
     
+	private double minimumMonthFee = 39;
 	private double initialPrice = 0.15;
 	private double pricePerSecond = 0.04 / 60;
 	private double smsPrice = 0.10;
@@ -42,7 +43,7 @@ public class ESYoigoLaDel4 extends ESYoigo {
 	}
 	
 	public Double getMinimumMonthFee() {
-		return 39.0;
+		return minimumMonthFee;
 	}
 	
 	public Double processCall(Call call, Map<String, Object> accumulatedData) {
