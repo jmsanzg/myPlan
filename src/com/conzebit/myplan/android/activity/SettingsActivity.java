@@ -18,7 +18,6 @@ package com.conzebit.myplan.android.activity;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Iterator;
 
 import android.app.Activity;
 import android.content.Context;
@@ -27,10 +26,10 @@ import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
-import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
+import android.preference.Preference.OnPreferenceChangeListener;
 
 import com.conzebit.myplan.R;
 import com.conzebit.myplan.android.MyPlanApp;

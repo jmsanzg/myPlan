@@ -59,7 +59,7 @@ public class PlanDetailActivity extends ListActivity {
 			MenuItem menuItem = menu.add(0, MENU_VIEW_PLAN_DATA, 0, R.string.menu_planurl);
 			menuItem.setIcon(R.drawable.menu_globe);
 		}
-		MenuItem menuItem = menu.add(1,2,1,R.string.settings_plan_settings);
+		menu.add(1, 2, 1, R.string.settings_plan_settings);
 
 		return true;
     }

@@ -58,7 +58,7 @@ public class ESMovistarMiGente extends ESMovistar{
 	private boolean isFavouriteContact(Contact contact){
 		PlanConfigElement<String> value = this.planConfig.getPlanConfigElement(CONFIG_KEY);
 		return (value.getValue().indexOf(contact.getMsisdn())>=0);
-		//TODO: Optimizar evaluación
+		//TODO: Optimizar evaluaciÃ³n
 	}
 	
 	@Override

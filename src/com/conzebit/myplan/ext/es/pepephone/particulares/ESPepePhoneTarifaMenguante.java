@@ -18,8 +18,6 @@ package com.conzebit.myplan.ext.es.pepephone.particulares;
 
 import java.util.Map;
 
-import android.util.Log;
-
 import com.conzebit.myplan.core.call.Call;
 import com.conzebit.myplan.core.sms.Sms;
 import com.conzebit.myplan.ext.es.pepephone.ESPepePhone;
