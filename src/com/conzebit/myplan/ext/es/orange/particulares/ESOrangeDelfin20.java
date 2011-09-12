@@ -76,8 +76,9 @@ public class ESOrangeDelfin20 extends ESOrange {
 				} else {
 					recipients.add(call.getContact().getMsisdn());
 					int hourOfDay = call.getDate().get(Calendar.HOUR_OF_DAY);
+					int dayOfWeek = call.getDate().get(Calendar.DAY_OF_WEEK);
 					secondsTotal += call.getDuration();
-					boolean insidePlan = (hourOfDay < 8 || hourOfDay >= 18) && secondsTotal <= maxSecondsMonth && recipients.size() <= maxRecipients; 
+					boolean insidePlan = (hourOfDay < 8 || hourOfDay >= 18 || dayOfWeek == Calendar.SATURDAY || dayOfWeek == Calendar.SUNDAY) && secondsTotal <= maxSecondsMonth && recipients.size() <= maxRecipients; 
 					if (!insidePlan) {
 						long duration = (secondsTotal > maxSecondsMonth) && (secondsTotal - call.getDuration() <= maxSecondsMonth)? secondsTotal - maxSecondsMonth : call.getDuration();  
 						callPrice += initialPrice + (duration * pricePerSecond);
