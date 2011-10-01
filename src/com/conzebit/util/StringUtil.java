@@ -26,4 +26,20 @@ public class StringUtil {
 	public static boolean isNotEmpty(final String string) {
 		return !isEmpty(string);
 	}
+	
+	public static String trim(String s) {
+		if (s == null) {
+			return null;
+		} else {
+			return s.trim();
+		}
+	}
+	
+	public static String toLowerCase(String s) {
+		if (s == null) {
+			return null;
+		} else {
+			return s.toLowerCase();
+		}
+	}
 }
