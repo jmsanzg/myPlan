@@ -33,7 +33,7 @@ import com.conzebit.myplan.ext.es.orange.ESOrange;
 
 
 /**
- * Panda 20.
+ * Delfín 32.
  * 
  * @author sanz
  */

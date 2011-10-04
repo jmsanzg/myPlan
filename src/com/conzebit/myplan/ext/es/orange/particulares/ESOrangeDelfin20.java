@@ -44,7 +44,7 @@ public class ESOrangeDelfin20 extends ESOrange {
 	private double pricePerSecond = 0.18 / 60;
 	private double smsPrice = 0.15;
 	private int maxSecondsMonth = 300 * 60;
-	private int maxRecipients = 75;
+	private int maxRecipients = 100;
     
 	public String getPlanName() {
 		return "Delfín 20";
