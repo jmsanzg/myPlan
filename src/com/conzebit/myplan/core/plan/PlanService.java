@@ -25,6 +25,10 @@ import java.util.HashMap;
 import com.conzebit.myplan.core.Chargeable;
 import com.conzebit.myplan.core.call.Call;
 import com.conzebit.myplan.core.msisdn.MsisdnType;
+import com.conzebit.myplan.ext.es.eroskimovil.particulares.ESEroskiMovilContigo;
+import com.conzebit.myplan.ext.es.eroskimovil.particulares.ESEroskiMovilConekta;
+import com.conzebit.myplan.ext.es.eroskimovil.particulares.ESEroskiMovilContratoSin;
+import com.conzebit.myplan.ext.es.eroskimovil.particulares.ESEroskiMovilHablaA6;
 import com.conzebit.myplan.ext.es.jazztel.particulares.ESJazztelJazzmovil5;
 import com.conzebit.myplan.ext.es.jazztel.particulares.ESJazztelTarifaPlana100;
 import com.conzebit.myplan.ext.es.jazztel.particulares.ESJazztelTarifaPlana200;
@@ -124,6 +128,11 @@ public class PlanService {
 	
 	private PlanService() {
 		this.plans = new ArrayList<AbstractPlan>();
+
+		this.plans.add(new ESEroskiMovilContigo());
+		this.plans.add(new ESEroskiMovilConekta());
+		this.plans.add(new ESEroskiMovilContratoSin());
+		this.plans.add(new ESEroskiMovilHablaA6());
 
 		this.plans.add(new ESJazztelJazzmovil5());
 		this.plans.add(new ESJazztelTarifaPlana100());
