@@ -59,7 +59,9 @@ public class AfterCallReceiver extends BroadcastReceiver {
 				incomingCall = true;
 			} else if (TelephonyManager.EXTRA_STATE_IDLE.equals(state)) {
             	if (!incomingCall) {
-            		AndroidMsisdnTypeStore androidMsisdnTypeStore = new AndroidMsisdnTypeStore(context);
+            		// Wait 2 seconds to give some time to android to log last call
+            		try {context.wait(2000);} catch (Exception e) {}
+                    AndroidMsisdnTypeStore androidMsisdnTypeStore = new AndroidMsisdnTypeStore(context);
             		MsisdnTypeService.getInstance(androidMsisdnTypeStore);
             		Call lastCall = LogStoreService.getInstance().getLastCall(context);
             		if (lastCall != null && lastCall.getDuration() > 0 && lastCall.getType() == Call.CALL_TYPE_SENT) {

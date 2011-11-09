@@ -9,7 +9,7 @@ h1. Planes incluidos
 
 * **EroskiMovil** - Conekta, Contigo, ContratoSin, HablaA6.
 * **Jazztel** - Jazzmovil 10, Tarifa plana 100 minutos, 200 minutos, 300 minutos, 400 minutos, 500 minutos.
-* **MásMovil** - Tarifa 3, Tarifa 5, Tarifa 8, Tarifa Total
+* **MásMovil** - Tarifa 3, Tarifa 5, Tarifa 8, Tarifa Total, @Ligth
 * **Movistar** - Contrato moviles, Contrato simple, Contrato tiempo libre, Planazo Móviles Movistar, Planazo Tiempo Libre, Movistar 8.
 * **Orange** - Delfín 20, Delfín 32, Delfín 42, Delfín 59, Delfín 79, Leon 25, Leon 30, Leon 49, Panda 15, Panda 20, Panda 22, Panda 26, Ardilla 6, Ardilla 8, Ardilla 9, Ardilla 12, Ardilla 15, Pingüino, Básico 6, Mini Básico.
 * **PepePhone** - Tarifa 6cent, Tarifa 7cent, Movilonia 9, Movilonia VIP, Pulpo Pepe, Ratoncito&Elefante, Lobo&Cordero.
