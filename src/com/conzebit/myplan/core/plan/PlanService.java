@@ -54,6 +54,12 @@ import com.conzebit.myplan.ext.es.movistar.particulares.ESMovistarContratoTiempo
 import com.conzebit.myplan.ext.es.movistar.particulares.ESMovistarMiGente;
 import com.conzebit.myplan.ext.es.movistar.particulares.ESMovistarPlanazoMovilesMovistar;
 import com.conzebit.myplan.ext.es.movistar.particulares.ESMovistarPlanazoTiempoLibre;
+import com.conzebit.myplan.ext.es.movistar.particulares.habla.ESMovistarHabla;
+import com.conzebit.myplan.ext.es.movistar.particulares.habla.ESMovistarHabla15;
+import com.conzebit.myplan.ext.es.movistar.particulares.habla.ESMovistarHabla25;
+import com.conzebit.myplan.ext.es.movistar.particulares.habla.ESMovistarHabla35;
+import com.conzebit.myplan.ext.es.movistar.particulares.habla.ESMovistarHabla45;
+import com.conzebit.myplan.ext.es.movistar.particulares.habla.ESMovistarHabla75;
 import com.conzebit.myplan.ext.es.orange.particulares.ESOrangeArdilla12;
 import com.conzebit.myplan.ext.es.orange.particulares.ESOrangeArdilla15;
 import com.conzebit.myplan.ext.es.orange.particulares.ESOrangeArdilla6;
@@ -164,6 +170,12 @@ public class PlanService {
 		this.plans.add(new ESMovistar8());
 		this.plans.add(new ESMovistar6());
 		this.plans.add(new ESMovistarMiGente());
+		this.plans.add(new ESMovistarHabla());
+		this.plans.add(new ESMovistarHabla15());
+		this.plans.add(new ESMovistarHabla25());
+		this.plans.add(new ESMovistarHabla35());
+		this.plans.add(new ESMovistarHabla45());
+		this.plans.add(new ESMovistarHabla75());
 		
 		this.plans.add(new ESOrangeBasico6());
 		this.plans.add(new ESOrangeArdilla6());

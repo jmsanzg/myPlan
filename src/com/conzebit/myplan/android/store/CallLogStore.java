@@ -51,9 +51,13 @@ class CallLogStore {
 
 		ArrayList<Chargeable> calls = new ArrayList<Chargeable>();
 
-		String[] projection = { CallLog.Calls.TYPE, CallLog.Calls.NUMBER,
-		        CallLog.Calls.CACHED_NAME, CallLog.Calls.DURATION,
-		        CallLog.Calls.DATE };
+		String[] projection = {
+				CallLog.Calls.TYPE,
+				CallLog.Calls.NUMBER,
+		        CallLog.Calls.CACHED_NAME,
+		        CallLog.Calls.DURATION,
+		        CallLog.Calls.DATE};
+		
 		String selection = null;
 		if (startBillingDate != null) {
 			selection = CallLog.Calls.DATE + " > " + startBillingDate.getTime();
@@ -61,6 +65,7 @@ class CallLogStore {
 				selection = selection + " AND " + CallLog.Calls.DATE + " < " + endBillingDate.getTime();
 			}
 		}
+		
 		Cursor cursor = context.getContentResolver().query(
 		        CallLog.Calls.CONTENT_URI, projection, selection, null,
 		        CallLog.Calls.DATE + " DESC");

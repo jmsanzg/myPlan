@@ -81,7 +81,6 @@ class SMSLogStore {
 					
 					
 				    String address = cursor.getString(addressColumn);
-				    Log.d("MyPlan", address);
 				    Contact contact = null;
 			        if (address != null) {
 			            address = address.trim();
@@ -92,7 +91,6 @@ class SMSLogStore {
 					
 					Calendar date = Calendar.getInstance();
 					date.setTimeInMillis(cursor.getLong(dateColumn));
-					Log.d("MyPlan", date.toString());
 					smses.add(new Sms(type, contact, date));
 	
 				} while (cursor.moveToNext());
@@ -115,11 +113,9 @@ class SMSLogStore {
 	        	int indexName = phoneCursor.getColumnIndex(People.NAME);
 	            String name = phoneCursor.getString(indexName);
 	            phoneCursor.close();
-	        	Log.d("MyPlan", "accessing MsisdnTypeService");
 	            Contact contact = new Contact(number, name, MsisdnTypeService.getInstance().getMsisdnType(number, "ES"));
 	            contactCache.put(address, contact);
 	        } else {
-	        	Log.d("MyPlan", "acccessing MsisdnTypeService");
 	        	//Contact contact = new Contact(address, address, MsisdnTypeService.getInstance().getMsisdnType(address, "ES"));
 	        	Contact contact = new Contact(address, address, MsisdnType.UNKNOWN);
 	        	contactCache.put(address, contact);
