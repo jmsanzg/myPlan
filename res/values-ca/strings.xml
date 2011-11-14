@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="main_comparePlans">Compara plans de preus</string>
+    <string name="main_viewstats">Estadístiques</string>
+    <string name="main_settings">Configuració</string>
+    <string name="main_accept_button">Accepta</string>
+    <string name="main_toast_settings">Heu d\'indicar un operador i un pla de preus</string>
+    
+    <string name="plan_month_fee">Quota mensual</string>
+    <string name="plan_minimum_month_fee">Quota mínima mensual</string>
+    <string name="plan_billingperiod">Període de facturació:</string>
+    
+    <string name="settings_myplan">Configuració del pla de preus</string>
+    <string name="settings_billingday">Dia de facturació</string>
+    <string name="settings_operator">Operador</string>
+    <string name="settings_operator_notselected">(seleccioneu un operador)</string>
+    <string name="settings_planname">Pla de preus actual</string>
+    <string name="settings_planname_notselected">(seleccioneu un pla)</string>
+    <string name="settings_plan_settings">Configuració del pla</string>
+    <string name="settings_general">Configuració general</string>
+    <string name="settings_plansorting">Ordenació dels plans</string>
+    <string name="settings_plansorting_price">Ordena per preu</string>
+    <string name="settings_plansorting_operator_price">Ordena per operador i preu</string>
+    <string name="settings_count_sms">Facturació d\'SMS</string>
+    <string name="settings_vat">Mostra els preus amb l\'IVA inclós</string>
+    <string name="settings_trap_after_call">Mostra la factura després de trucar</string>
+    <string name="settings_trap_after_call_summary"></string>
+    <string name="settings_show_plans">Mostra els plans</string>
+    <string name="settings_show_plans_detail">Es mostraran els plans de preus seleccionats</string>
+    
+    <string name="stats_missed_calls">Trucades perdudes</string>
+    <string name="stats_answered_calls">Trucades despenjades</string>
+    <string name="stats_inbound_calls">Trucades entrants</string>
+    <string name="stats_outbound_calls">Trucades sortints</string>
+    <string name="stats_inbound_seconds">Segons entrants</string>
+    <string name="stats_outbound_seconds">Segons sortints</string>
+    <string name="stats_total_calls">Trucades totals</string>
+    <string name="stats_shortest_call">Trucada més curta</string>
+    <string name="stats_longest_call">Trucada més llarga</string>
+    <string name="stats_average_call">Durada mitjana de trucada</string>
+    <string name="stats_menu_general_data">Dades generals</string>
+    <string name="stats_menu_top_caller_calls">Números més freqüents (en nombre de trucades)</string>
+    <string name="stats_menu_top_caller_duration">Números més trucats (en temps)</string>
+
+    <string name="disclaimer">Descàrrec</string>
+    <string name="disclaimer_text">
+        \n\nEls càlculs de tarifes d\'aquesta aplicació es realitzen segon la informació obtinguda al web de cada operador.
+        \n\\nL\'autor d\'aquesta aplicació no es fa responsable de la possible inexactitud de les dades mostrades ni de l\'ús que se\'n pugui fer.
+        \n\nL\'ús d\'aquesta aplicació implica l\'acceptació expresa del text indicat anteriorment.
+    </string>
+    
+    <string name="menu_about">Quant a</string>
+    <string name="menu_previous_period">Període anterior</string>
+    <string name="menu_following_period">Període següent</string>
+    <string name="menu_planurl">Lloc web del pla</string>
+    
+    <string name="es.orange.ardilla9.hour">Hora d\'inici de la tarifa reduïda</string>
+    <string name="es.movistar.migente.favourites">Números favorits</string>
+</resources>
