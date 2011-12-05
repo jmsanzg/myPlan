@@ -14,10 +14,13 @@
     
     <ScrollView
         android:layout_width="fill_parent"
+        android:layout_marginLeft="15px"
+        android:layout_marginRight="15px"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15px">
         <TextView
-            android:text="@string/disclaimer_text"
+            android:id="@+id/terms_and_conditions_text"
+            android:text=""
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"/>
     </ScrollView>

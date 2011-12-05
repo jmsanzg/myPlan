@@ -45,9 +45,11 @@
 
     <string name="disclaimer">Descàrrec</string>
     <string name="disclaimer_text">
-        \n\nEls càlculs de tarifes d\'aquesta aplicació es realitzen segon la informació obtinguda al web de cada operador.
-        \n\\nL\'autor d\'aquesta aplicació no es fa responsable de la possible inexactitud de les dades mostrades ni de l\'ús que se\'n pugui fer.
-        \n\nL\'ús d\'aquesta aplicació implica l\'acceptació expresa del text indicat anteriorment.
+    <![CDATA[
+        <br/><br/>Els càlculs de tarifes d\'aquesta aplicació es realitzen segon la informació obtinguda al web de cada operador.
+        <br/><br/>L\'autor d\'aquesta aplicació no es fa responsable de la possible inexactitud de les dades mostrades ni de l\'ús que se\'n pugui fer.
+        <br/><br/>L\'ús d\'aquesta aplicació implica l\'acceptació expresa del text indicat anteriorment.
+    ]]>
     </string>
     
     <string name="menu_about">Quant a</string>

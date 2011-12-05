@@ -20,10 +20,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.conzebit.myplan.R;
@@ -59,6 +61,8 @@ public class MainActivity extends Activity {
         
         if ("no".equals(termsShown)) {
         	this.setContentView(R.layout.terms_and_conditions);
+        	TextView textView = (TextView) this.findViewById(R.id.terms_and_conditions_text);
+        	textView.setText(Html.fromHtml(getString(R.string.disclaimer_text)));
         	Settings.setTermsShown(this, "yes");
         	Button button = (Button) this.findViewById(R.id.accept_button);
         	button.setOnClickListener(new View.OnClickListener() {
