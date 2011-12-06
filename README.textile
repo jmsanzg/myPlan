@@ -8,11 +8,11 @@ Sólo incluye planes de contrato personales, quedando fuera del ámbito del prog
 h1. Planes incluidos
 
 * **EroskiMovil** - Conekta, Contigo, ContratoSin, HablaA6.
-* **Jazztel** - Jazzmovil 10, Tarifa plana 100 minutos, 200 minutos, 300 minutos, 400 minutos, 500 minutos.
-* **MásMovil** - Tarifa 3, Tarifa 5, Tarifa 8, Tarifa Total, @Ligth.
+* **Jazztel** - Jazzmovil 5, Tarifa plana 100 minutos, 200 minutos, 300 minutos, 400 minutos, 500 minutos.
+* **MásMovil** - Tarifa 3, Tarifa 5, Tarifa 8, Ligth 1GB, Light 300MB, Light 500MB, Movil Today, Tarifa Plana 200, Sin 1GB, Sin 300MB, Sin 500MB, Tarifa Total,
 * **Movistar** - Contrato moviles, Contrato simple, Contrato tiempo libre, Planazo Móviles Movistar, Planazo Tiempo Libre, Movistar 8, Habla, Habla 15, Habla 25, Habla 35, Habla 45, Habla 75, Habla Ocio, Habla Ocio 15. 
-* **Orange** - Delfín 20, Delfín 32, Delfín 42, Delfín 59, Delfín 79, Leon 25, Leon 30, Leon 49, Panda 15, Panda 20, Panda 22, Panda 26, Ardilla 6, Ardilla 8, Ardilla 9, Ardilla 12, Ardilla 15, Pingüino, Básico 6, Mini Básico.
-* **PepePhone** - Tarifa 6cent, Tarifa 7cent, Movilonia 9, Movilonia VIP, Pulpo Pepe, Ratoncito&Elefante, Lobo&Cordero.
+* **Orange** - Ardilla 6, Ardilla 8, Ardilla 9, Ardilla 12, Ardilla 15, Básico 6, Delfín 20, Delfín 30, Delfín 32. Delfín 40, Delfín 42, Delfín 59, Delfín 79, Leon 24, Leon 25, Leon 30, Leon 32, Leon 49, Mini Básico, Panda 15, Panda 20, Panda 22, Panda 26, Pingüino.
+* **PepePhone** - Tarifa 6cent, Tarifa 7cent, Lobo&Cordero, Movilonia 9, Movilonia VIP, Pulpo Pepe, Ratoncito&Elefante, Sin Animal, Tarifa Menguante.
 * **Simyo** - Tarifa 0 y 8 céntimos, Tarifa 3 céntimos, Tarifa 5 céntimos.
 * **Vodafone** - A mi Aire 90x1 24h, A mi Aire 90x1 a Todos, A mi Aire Simple, Contrato 1, Diminuto 8, Mini 24h, Mini a Todos, Plana 24h, Plana a Todos, Super Plana Mini, Super Tarifa Plana, L, M, S, XL, XS, XS6, XS8, @L, @M, @S, @XL, @XS.
 * **Yoigo** - La del 0, La del 4, La del 6, La del 8.

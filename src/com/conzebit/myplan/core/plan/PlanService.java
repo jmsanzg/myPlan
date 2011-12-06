@@ -38,6 +38,7 @@ import com.conzebit.myplan.ext.es.jazztel.particulares.ESJazztelTarifaPlana500;
 import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifa3;
 import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifa5;
 import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifa8;
+import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaPlana200;
 import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaTotal;
 import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaSIN300;
 import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaSIN500;
@@ -164,6 +165,7 @@ public class PlanService {
 		this.plans.add(new ESMasMovilTarifaLight300());
 		this.plans.add(new ESMasMovilTarifaLight500());
 		this.plans.add(new ESMasMovilTarifaLight1GB());
+		this.plans.add(new ESMasMovilTarifaPlana200());
 		
 		this.plans.add(new ESMovistarContratoMoviles());
 		this.plans.add(new ESMovistarContratoSimple());
