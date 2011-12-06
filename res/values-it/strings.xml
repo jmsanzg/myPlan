@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="main_comparePlans">Tariffe</string>
+    <string name="main_viewstats">Statistiche</string>
+    <string name="main_settings">Configurazione</string>
+    <string name="main_accept_button">Accettare</string>
+    <string name="main_toast_settings">Devi configurare operatore e tariffa</string>
+
+    <string name="plan_month_fee">Cuota mensual</string>
+    <string name="plan_minimum_month_fee">Differenza rispetto al consumo minimo</string>
+    <string name="plan_billingperiod">Periodo di fatturazione:</string>
+    
+    <string name="settings_myplan">Configurazione della mia tariffa</string>
+    <string name="settings_billingday">Giorno di inizio fatturazione</string>
+    <string name="settings_operator">Operatore</string>
+    <string name="settings_operator_notselected">(seleziona un operatore)</string>
+    <string name="settings_planname">La mia tariffa attuale</string>
+    <string name="settings_planname_notselected">(seleziona una tariffa)</string>
+    <string name="settings_plan_settings">Configurazione della tariffa</string>
+    <string name="settings_general">Configurazione generale</string>
+    <string name="settings_plansorting">Ordinazione delle tariffe</string>
+    <string name="settings_plansorting_price">Ordinare per prezzo</string>
+    <string name="settings_plansorting_operator_price">Ordinare per operatore e prezzo</string>
+    <string name="settings_count_sms">Contabilizzare SMS</string>
+    <string name="settings_vat">Importo con IVA</string>
+    <string name="settings_trap_after_call">Importo al finalizzare</string>
+    <string name="settings_trap_after_call_summary">Mostrare l\'importo al terminare la chiamata</string>
+    <string name="settings_crash_report_disabled">Disabilitare l\'invio di errori</string>
+    <string name="settings_crash_report_disabled_summary">Non si invieranno dati personali</string>
+    <string name="settings_show_plans">Mostra tariffe</string>
+    <string name="settings_show_plans_detail">Si mostreranno le tariffe selezionate</string>
+
+    <string name="stats_missed_calls">Chiamate perse</string>
+    <string name="stats_answered_calls">Chiamate risposte</string>
+    <string name="stats_inbound_calls">Chiamate entranti</string>
+    <string name="stats_outbound_calls">Chiamate uscenti</string>
+    <string name="stats_inbound_seconds">Durazione delle chiamate entranti</string>
+    <string name="stats_outbound_seconds">Durazione delle chiamate uscenti</string>
+    <string name="stats_total_calls">Totale chiamate</string>
+    <string name="stats_shortest_call">Chiamata piú breve</string>
+    <string name="stats_longest_call">Chiamate piú lunga</string>
+    <string name="stats_average_call">Tempo medio di chiamata</string>
+    <string name="stats_menu_general_data">Dati generali</string>
+    <string name="stats_menu_top_caller_calls">Numeri piú chiamati (quantitá)</string>
+    <string name="stats_menu_top_caller_duration">Numeri piú chiamati (tempo)</string>
+
+    <string name="disclaimer">Condizioni d\'uso</string>
+    <string name="disclaimer_text">
+    <![CDATA[
+	
+		myPlan é un\'applicazione gratuita e di codice aperto che al momento funziona
+		solo in Spagna. Se volessi aiutare aggiungendo tariffe e includendo le tariffe
+		del tuo paese, puoi farlo visitando
+		<a href="http://www.github.com/jmsanzg/myPlan">github.com</a>.
+        <br/><br/>Il calcolo della tariffa di questa applicazione si realizza d\'accordo
+		all\'informazione ottenuta dalla pagina web di ogni operatore.
+        <br/><br/>
+		Il creatore di questa applicazione non si responsabilizza della possibile
+		inesattezza dei dati mostrati ne dell\'uso che possa farsi degli stessi.
+		<br/><br/>
+		L\'uso di questa applicazione implica la accettazione espressa di quanto
+		anteriormente esposto.
+    ]]>
+    </string>
+    
+    <string name="menu_about">About us</string>
+    <string name="menu_previous_period">Periodo Anteriore</string>
+    <string name="menu_following_period">Periodo Seguente</string>
+    <string name="menu_planurl">Web della tariffa</string>
+
+    <string name="es.orange.ardilla9.hour">Ora inizio tariffa ridotta</string>
+    <string name="es.movistar.migente.favourites">Numeri VIP</string>
+</resources>

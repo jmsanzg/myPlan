@@ -3,55 +3,53 @@
     <string name="app_name">myPlan</string>
     <string name="app_version">2.0.17</string>
 
-    <string name="main_comparePlans">Ver planes</string>
-    <string name="main_viewstats">Estadísticas</string>
-    <string name="main_settings">Ajustes</string>
-    <string name="main_accept_button">Aceptar</string>
-    <string name="main_toast_settings">Debes configurar operadora y plan</string>
-
-    <string name="plan_month_fee">Cuota mensual</string>
-    <string name="plan_minimum_month_fee">Diferencia consumo mínimo</string>
-    <string name="plan_billingperiod">Periodo de facturación:</string>
+    <string name="main_comparePlans">Compare plans</string>
+    <string name="main_viewstats">Statistics</string>
+    <string name="main_settings">Settings</string>
+    <string name="main_accept_button">Accept</string>
+    <string name="main_toast_settings">You must config Operator and Plan</string>
     
-    <string name="settings_myplan">Ajustes de mi plan</string>
-    <string name="settings_billingday">Día inicio facturación</string>
-    <string name="settings_operator">Operadora</string>
-    <string name="settings_operator_notselected">(seleccione una compañía)</string>
-    <string name="settings_planname">Mi plan actual</string>
-    <string name="settings_planname_notselected">(seleccione un plan)</string>
-    <string name="settings_plan_settings">Ajustes del plan</string>
-    <string name="settings_general">Ajustes generales</string>
-    <string name="settings_plansorting">Ordenación de planes</string>
-    <string name="settings_plansorting_price">Ordenar por precio</string>
-    <string name="settings_plansorting_operator_price">Ordenar por compañía y precio</string>
-    <string name="settings_count_sms">Contabilizar SMS</string>
-    <string name="settings_vat">Importes con IVA</string>
-    <string name="settings_trap_after_call">Importe al finalizar</string>
-    <string name="settings_trap_after_call_summary">Mostrar importe al terminar llamada</string>
-    <string name="settings_crash_report_disabled">Deshabilitar el envio de errores</string>
-    <string name="settings_crash_report_disabled_summary">No se envían datos personales</string>
-    <string name="settings_show_plans">Mostrar planes</string>
-    <string name="settings_show_plans_detail">Se mostrarán los planes seleccionados</string>
-
-    <string name="stats_missed_calls">Llamadas perdidas</string>
-    <string name="stats_answered_calls">Llamadas contestadas</string>
-    <string name="stats_inbound_calls">Llamadas entrantes</string>
-    <string name="stats_outbound_calls">Llamadas salientes</string>
-    <string name="stats_inbound_seconds">Duración llamadas entrantes</string>
-    <string name="stats_outbound_seconds">Duración llamadas salientes</string>
-    <string name="stats_total_calls">Total de llamadas</string>
-    <string name="stats_shortest_call">Llamada más corta</string>
-    <string name="stats_longest_call">Llamada más larga</string>
-    <string name="stats_average_call">Tiempo medio llamada</string>
+    <string name="plan_month_fee">Month fee</string>
+    <string name="plan_minimum_month_fee">Minimum month fee</string>
+    <string name="plan_billingperiod">Billing period:</string>
+    
+    <string name="settings_myplan">My Plan settings</string>
+    <string name="settings_billingday">Billing day</string>
+    <string name="settings_operator">Operator</string>
+    <string name="settings_operator_notselected">(select an operator)</string>
+    <string name="settings_planname">My current plan</string>
+    <string name="settings_planname_notselected">(select a plan)</string>
+    <string name="settings_plan_settings">Plan Settings</string>
+    <string name="settings_general">General settings</string>
+    <string name="settings_plansorting">Plan sorting</string>
+    <string name="settings_plansorting_price">Sort by price</string>
+    <string name="settings_plansorting_operator_price">Sort by operator and price</string>
+    <string name="settings_count_sms">Bill SMS</string>
+    <string name="settings_vat">Show charges with VAT included</string>
+    <string name="settings_trap_after_call">Show bill after call</string>
+    <string name="settings_trap_after_call_summary"></string>
+    <string name="settings_show_plans">Show plans</string>
+    <string name="settings_show_plans_detail">Selected plans will be listed</string>
+    
+    <string name="stats_missed_calls">Missed calls</string>
+    <string name="stats_answered_calls">Answered calls</string>
+    <string name="stats_inbound_calls">Inbound calls</string>
+    <string name="stats_outbound_calls">Outbound calls</string>
+    <string name="stats_inbound_seconds">Inbound seconds</string>
+    <string name="stats_outbound_seconds">Outbound seconds</string>
+    <string name="stats_total_calls">Total calls</string>
+    <string name="stats_shortest_call">Shortest call</string>
+    <string name="stats_longest_call">Longest call</string>
+    <string name="stats_average_call">Average call</string>
     <string name="stats_menu_general_data">Datos generales</string>
     <string name="stats_menu_top_caller_calls">Números más llamados (cantidad)</string>
     <string name="stats_menu_top_caller_duration">Números más llamados (tiempo)</string>
 
-    <string name="disclaimer">Condiciones de uso</string>
+    <string name="disclaimer">Disclaimer</string>
     <string name="disclaimer_text">
     <![CDATA[
-        <br/><br/>myPlan es una aplicación gratuita y de código abierto de momento para su uso sólo en España.
-        Si quieres ayudar a ampliar los planes y que se incluyan los de tu país puedes hacerlo visitando
+        <br/><br/>myPlan is a free open source program that, for now, only works in Spain.
+        If you want to add more carrier voice/data plans or add your country carriers and plans, you can do it on
         <a href="http://www.github.com/jmsanzg/myPlan">github.com</a>.
         <br/><br/>Los cálculos de tarifas en esta aplicación se realizan conforme a la
         información obtenida en la web de cada operador.
@@ -62,11 +60,11 @@
     ]]>
     </string>
     
-    <string name="menu_about">Acerca de</string>
-    <string name="menu_previous_period">Periodo Anterior</string>
-    <string name="menu_following_period">Periodo Siguiente</string>
-    <string name="menu_planurl">Web del plan</string>
-
-    <string name="es.orange.ardilla9.hour">Hora ini. franja reducida</string>
-    <string name="es.movistar.migente.favourites">Números Mi Gente</string>
-</resources>
+    <string name="menu_about">About</string>
+    <string name="menu_previous_period">Previous Period</string>
+    <string name="menu_following_period">Following Period</string>
+    <string name="menu_planurl">Plan webpage</string>
+    
+    <string name="es.orange.ardilla9.hour">Start time of reduced price</string>
+    <string name="es.movistar.migente.favourites">Favourite numbers</string>
+ </resources>
