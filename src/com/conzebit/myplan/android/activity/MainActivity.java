@@ -63,10 +63,10 @@ public class MainActivity extends Activity {
         	this.setContentView(R.layout.terms_and_conditions);
         	TextView textView = (TextView) this.findViewById(R.id.terms_and_conditions_text);
         	textView.setText(Html.fromHtml(getString(R.string.disclaimer_text)));
-        	Settings.setTermsShown(this, "yes");
         	Button button = (Button) this.findViewById(R.id.accept_button);
         	button.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
+		        	Settings.setTermsShown(v.getContext(), "yes");
 					loadMainView();
 				}
 			});
