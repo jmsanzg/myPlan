@@ -78,6 +78,7 @@ public class ESVodafoneContrato1 extends ESVodafone {
 				if (sms.getType() == Sms.SMS_TYPE_RECEIVED) {
 					continue;
 				}
+				globalPrice += smsPrice;
 				ret.addPlanCall(new PlanChargeable(chargeable, smsPrice, this.getCurrency()));
 			}
 		}
