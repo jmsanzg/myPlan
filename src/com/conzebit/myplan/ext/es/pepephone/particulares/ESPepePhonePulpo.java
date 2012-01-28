@@ -19,6 +19,8 @@ package com.conzebit.myplan.ext.es.pepephone.particulares;
 import java.util.Map;
 
 import com.conzebit.myplan.core.call.Call;
+import com.conzebit.myplan.core.msisdn.MsisdnType;
+import com.conzebit.myplan.core.plan.PlanChargeable.Type;
 import com.conzebit.myplan.core.sms.Sms;
 import com.conzebit.myplan.ext.es.pepephone.ESPepePhone;
 
@@ -41,20 +43,31 @@ public class ESPepePhonePulpo extends ESPepePhone {
 		return "http://www.pepephone.com/promo/adslzone-pulpopepe/index.html";
 	}
 	
-	public Double processCall(Call call, Map<String, Object> accumulatedData) {
+	public ProcessResult processCall(Call call, Map<String, Object> accumulatedData) {
 		if (call.getType() != Call.CALL_TYPE_SENT) {
 			return null;
 		}
 
-		double pricePerSecond = (int) (call.getDuration() / 60);
-		pricePerSecond = (pricePerSecond >= 5) ? 0.05 : pricePerSecond / 100;
-		return initialPrice + (call.getDuration() * (pricePerSecond / 60));
+		ProcessResult ret = new ProcessResult();
+		if (call.getContact().getMsisdnType() == MsisdnType.ES_SPECIAL_ZER0) {
+			ret.price = 0.0;
+			ret.type = Type.ZERO;
+		} else {
+			double pricePerSecond = (int) (call.getDuration() / 60);
+			pricePerSecond = (pricePerSecond >= 4) ? 0.049 : pricePerSecond / 100;
+			ret.price = initialPrice + (call.getDuration() * pricePerSecond);
+			ret.type = Type.INSIDE_PLAN;
+		}
+		return ret;
 	}
 
-	public Double processSms(Sms sms, Map<String, Object> accumulatedData) {
+	public ProcessResult processSms(Sms sms, Map<String, Object> accumulatedData) {
 		if (sms.getType() != Sms.SMS_TYPE_SENT) {
 			return null;
 		}
-		return smsPrice;
+		ProcessResult ret = new ProcessResult();
+		ret.price = smsPrice;
+		ret.type = Type.INSIDE_PLAN;
+		return ret;
 	}
 }

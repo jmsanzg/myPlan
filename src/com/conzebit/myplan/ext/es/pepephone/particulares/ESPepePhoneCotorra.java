@@ -26,35 +26,46 @@ import com.conzebit.myplan.ext.es.pepephone.ESPepePhone;
 
 
 /**
- * PepePhone Sin Animal
+ * PepePhone Cotorra
  * 
  * @author sanz
  */
-public class ESPepePhoneSinAnimal extends ESPepePhone {
+public class ESPepePhoneCotorra extends ESPepePhone {
     
 	private double initialPrice = 0.15;
-	private double pricePerSecond = 0.07 / 60;
 	private double smsPrice = 0.09;
     
 	public String getPlanName() {
-		return "Tarifa Sin animal";
+		return "Tarifa Cotorra Pepe";
 	}
 	
 	public String getPlanURL() {
-		return "http://pepephone.com/promo/mimovilwindows/";
+		return "http://www.pepephone.com/promo/elandroidelibre-cotorra/";
 	}
 	
 	public ProcessResult processCall(Call call, Map<String, Object> accumulatedData) {
 		if (call.getType() != Call.CALL_TYPE_SENT) {
 			return null;
 		}
-		
+
 		ProcessResult ret = new ProcessResult();
 		if (call.getContact().getMsisdnType() == MsisdnType.ES_SPECIAL_ZER0) {
 			ret.price = 0.0;
 			ret.type = Type.ZERO;
 		} else {
-			ret.price = (call.getDuration() < 60 ? 0.0 : initialPrice) + (call.getDuration() * pricePerSecond);
+			ret.price = initialPrice;
+			if (call.getDuration() < 60) {
+				ret.price += call.getDuration() * 0.05;
+			} else if (call.getDuration() < 120) {
+				ret.price += 60 * 0.05 + (call.getDuration() - 60) * 0.04;
+			} else if (call.getDuration() < 180) {
+				ret.price += 60 * 0.05 + 60 * 0.04 + (call.getDuration() - 120) * 0.03;
+			} else if (call.getDuration() < 240) {
+				ret.price += 60 * 0.05 + 60 * 0.04 + 60 * 0.03 + (call.getDuration() - 180) * 0.02;
+			} else  {
+				ret.price += 60 * 0.05 + 60 * 0.04 + 60 * 0.03 + 60 * 0.02 + (call.getDuration() - 240) * 0.019;
+			}
+			 
 			ret.type = Type.INSIDE_PLAN;
 		}
 		return ret;

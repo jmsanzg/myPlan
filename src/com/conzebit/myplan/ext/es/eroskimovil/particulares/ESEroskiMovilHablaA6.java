@@ -19,6 +19,8 @@ package com.conzebit.myplan.ext.es.eroskimovil.particulares;
 import java.util.Map;
 
 import com.conzebit.myplan.core.call.Call;
+import com.conzebit.myplan.core.msisdn.MsisdnType;
+import com.conzebit.myplan.core.plan.PlanChargeable.Type;
 import com.conzebit.myplan.core.sms.Sms;
 import com.conzebit.myplan.ext.es.eroskimovil.ESEroskiMovil;
 
@@ -40,18 +42,29 @@ public class ESEroskiMovilHablaA6 extends ESEroskiMovil {
 		return "https://www.eroskimovil.es/geomv/c/pub/es/contrato/tarifas/nacional.jsp";
 	}
 
-	public Double processCall(Call call, Map<String, Object> accumulatedData) {
+	public ProcessResult processCall(Call call, Map<String, Object> accumulatedData) {
 		if (call.getType() != Call.CALL_TYPE_SENT) {
 			return null;
 		}
 
-		return initialPrice + (call.getDuration() * pricePerSecond);
+		ProcessResult ret = new ProcessResult();
+		if (call.getContact().getMsisdnType() == MsisdnType.ES_SPECIAL_ZER0) {
+			ret.price = 0.0;
+			ret.type = Type.ZERO;
+		} else {
+			ret.price = initialPrice + (call.getDuration() * pricePerSecond);
+			ret.type = Type.INSIDE_PLAN;
+		}
+		return ret;
 	}
 
-	public Double processSms(Sms sms, Map<String, Object> accumulatedData) {
+	public ProcessResult processSms(Sms sms, Map<String, Object> accumulatedData) {
 		if (sms.getType() != Sms.SMS_TYPE_SENT) {
 			return null;
 		}
-		return smsPrice;
+		ProcessResult ret = new ProcessResult();
+		ret.price = smsPrice;
+		ret.type = Type.INSIDE_PLAN;
+		return ret;
 	}
 }

@@ -36,6 +36,8 @@ public class ESMsisdnTypeValidator implements IMsisdnTypeValidator {
 		this.add("669"); // movistar customer care
 		this.add("470"); // orange customer care
 		this.add("1470"); // orange customer care
+		this.add("222"); // orange customer care
+		this.add("1222"); // orange customer care
 		this.add("1414"); // orange customer care
 		this.add("1212"); // pepephone customer care
 		this.add("121"); // simyo customer care
@@ -44,9 +46,6 @@ public class ESMsisdnTypeValidator implements IMsisdnTypeValidator {
 		this.add("1443"); // vodafone customer care business
 		this.add("607123000"); // vodafone customer care (equals to 122)
 		this.add("622"); // yoigo customer care
-		
-		
-		
 	}};
 
     public String getCountryCode() {
@@ -54,11 +53,23 @@ public class ESMsisdnTypeValidator implements IMsisdnTypeValidator {
     }
 
     public MsisdnType getMsisdnType(String msisdn) {
+    	if (msisdn == null) {
+    	    return MsisdnType.UNKNOWN;
+    	}
 	    
 	    if ((msisdn.startsWith("+") && !msisdn.startsWith("+34")) ||
 	        (msisdn.startsWith("00") && !msisdn.startsWith("0034"))) {
 	    	return MsisdnType.ES_INTERNATIONAL;
 	    }
+
+	    if (specialZeroMsisdn.contains(msisdn)) {
+	    	return MsisdnType.ES_SPECIAL_ZER0;
+	    }
+	    
+	    if (specialMsisdn.contains(msisdn)) {
+	    	return MsisdnType.ES_SPECIAL;
+	    }
+	    
 
 	    if (msisdn.startsWith("+34")) {
 	    	msisdn = msisdn.substring(3);
@@ -84,14 +95,6 @@ public class ESMsisdnTypeValidator implements IMsisdnTypeValidator {
 	    // 91, 92 -> National
 	    if (msisdn.startsWith("9")) {
 	    	return MsisdnType.ES_LAND_LINE;
-	    }
-	    
-	    if (specialZeroMsisdn.contains(msisdn)) {
-	    	return MsisdnType.ES_SPECIAL_ZER0;
-	    }
-	    
-	    if (specialMsisdn.contains(msisdn)) {
-	    	return MsisdnType.ES_SPECIAL;
 	    }
 	    
 	    return MsisdnType.UNKNOWN;

@@ -20,6 +20,7 @@ import java.util.Map;
 
 import com.conzebit.myplan.core.call.Call;
 import com.conzebit.myplan.core.msisdn.MsisdnType;
+import com.conzebit.myplan.core.plan.PlanChargeable.Type;
 import com.conzebit.myplan.core.sms.Sms;
 import com.conzebit.myplan.ext.es.yoigo.ESYoigo;
 import com.conzebit.util.Formatter;
@@ -53,51 +54,62 @@ public class ESYoigoLaDel0 extends ESYoigo {
 		return minimumMonthFee;
 	}
 	
-	public Double processCall(Call call, Map<String, Object> accumulatedData) {
+	public ProcessResult processCall(Call call, Map<String, Object> accumulatedData) {
 		if (call.getType() != Call.CALL_TYPE_SENT) {
 			return null;
 		}
 		
-		String dateCallYoigo = (String) accumulatedData.get(ACCUMULATED_DATA_DATE_CALL_YOIGO);
-		if (dateCallYoigo == null) {
-			dateCallYoigo = "";
-		}
-		Long yoigoSeconds = (Long) accumulatedData.get(ACCUMULATED_DATA_YOIGO_SECONDS);
-		if (yoigoSeconds == null) {
-			yoigoSeconds = new Long(0);
-		}
-
-		double callPrice = 0;
-		if (call.getContact().getMsisdnType() == MsisdnType.ES_YOIGO) {
-			String formattedDate = Formatter.formatDate(call.getDate());
-			if (dateCallYoigo.equals(formattedDate)) {
-				yoigoSeconds = yoigoSeconds + call.getDuration();
-			} else {
-				dateCallYoigo = formattedDate;
-				accumulatedData.put(ACCUMULATED_DATA_DATE_CALL_YOIGO, dateCallYoigo);
-				yoigoSeconds = call.getDuration();
-			}
-			accumulatedData.put(ACCUMULATED_DATA_YOIGO_SECONDS, yoigoSeconds);
-			
-			if (yoigoSeconds <= maxYoigoSeconds) {
-				callPrice = initialPrice;
-			} else {
-				long duration = call.getDuration();
-				if (yoigoSeconds - call.getDuration() < maxYoigoSeconds) {
-					duration = yoigoSeconds - call.getDuration();
-				}
-				callPrice = initialPrice + (duration * pricePerSecond);
-			}
+		ProcessResult ret = new ProcessResult();
+		if (call.getContact().getMsisdnType() == MsisdnType.ES_SPECIAL_ZER0) {
+			ret.price = 0.0;
+			ret.type = Type.ZERO;
 		} else {
-			callPrice = initialPrice + (call.getDuration() * pricePerSecond);
+			String dateCallYoigo = (String) accumulatedData.get(ACCUMULATED_DATA_DATE_CALL_YOIGO);
+			if (dateCallYoigo == null) {
+				dateCallYoigo = "";
+			}
+			Long yoigoSeconds = (Long) accumulatedData.get(ACCUMULATED_DATA_YOIGO_SECONDS);
+			if (yoigoSeconds == null) {
+				yoigoSeconds = new Long(0);
+			}
+
+			if (call.getContact().getMsisdnType() == MsisdnType.ES_YOIGO) {
+				String formattedDate = Formatter.formatDate(call.getDate());
+				if (dateCallYoigo.equals(formattedDate)) {
+					yoigoSeconds = yoigoSeconds + call.getDuration();
+				} else {
+					dateCallYoigo = formattedDate;
+					accumulatedData.put(ACCUMULATED_DATA_DATE_CALL_YOIGO, dateCallYoigo);
+					yoigoSeconds = call.getDuration();
+				}
+				accumulatedData.put(ACCUMULATED_DATA_YOIGO_SECONDS, yoigoSeconds);
+				
+				if (yoigoSeconds <= maxYoigoSeconds) {
+					ret.price = initialPrice;
+					ret.type = Type.INSIDE_PLAN;
+				} else {
+					long duration = call.getDuration();
+					if (yoigoSeconds - call.getDuration() < maxYoigoSeconds) {
+						duration = yoigoSeconds - call.getDuration();
+					}
+					ret.price = initialPrice + (duration * pricePerSecond);
+					ret.type = Type.OUTSIDE_PLAN;
+				}
+			} else {
+				ret.price = initialPrice + (call.getDuration() * pricePerSecond);
+				ret.type = Type.OUTSIDE_PLAN;
+			}
 		}
-		return callPrice;
+		return ret;
 	}
 
-	public Double processSms(Sms sms, Map<String, Object> accumulatedData) {
+	public ProcessResult processSms(Sms sms, Map<String, Object> accumulatedData) {
 		if (sms.getType() != Sms.SMS_TYPE_SENT) {
 			return null;
 		}
-		return smsPrice;
-	}	
+		ProcessResult ret = new ProcessResult();
+		ret.price = smsPrice;
+		ret.type = Type.INSIDE_PLAN;
+		return ret;
+	}
 }

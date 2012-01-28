@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="main_comparePlans">Comparer les offres</string>
+    <string name="main_viewstats">Statistiques</string>
+    <string name="main_settings">Paramètres</string>
+    <string name="main_accept_button">Accepter</string>
+    <string name="main_toast_settings">Vous devez configurer les Opérateurs et leurs offres</string>
+    
+    <string name="plan_month_fee">Tarif mensuel</string>
+    <string name="plan_minimum_month_fee">Tarif mensuel minimum</string>
+    <string name="plan_billingperiod">Fréquence de facturation:</string>
+    
+    <string name="settings_myplan">Paramètres de mon abonnement</string>
+    <string name="settings_billingday">Jour de facturation</string>
+    <string name="settings_operator">Opérateur</string>
+    <string name="settings_operator_notselected">(choisissez un opérateur)</string>
+    <string name="settings_planname">Abonnement actuel</string>
+    <string name="settings_planname_notselected">(choisissez un abonnement)</string>
+    <string name="settings_plan_settings">Paramètres de l\'abonnement</string>
+    <string name="settings_general">Paramètres généraux</string>
+    <string name="settings_plansorting">Tri des abonnements</string>
+    <string name="settings_plansorting_price">Trier par prix</string>
+    <string name="settings_plansorting_operator_price">Trier par opérateur et prix</string>
+    <string name="settings_count_sms">Compter les SMS</string>
+    <string name="settings_vat">Montrer la TVA</string>
+    <string name="settings_trap_after_call">Comptabiliser après un appel</string>
+    <string name="settings_trap_after_call_summary">Montrer la facture après un appel</string>
+    <string name="settings_show_plans">Montrer les abonnements</string>
+    <string name="settings_show_plans_detail">Les abonnements sélectionnés seront montrés</string>
+    
+    <string name="stats_missed_calls">Appels manqués</string>
+    <string name="stats_answered_calls">Appels répondus</string>
+    <string name="stats_inbound_calls">Appels entrants</string>
+    <string name="stats_outbound_calls">Appels sortants</string>
+    <string name="stats_inbound_seconds">Durée des appels entrants (s)</string>
+    <string name="stats_outbound_seconds">Durée des appels sortants (s)</string>
+    <string name="stats_total_calls">Nombre d\'appels</string>
+    <string name="stats_shortest_call">Appel le plus court</string>
+    <string name="stats_longest_call">Appel le plus long</string>
+    <string name="stats_average_call">Durée moyenne d\'appel</string>
+    <string name="stats_menu_general_data">Informations générales</string>
+    <string name="stats_menu_top_caller_calls">Numéros les plus appelés (nombre)</string>
+    <string name="stats_menu_top_caller_duration">Numéros les plus appelés (durée)</string>
+
+    <string name="disclaimer">Disclaimer</string>
+    <string name="disclaimer_text">
+    <![CDATA[
+        <br/><br/>myPlan is a free open source program that, for now, only works in Spain.
+        If you want to add more carrier voice/data plans or add your country carriers and plans, you can do it on
+        <a href="http://www.github.com/jmsanzg/myPlan">github.com</a>.
+        <br/><br/>Los cálculos de tarifas en esta aplicación se realizan conforme a la
+        información obtenida en la web de cada operador.
+        <br/><br/>El creador de esta aplicación no se hace responsable de la posible
+        inexactitud de los datos mostrados ni del uso que de ellos se pueda hacer.
+        <br/><br/>El uso de esta aplicación implica la aceptación expresa de lo
+        anteriormente expuesto.
+    ]]>
+    </string>
+    
+    <string name="menu_about">À propos</string>
+    <string name="menu_previous_period">Période précèdente</string>
+    <string name="menu_following_period">Période suivante</string>
+    <string name="menu_planurl">Page web des abonnements</string>
+    
+    <string name="es.orange.ardilla9.hour">Début heures creuses</string>
+    <string name="es.movistar.migente.favourites">Numéros favoris</string>
+ </resources>

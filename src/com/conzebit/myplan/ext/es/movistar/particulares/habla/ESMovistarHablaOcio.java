@@ -25,6 +25,7 @@ import com.conzebit.myplan.core.message.ChargeableMessage;
 import com.conzebit.myplan.core.msisdn.MsisdnType;
 import com.conzebit.myplan.core.plan.PlanChargeable;
 import com.conzebit.myplan.core.plan.PlanSummary;
+import com.conzebit.myplan.core.plan.PlanChargeable.Type;
 import com.conzebit.myplan.core.sms.Sms;
 import com.conzebit.myplan.ext.es.movistar.ESMovistar;
 
@@ -53,7 +54,7 @@ public class ESMovistarHablaOcio extends ESMovistar {
 	
 	public PlanSummary process(ArrayList<Chargeable> data) {
 		PlanSummary ret = new PlanSummary(this);
-		ret.addPlanCall(new PlanChargeable(new ChargeableMessage(ChargeableMessage.MESSAGE_MONTH_FEE), monthFee, this.getCurrency()));
+		ret.addPlanCall(new PlanChargeable(new ChargeableMessage(ChargeableMessage.MESSAGE_MONTH_FEE), monthFee, this.getCurrency(), Type.MONTH_FEE));
 
 		int secondsTotal = 0;
 		for (Chargeable chargeable : data) {
@@ -65,34 +66,40 @@ public class ESMovistarHablaOcio extends ESMovistar {
 				}
 				
 				double callPrice = 0;
-				
+				Type type = null;
 				if (call.getContact().getMsisdnType() == MsisdnType.ES_SPECIAL_ZER0) {
 					callPrice = 0;
+					type = Type.ZERO;
 				} else {
 					int dayOfWeek = call.getDate().get(Calendar.DAY_OF_WEEK);
 					if (dayOfWeek == Calendar.SATURDAY || dayOfWeek == Calendar.SUNDAY) {
 						secondsTotal += call.getDuration();
 						boolean insidePlan = secondsTotal <= maxSecondsMonth;
-						if (!insidePlan) {
+						if (insidePlan) {
+							type = Type.INSIDE_PLAN;
+						} else {
+							type = Type.OUTSIDE_PLAN;
 							long duration = (secondsTotal > maxSecondsMonth) && (secondsTotal - call.getDuration() <= maxSecondsMonth)? secondsTotal - maxSecondsMonth : call.getDuration();  
 							callPrice += initialPrice + (duration * pricePerSecond);
 						}
 					} else {
 						int hourOfDay = call.getDate().get(Calendar.HOUR_OF_DAY);
 						if (hourOfDay < 8 || hourOfDay >= 16) {
+							type = Type.INSIDE_PLAN;
 							callPrice += initialPrice + (call.getDuration() * pricePerSecond);
 						} else {
+							type = Type.OUTSIDE_PLAN;
 							callPrice += initialPrice + (call.getDuration() * pricePerSecond2);
 						}
 					}
 				}
-				ret.addPlanCall(new PlanChargeable(call, callPrice, this.getCurrency()));
+				ret.addPlanCall(new PlanChargeable(call, callPrice, this.getCurrency(), type));
 			} else if (chargeable.getChargeableType() == Chargeable.CHARGEABLE_TYPE_SMS) {
 				Sms sms = (Sms) chargeable;
 				if (sms.getType() == Sms.SMS_TYPE_RECEIVED) {
 					continue;
 				}
-				ret.addPlanCall(new PlanChargeable(chargeable, smsPrice, this.getCurrency()));
+				ret.addPlanCall(new PlanChargeable(chargeable, smsPrice, this.getCurrency(), Type.INSIDE_PLAN));
 			}
 		}
 		return ret;

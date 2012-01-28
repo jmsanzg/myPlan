@@ -25,6 +25,7 @@ import com.conzebit.myplan.core.message.ChargeableMessage;
 import com.conzebit.myplan.core.msisdn.MsisdnType;
 import com.conzebit.myplan.core.plan.PlanChargeable;
 import com.conzebit.myplan.core.plan.PlanSummary;
+import com.conzebit.myplan.core.plan.PlanChargeable.Type;
 import com.conzebit.myplan.core.sms.Sms;
 import com.conzebit.myplan.ext.es.movistar.ESMovistar;
 
@@ -54,7 +55,7 @@ public class ESMovistar6 extends ESMovistar {
 
 	public PlanSummary process(ArrayList<Chargeable> data) {
 		PlanSummary ret = new PlanSummary(this);
-		ret.addPlanCall(new PlanChargeable(new ChargeableMessage(ChargeableMessage.MESSAGE_MONTH_FEE), monthFee, this.getCurrency()));
+		ret.addPlanCall(new PlanChargeable(new ChargeableMessage(ChargeableMessage.MESSAGE_MONTH_FEE), monthFee, this.getCurrency(), Type.MONTH_FEE));
 
 		int secondsTotal = 0;
 		int callsTotal = 0;

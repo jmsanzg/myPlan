@@ -20,14 +20,24 @@ import com.conzebit.myplan.core.Chargeable;
 
 public class PlanChargeable {
 
+	public enum Type {
+		INSIDE_PLAN, OUTSIDE_PLAN, ZERO, MONTH_FEE, MINIMUM_MONTH_FEE;
+	}
+	
 	private Chargeable chargeable;
 	private double price;
 	private String currency;
-	
+	private Type type = null; 
+
 	public PlanChargeable(Chargeable chargeable, double price, String currency) {
+		this(chargeable, price, currency, null);
+	}
+
+	public PlanChargeable(Chargeable chargeable, double price, String currency, Type type) {
 		this.chargeable = chargeable;
 		this.price = price;
 		this.currency = currency;
+		this.type = type;
 	}
 	
 	public Chargeable getChargeable() {
@@ -40,6 +50,10 @@ public class PlanChargeable {
 	
 	public String getCurrency() {
 		return this.currency;
+	}
+	
+	public Type getType() {
+		return this.type;
 	}
 	
 }

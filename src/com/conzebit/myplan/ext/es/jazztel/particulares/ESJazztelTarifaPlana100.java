@@ -19,6 +19,8 @@ package com.conzebit.myplan.ext.es.jazztel.particulares;
 import java.util.Map;
 
 import com.conzebit.myplan.core.call.Call;
+import com.conzebit.myplan.core.msisdn.MsisdnType;
+import com.conzebit.myplan.core.plan.PlanChargeable.Type;
 import com.conzebit.myplan.core.sms.Sms;
 import com.conzebit.myplan.ext.es.jazztel.ESJazztel;
 
@@ -49,7 +51,7 @@ public class ESJazztelTarifaPlana100 extends ESJazztel {
 		return 15.95;
 	}
 	
-	public Double processCall(Call call, Map<String, Object> accumulatedData) {
+	public ProcessResult processCall(Call call, Map<String, Object> accumulatedData) {
 		if (call.getType() != Call.CALL_TYPE_SENT) {
 			return null;
 		}
@@ -61,19 +63,31 @@ public class ESJazztelTarifaPlana100 extends ESJazztel {
 		secondsTotal += call.getDuration();
 		accumulatedData.put(ACCUMULATED_DATA_SECONDS, secondsTotal);
 		
-		double callPrice = 0;
-		boolean insidePlan =  secondsTotal <= maxSecondsMonth; 
-		if (!insidePlan) {
-			long duration = (secondsTotal > maxSecondsMonth) && (secondsTotal - call.getDuration() <= maxSecondsMonth)? secondsTotal - maxSecondsMonth : call.getDuration();  
-			callPrice += initialPrice + (duration * pricePerSecond);
+		ProcessResult ret = new ProcessResult();
+		if (call.getContact().getMsisdnType() == MsisdnType.ES_SPECIAL_ZER0) {
+			ret.price = 0.0;
+			ret.type = Type.ZERO;
+		} else {
+			boolean insidePlan =  secondsTotal <= maxSecondsMonth; 
+			if (insidePlan) {
+				ret.price = 0.0;
+				ret.type = Type.INSIDE_PLAN;
+			} else {
+				long duration = (secondsTotal > maxSecondsMonth) && (secondsTotal - call.getDuration() <= maxSecondsMonth)? secondsTotal - maxSecondsMonth : call.getDuration();  
+				ret.price = initialPrice + (duration * pricePerSecond);
+				ret.type = Type.OUTSIDE_PLAN;
+			}
 		}
-		return callPrice;
+		return ret;
 	}
 
-	public Double processSms(Sms sms, Map<String, Object> accumulatedData) {
+	public ProcessResult processSms(Sms sms, Map<String, Object> accumulatedData) {
 		if (sms.getType() != Sms.SMS_TYPE_SENT) {
 			return null;
 		}
-		return smsPrice;
+		ProcessResult ret = new ProcessResult();
+		ret.price = smsPrice;
+		ret.type = Type.INSIDE_PLAN;
+		return ret;
 	}	
 }

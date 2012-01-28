@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="main_comparePlans">Planak ikusi</string>
+    <string name="main_viewstats">Estatistikak</string>
+    <string name="main_settings">Ezarpenak</string>
+    <string name="main_accept_button">Onartu</string>
+    <string name="main_toast_settings">Operadorea eta plana konfiguratu behar duzu</string>
+
+    <string name="plan_month_fee">Hileko kuota</string>
+    <string name="plan_minimum_month_fee">Gutxiengo kontsumoarekiko aldea</string>
+    <string name="plan_billingperiod">Fakturazio aldia:</string>
+    
+    <string name="settings_myplan">Nire planaren ezarpenak</string>
+    <string name="settings_billingday">Fakturazioko hasiera eguna</string>
+    <string name="settings_operator">Operadorea</string>
+
+    <string name="settings_operator_notselected">(aukeratu konpainia)</string>
+    <string name="settings_planname">Nire egungo plana</string>
+    <string name="settings_planname_notselected">(aukeratu plana)</string>
+    <string name="settings_plan_settings">Planaren ezarpenak</string>
+    <string name="settings_general">Ezarpen orokorrak</string>
+
+    <string name="settings_plansorting">Planen ordenazioa</string>
+    <string name="settings_plansorting_price">Prezioaren arabera ordenatu</string>
+    <string name="settings_plansorting_operator_price">Konpainia eta prezioaren arabera ordenatu</string>
+    <string name="settings_count_sms">SMSak kontabilizatu</string>
+    <string name="settings_vat">Zenbatekoak BEZ barne</string>
+    <string name="settings_trap_after_call">Zenbatekoa amaitzerakoan</string>
+
+    <string name="settings_trap_after_call_summary">Zenbatekoa erakutsi deia amaitzerakoan</string>
+    <string name="settings_crash_report_disabled">Desgaitu erroreen bidalketa</string>
+    <string name="settings_crash_report_disabled_summary">Ez da datu pertsonalik bidaltzen</string>
+    <string name="settings_show_plans">Planak erakutsi -Mostrar planes</string>
+    <string name="settings_show_plans_detail">Aukeratutako planak erakutsiko dira</string>
+
+    <string name="stats_missed_calls">Dei galduak</string>
+
+    <string name="stats_answered_calls">Erantzundako deiak</string>
+    <string name="stats_inbound_calls">Sartze deiak</string>
+    <string name="stats_outbound_calls">Irtete deiak</string>
+    <string name="stats_inbound_seconds">Sartze deien iraupena</string>
+    <string name="stats_outbound_seconds">Irtete deien iraupena</string>
+    <string name="stats_total_calls">Dei guztiak</string>
+
+    <string name="stats_shortest_call">Deirik laburrena</string>
+    <string name="stats_longest_call">Deirik luzeena</string>
+    <string name="stats_average_call">Deien bataz bestekoa</string>
+    <string name="stats_menu_general_data">Datu orokorrak</string>
+    <string name="stats_menu_top_caller_calls">Zenbakirik deituenak (kopurua)</string>
+    <string name="stats_menu_top_caller_duration">Zenbakirik deituenak (denbora)</string>
+
+    <string name="disclaimer">Erabiltze baldintzako</string>
+    <string name="disclaimer_text">
+    <![CDATA[
+        <br/><br/>myPlan kode irekiko eta doako aplikazioa da. Momentuz Estatu Espainiarrean erabilpenerako. Planen zabalkundean lagundu nahi baduzu eta zure Herrialdekoak sartuak izan daitezen egin dezakezu ondokoa bisitatuz
+        <a href="http://www.github.com/jmsanzg/myPlan">github.com</a>.
+        <br/><br/>Tarifen kalkuluak aplikazio honetan operadore bakoitzeko webgunean hartutako informazioan oinarritzen da.
+        <br/><br/>Aplikazio honetako sortzailea ez da erantzule egiten agertutako datuen emaitzaz hala nola datu horien egin daitezkeen erabilpenaz.
+        <br/><br/>Apliakzio honen erabilpena aurretiaz esandakoen onarpen espresa suposatzen du.
+    ]]>
+    </string>
+    
+    <string name="menu_about">Honen inguruan</string>
+    <string name="menu_previous_period">Aurreko aldia</string>
+    <string name="menu_following_period">Hurrengo aldia</string>
+
+    <string name="menu_planurl">Planaren webgunea</string>
+
+    <string name="es.orange.ardilla9.hour">Murriztutako epearen hasiera</string>
+    <string name="es.movistar.migente.favourites">Números Mi Gente</string>
+</resources>

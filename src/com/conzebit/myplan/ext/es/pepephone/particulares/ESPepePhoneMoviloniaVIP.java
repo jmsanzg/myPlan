@@ -19,6 +19,8 @@ package com.conzebit.myplan.ext.es.pepephone.particulares;
 import java.util.Map;
 
 import com.conzebit.myplan.core.call.Call;
+import com.conzebit.myplan.core.msisdn.MsisdnType;
+import com.conzebit.myplan.core.plan.PlanChargeable.Type;
 import com.conzebit.myplan.core.sms.Sms;
 import com.conzebit.myplan.ext.es.pepephone.ESPepePhone;
 
@@ -30,8 +32,8 @@ import com.conzebit.myplan.ext.es.pepephone.ESPepePhone;
  */
 public class ESPepePhoneMoviloniaVIP extends ESPepePhone {
     
-	private double pricePerSecond = 0.12 / 60;
-	private double pricePerSecond2 = 0.06 / 60;
+	private double pricePerSecond = 0.11 / 60;
+	private double pricePerSecond2 = 0.055 / 60;
 	private double smsPrice = 0.09;
 	private int maxSeconds = (3 * 60) + 30;
     
@@ -43,24 +45,34 @@ public class ESPepePhoneMoviloniaVIP extends ESPepePhone {
 		return "http://www.pepephone.com/tarifamovilonia/";
 	}
 	
-	public Double processCall(Call call, Map<String, Object> accumulatedData) {
+	public ProcessResult processCall(Call call, Map<String, Object> accumulatedData) {
 		if (call.getType() != Call.CALL_TYPE_SENT) {
 			return null;
 		}
 
-		double callPrice = 0;
-		if (call.getDuration() <= maxSeconds) {
-			callPrice = (call.getDuration() * pricePerSecond);
+		ProcessResult ret = new ProcessResult();
+		if (call.getContact().getMsisdnType() == MsisdnType.ES_SPECIAL_ZER0) {
+			ret.price = 0.0;
+			ret.type = Type.ZERO;
 		} else {
-			callPrice = (maxSeconds * pricePerSecond) + ((call.getDuration() - maxSeconds) * pricePerSecond2);
+			if (call.getDuration() <= maxSeconds) {
+				ret.price = (call.getDuration() * pricePerSecond);
+				ret.type = Type.INSIDE_PLAN;
+			} else {
+				ret.price = (maxSeconds * pricePerSecond) + ((call.getDuration() - maxSeconds) * pricePerSecond2);
+				ret.type = Type.OUTSIDE_PLAN;
+			}
 		}
-		return callPrice;
+		return ret;
 	}
 
-	public Double processSms(Sms sms, Map<String, Object> accumulatedData) {
+	public ProcessResult processSms(Sms sms, Map<String, Object> accumulatedData) {
 		if (sms.getType() != Sms.SMS_TYPE_SENT) {
 			return null;
 		}
-		return smsPrice;
+		ProcessResult ret = new ProcessResult();
+		ret.price = smsPrice;
+		ret.type = Type.INSIDE_PLAN;
+		return ret;
 	}
 }

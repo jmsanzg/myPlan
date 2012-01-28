@@ -89,6 +89,8 @@ import com.conzebit.myplan.ext.es.orange.particulares.ESOrangePanda26;
 import com.conzebit.myplan.ext.es.orange.particulares.ESOrangePinguino;
 import com.conzebit.myplan.ext.es.pepephone.particulares.ESPepePhone6;
 import com.conzebit.myplan.ext.es.pepephone.particulares.ESPepePhone7;
+import com.conzebit.myplan.ext.es.pepephone.particulares.ESPepePhoneCotorra;
+import com.conzebit.myplan.ext.es.pepephone.particulares.ESPepePhoneEinstein;
 import com.conzebit.myplan.ext.es.pepephone.particulares.ESPepePhoneLoboCordero;
 import com.conzebit.myplan.ext.es.pepephone.particulares.ESPepePhoneMovilonia9;
 import com.conzebit.myplan.ext.es.pepephone.particulares.ESPepePhoneMoviloniaVIP;
@@ -211,6 +213,8 @@ public class PlanService {
 
 		this.plans.add(new ESPepePhone6());
 		this.plans.add(new ESPepePhone7());
+		this.plans.add(new ESPepePhoneCotorra());
+		this.plans.add(new ESPepePhoneEinstein());
 		this.plans.add(new ESPepePhoneMovilonia9());
 		this.plans.add(new ESPepePhoneMoviloniaVIP());
 		this.plans.add(new ESPepePhonePulpo());
@@ -281,15 +285,17 @@ public class PlanService {
 	
 	public void updateMisdnTypeAndProcess(String msisdn, MsisdnType msisdnType) {
 		// TODO if Contact is the same instance then remove this loop
-		for (Chargeable chargeable : this.data) {
-			if (chargeable.getChargeableType() == Chargeable.CHARGEABLE_TYPE_CALL) {
-				Call call = (Call) chargeable;
-				if (msisdn.equals(call.getContact().getMsisdn())) {
-					call.getContact().setMsisdnType(msisdnType);
+		if (msisdn != null) {
+			for (Chargeable chargeable : this.data) {
+				if (chargeable.getChargeableType() == Chargeable.CHARGEABLE_TYPE_CALL) {
+					Call call = (Call) chargeable;
+					if (msisdn.equals(call.getContact().getMsisdn())) {
+						call.getContact().setMsisdnType(msisdnType);
+					}
 				}
 			}
+			process();
 		}
-		process();
 	}
 	
 	private void process() {

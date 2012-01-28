@@ -60,7 +60,11 @@ public class AfterCallReceiver extends BroadcastReceiver {
 			} else if (TelephonyManager.EXTRA_STATE_IDLE.equals(state)) {
             	if (!incomingCall) {
             		// Wait 2 seconds to give some time to android to log last call
-            		try {context.wait(2000);} catch (Exception e) {}
+            		try {
+            			synchronized (context) {
+            				context.wait(2000);
+            			}
+            		} catch (Exception e) {}
                     AndroidMsisdnTypeStore androidMsisdnTypeStore = new AndroidMsisdnTypeStore(context);
             		MsisdnTypeService.getInstance(androidMsisdnTypeStore);
             		Call lastCall = LogStoreService.getInstance().getLastCall(context);
@@ -79,14 +83,19 @@ public class AfterCallReceiver extends BroadcastReceiver {
 		String planName = Settings.getMyPlan(context);
 		PlanService planService = PlanService.getInstance();
 		PlanSummary summary = planService.process(data, operator, planName);
-		ArrayList<PlanChargeable> planCalls = summary.getPlanCalls();
 		PlanChargeable last = null;
-		for (int i = planCalls.size() - 1; i >= 0; i--) {
-			last = summary.getPlanCalls().get(i);
-			if (last.getChargeable() != null && last.getChargeable().getChargeableType() == Chargeable.CHARGEABLE_TYPE_CALL) {
-				break;
+		//long totalDuration = 0;
+		//long totalCalls = 0;
+		
+		for (PlanChargeable planChargeable : summary.getPlanCalls()) {
+			if (planChargeable.getChargeable() != null && planChargeable.getChargeable().getChargeableType() == Chargeable.CHARGEABLE_TYPE_CALL) {
+				//totalCalls++;
+				//Call call = (Call) planChargeable.getChargeable();
+				//totalDuration += call.getDuration();
+				last = planChargeable;
 			}
 		}
+		//totalDuration = (long) totalDuration / 60; // show the value in minutes
 		String lastCallPrice = Formatter.formatDecimal(last.getPrice()) + " " + last.getCurrency();
 		String totalPrice = Formatter.formatDecimal(summary.getTotalPrice()) + " " + last.getCurrency();
 		String text = lastCallPrice + " / " + totalPrice;

@@ -26,22 +26,20 @@ import com.conzebit.myplan.ext.es.pepephone.ESPepePhone;
 
 
 /**
- * PepePhone Sin Animal
+ * PepePhone Einstein
  * 
  * @author sanz
  */
-public class ESPepePhoneSinAnimal extends ESPepePhone {
+public class ESPepePhoneEinstein extends ESPepePhone {
     
-	private double initialPrice = 0.15;
-	private double pricePerSecond = 0.07 / 60;
 	private double smsPrice = 0.09;
     
 	public String getPlanName() {
-		return "Tarifa Sin animal";
+		return "Tarifa Einstein";
 	}
 	
 	public String getPlanURL() {
-		return "http://pepephone.com/promo/mimovilwindows/";
+		return "http://www.pepephone.com/promo/tarifaeinstein/";
 	}
 	
 	public ProcessResult processCall(Call call, Map<String, Object> accumulatedData) {
@@ -54,7 +52,13 @@ public class ESPepePhoneSinAnimal extends ESPepePhone {
 			ret.price = 0.0;
 			ret.type = Type.ZERO;
 		} else {
-			ret.price = (call.getDuration() < 60 ? 0.0 : initialPrice) + (call.getDuration() * pricePerSecond);
+			double a = 50;
+			double b = 1.25;
+			double c = 0.25;
+			double d = 2.5;
+			double e = 4;
+			double t = call.getDuration() / 60;
+			ret.price = (Math.pow(a, Math.pow(b / (b + c * t), d)) + e) * t;
 			ret.type = Type.INSIDE_PLAN;
 		}
 		return ret;

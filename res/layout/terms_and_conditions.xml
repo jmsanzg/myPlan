@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -7,27 +7,35 @@
     android:background="@color/conzebit_background_dark">
 
     <ImageView
+        android:id="@+id/image"
         android:src="@drawable/myplan"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         />
+
+    <Button
+        android:id="@+id/accept_button"
+        android:text="@string/main_accept_button"
+        android:gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
     
     <ScrollView
+        android:id="@+id/terms_and_conditions_scroll"
         android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:layout_marginLeft="15px"
         android:layout_marginRight="15px"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15px">
+        android:layout_marginBottom="15px"
+        android:layout_below="@id/image"
+        android:layout_above="@id/accept_button"
+        >
         <TextView
             android:id="@+id/terms_and_conditions_text"
             android:text=""
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"/>
     </ScrollView>
-    <Button
-        android:id="@+id/accept_button"
-        android:text="@string/main_accept_button"
-        android:gravity="center"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"/>
-</LinearLayout>
+</RelativeLayout>

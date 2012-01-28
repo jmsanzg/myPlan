@@ -25,6 +25,7 @@ import com.conzebit.myplan.core.bandwidth.Bandwidth;
 import com.conzebit.myplan.core.call.Call;
 import com.conzebit.myplan.core.message.ChargeableMessage;
 import com.conzebit.myplan.core.msisdn.MsisdnType;
+import com.conzebit.myplan.core.plan.PlanChargeable.Type;
 import com.conzebit.myplan.core.sms.Sms;
 
 public abstract class AbstractPlan {
@@ -43,15 +44,20 @@ public abstract class AbstractPlan {
 	
 	public abstract String getPlanURL();
 	
-	public Double processCall(Call call, Map<String, Object> accumulatedData) {
+	public class ProcessResult {
+		public Double price;
+		public PlanChargeable.Type type;
+	}
+	
+	public ProcessResult processCall(Call call, Map<String, Object> accumulatedData) {
 		return null;
 	}
 	
-	public Double processSms(Sms sms, Map<String, Object> accumulatedData) {
+	public ProcessResult processSms(Sms sms, Map<String, Object> accumulatedData) {
 		return null;
 	}
 	
-	public Double processBandwidth(Bandwidth bandwidth, Map<String, Object> accumulatedData) {
+	public ProcessResult processBandwidth(Bandwidth bandwidth, Map<String, Object> accumulatedData) {
 		return null;
 	}
 	
@@ -72,37 +78,40 @@ public abstract class AbstractPlan {
 		
 		Double monthFee = this.getMonthFee();
 		if (monthFee != null) {
-			ret.addPlanCall(new PlanChargeable(new ChargeableMessage(ChargeableMessage.MESSAGE_MONTH_FEE), monthFee, this.getCurrency()));
+			ret.addPlanCall(new PlanChargeable(new ChargeableMessage(ChargeableMessage.MESSAGE_MONTH_FEE), monthFee, this.getCurrency(), PlanChargeable.Type.MONTH_FEE));
 		}
 		
 		double globalPrice = 0;
 		Map<String, Object> accumulatedData = new HashMap<String, Object>();
 
 		for (Chargeable chargeable : data) {
-			Double price = null;
+			
+			ProcessResult pr = null;
 			if (chargeable.getChargeableType() == Chargeable.CHARGEABLE_TYPE_CALL) {
 				Call call = (Call) chargeable;
 				if (call.getContact().getMsisdnType() == MsisdnType.ES_SPECIAL_ZER0) {
-					price = 0.0;
+					pr = new ProcessResult();
+					pr.price = 0.0;
+					pr.type = Type.ZERO;
 				} else {
-					price = this.processCall(call, accumulatedData);
+					pr = this.processCall(call, accumulatedData);
 				}
 			} else if (chargeable.getChargeableType() == Chargeable.CHARGEABLE_TYPE_SMS) {
 				Sms sms = (Sms) chargeable;
-				price = this.processSms(sms, accumulatedData);
+				pr = this.processSms(sms, accumulatedData);
 			} else if (chargeable.getChargeableType() == Chargeable.CHARGEABLE_TYPE_BANDWIDTH) {
 				Bandwidth bandwidth = (Bandwidth) chargeable;
-				price = this.processBandwidth(bandwidth, accumulatedData);
+				pr = this.processBandwidth(bandwidth, accumulatedData);
 			}
-			if (price != null) {
-				globalPrice += price;
-				ret.addPlanCall(new PlanChargeable(chargeable, price, this.getCurrency()));
+			if (pr != null) {
+				globalPrice += pr.price;
+				ret.addPlanCall(new PlanChargeable(chargeable, pr.price, this.getCurrency(), pr.type));
 			}
 		}
 		
 		Double minimumMonthFee = this.getMinimumMonthFee();
 		if (minimumMonthFee != null && globalPrice < minimumMonthFee) {
-			ret.addPlanCall(new PlanChargeable(new ChargeableMessage(ChargeableMessage.MESSAGE_MINIMUM_MONTH_FEE), minimumMonthFee - globalPrice, this.getCurrency()));
+			ret.addPlanCall(new PlanChargeable(new ChargeableMessage(ChargeableMessage.MESSAGE_MINIMUM_MONTH_FEE), minimumMonthFee - globalPrice, this.getCurrency(), null));
 		}
 		return ret;
 	}
