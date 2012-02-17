@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="main_comparePlans">Ver os plans</string>
+    <string name="main_viewstats">Estatísticas</string>
+    <string name="main_settings">Axustes</string>
+    <string name="main_accept_button">Aceptar</string>
+    <string name="main_toast_settings">Debes configurar a operadora e o plan</string>
+
+    <string name="plan_month_fee">Cota mensual</string>
+    <string name="plan_minimum_month_fee">Diferenza consumo mínimo</string>
+    <string name="plan_billingperiod">Período de facturación:</string>
+
+    <string name="settings_myplan">Axustes do meu plan</string>
+    <string name="settings_billingday">Día inicio facturación</string>
+    <string name="settings_operator">Operadora</string>
+    <string name="settings_operator_notselected">(seleccione unha compañía)</string>
+    <string name="settings_planname">O meu plan actual</string>
+    <string name="settings_planname_notselected">(seleccione un plan)</string>
+    <string name="settings_plan_settings">Axustes do plan</string>
+    <string name="settings_general">Axustes xerais</string>
+    <string name="settings_plansorting">Ordenación de plans</string>
+    <string name="settings_plansorting_price">Ordenar por prezo</string>
+    <string name="settings_plansorting_operator_price">Ordenar por compañía e prezo</string>
+    <string name="settings_count_sms">Contabilizar SMS</string>
+    <string name="settings_vat">Importes con IVE</string>
+    <string name="settings_trap_after_call">Importe ao finalizar</string>
+    <string name="settings_trap_after_call_summary">Mostrar importe ao terminar chamada</string>
+    <string name="settings_crash_report_disabled">Deshabilitar o envio de erros</string>
+    <string name="settings_crash_report_disabled_summary">Non se envían datos persoais</string>
+    <string name="settings_show_plans">Mostrar plans</string>
+    <string name="settings_show_plans_detail">Mostraranse os plans seleccionados</string>
+
+    <string name="stats_missed_calls">Chamadas perdidas</string>
+    <string name="stats_answered_calls">Chamadas contestadas</string>
+    <string name="stats_inbound_calls">Chamadas entrantes</string>
+    <string name="stats_outbound_calls">Chamadas saíntes</string>
+    <string name="stats_inbound_seconds">Duración chamadas entrantes</string>
+    <string name="stats_outbound_seconds">Duración chamadas saíntes</string>
+    <string name="stats_total_calls">Total de chamadas</string>
+    <string name="stats_shortest_call">Chamada máis curta</string>
+    <string name="stats_longest_call">Chamada máis longa</string>
+    <string name="stats_average_call">Tempo medio chamada</string>
+    <string name="stats_menu_general_data">Datos xerais</string>
+    <string name="stats_menu_top_caller_calls">Números máis chamados (cantidade)</string>
+    <string name="stats_menu_top_caller_duration">Números máis chamados (tempo)</string>
+
+    <string name="disclaimer">Condicións de uso</string>
+    <string name="disclaimer_text">
+    <![CDATA[
+        <br/><br/>myPlan é unha aplicación gratuíta e de código aberto de momento para o seu uso só en España.
+        Se queres axudar a ampliar os plans e que se inclúan os do teu país podes facelo visitando
+        <a href="http://www.github.com/jmsanzg/myPlan">github.com</a>.
+        <br/><br/>Os cálculos de tarifas nesta aplicación realízanse conforme á
+        información obtida na web de cada operador.
+        <br/><br/>O creador desta aplicación non se fai responsábel da posíbel
+        inexactitude dos datos mostrados nin do uso que deles se poida facer.
+        <br/><br/>O uso desta aplicación implica a aceptación expresa do
+        anteriormente exposto.
+    ]]>
+    </string>
+
+    <string name="menu_about">Acerca de</string>
+    <string name="menu_previous_period">Período Anterior</string>
+    <string name="menu_following_period">Período Seguinte</string>
+    <string name="menu_planurl">Web do plan</string>
+
+    <string name="es.orange.ardilla9.hour">Hora ini. franxa reducida</string>
+    <string name="es.movistar.migente.favourites">Números A Miña Xente</string>
+</resources>
