@@ -57,8 +57,8 @@ public class ESPepePhoneEinstein extends ESPepePhone {
 			double c = 0.25;
 			double d = 2.5;
 			double e = 4;
-			double t = call.getDuration() / 60;
-			ret.price = (Math.pow(a, Math.pow(b / (b + c * t), d)) + e) * t;
+			double t = call.getDuration() / 60.0;
+			ret.price = ((Math.pow(a, Math.pow(b / (b + c * t), d)) + e) * t) / 100;
 			ret.type = Type.INSIDE_PLAN;
 		}
 		return ret;

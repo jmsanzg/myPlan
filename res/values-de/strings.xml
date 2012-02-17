@@ -1,69 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="main_comparePlans">Ver planes</string>
-    <string name="main_viewstats">Estadísticas</string>
-    <string name="main_settings">Ajustes</string>
-    <string name="main_accept_button">Aceptar</string>
-    <string name="main_toast_settings">Debes configurar operadora y plan</string>
-
-    <string name="plan_month_fee">Cuota mensual</string>
-    <string name="plan_minimum_month_fee">Diferencia consumo mínimo</string>
-    <string name="plan_billingperiod">Periodo de facturación:</string>
+    <string name="main_comparePlans">Tarifansicht</string>
+    <string name="main_viewstats">Statistiken</string>
+    <string name="main_settings">Einstellungen</string>
+    <string name="main_accept_button">Akzeptieren</string>
+    <string name="main_toast_settings">Wählen Sie Anbieter und Tarif</string>
     
-    <string name="settings_myplan">Ajustes de mi plan</string>
-    <string name="settings_billingday">Día inicio facturación</string>
-    <string name="settings_operator">Operadora</string>
-    <string name="settings_operator_notselected">(seleccione una compañía)</string>
-    <string name="settings_planname">Mi plan actual</string>
-    <string name="settings_planname_notselected">(seleccione un plan)</string>
-    <string name="settings_plan_settings">Ajustes del plan</string>
-    <string name="settings_general">Ajustes generales</string>
-    <string name="settings_plansorting">Ordenación de planes</string>
-    <string name="settings_plansorting_price">Ordenar por precio</string>
-    <string name="settings_plansorting_operator_price">Ordenar por compañía y precio</string>
-    <string name="settings_count_sms">Contabilizar SMS</string>
-    <string name="settings_vat">Importes con IVA</string>
-    <string name="settings_trap_after_call">Importe al finalizar</string>
-    <string name="settings_trap_after_call_summary">Mostrar importe al terminar llamada</string>
-    <string name="settings_crash_report_disabled">Deshabilitar el envio de errores</string>
-    <string name="settings_crash_report_disabled_summary">No se envían datos personales</string>
-    <string name="settings_show_plans">Mostrar planes</string>
-    <string name="settings_show_plans_detail">Se mostrarán los planes seleccionados</string>
+    <string name="plan_month_fee">Monatlicher Preis</string>
+    <string name="plan_minimum_month_fee">Unterschiede beim Mindestkonsum</string>
+    <string name="plan_billingperiod">Rechnungszeitraum:</string>
+    
+    <string name="settings_myplan">Anpassung meines Tarifes</string>
+    <string name="settings_billingday">Erster Rechnungstag</string>
+    <string name="settings_operator">Mobilfunkanbieter</string>
+    <string name="settings_operator_notselected">(Wählen Sie einen Anbieter)</string>
+    <string name="settings_planname">Mein aktueller Vertragstarif</string>
+    <string name="settings_planname_notselected">(Wählen Sie einen Tarif aus)</string>
+    <string name="settings_plan_settings">Tarifeinstellung</string>
+    <string name="settings_general">Allgemeine Einstellungen</string>
+    <string name="settings_plansorting">Auflistung der Tarife</string>
+    <string name="settings_plansorting_price">Auflistung der Preise</string>
+    <string name="settings_plansorting_operator_price">Auflistung nach Anbieter und Preis</string>
+    <string name="settings_count_sms">SMS in die Berechnung mit einbeziehen</string>
+    <string name="settings_vat">Gebühren mit MwSt</string>
+    <string name="settings_trap_after_call">Endgültiger Betrag</string>
+    <string name="settings_trap_after_call_summary">Kosten nach Gespräch anzeigen</string>
+    <string name="settings_show_plans">Tarife anzeigen</string>
+    <string name="settings_show_plans_detail">Es werden die ausgewählten Tarife angezeigt</string>
+    
+    <string name="stats_missed_calls">Nicht entgegengenommene Anrufe</string>
+    <string name="stats_answered_calls">Entgegengenommene Anrufe</string>
+    <string name="stats_inbound_calls">Eingehender Anruf</string>
+    <string name="stats_outbound_calls">Ausgehender Anruf</string>
+    <string name="stats_inbound_seconds">Dauer der eingehenden Anrufe</string>
+    <string name="stats_outbound_seconds">Dauer der ausgehenden Anrufe</string>
+    <string name="stats_total_calls">Alle Gespräche</string>
+    <string name="stats_shortest_call">Kürzestes Gespräch</string>
+    <string name="stats_longest_call">Längstes Gespräch</string>
+    <string name="stats_average_call">Durchschnittliche Gesprächsdauer</string>
+    <string name="stats_menu_general_data">Allgemeine Informationen</string>
+    <string name="stats_menu_top_caller_calls">Telefonnummern der häufigsten Gespräche</string>
+    <string name="stats_menu_top_caller_duration">Telefonnummern der längsten Gespräche</string>
 
-    <string name="stats_missed_calls">Llamadas perdidas</string>
-    <string name="stats_answered_calls">Llamadas contestadas</string>
-    <string name="stats_inbound_calls">Llamadas entrantes</string>
-    <string name="stats_outbound_calls">Llamadas salientes</string>
-    <string name="stats_inbound_seconds">Duración llamadas entrantes</string>
-    <string name="stats_outbound_seconds">Duración llamadas salientes</string>
-    <string name="stats_total_calls">Total de llamadas</string>
-    <string name="stats_shortest_call">Llamada más corta</string>
-    <string name="stats_longest_call">Llamada más larga</string>
-    <string name="stats_average_call">Tiempo medio llamada</string>
-    <string name="stats_menu_general_data">Datos generales</string>
-    <string name="stats_menu_top_caller_calls">Números más llamados (cantidad)</string>
-    <string name="stats_menu_top_caller_duration">Números más llamados (tiempo)</string>
-
-    <string name="disclaimer">Condiciones de uso</string>
+    <string name="disclaimer">Benutzungsbestimmungen</string>
     <string name="disclaimer_text">
     <![CDATA[
-        <br/><br/>myPlan es una aplicación gratuita y de código abierto de momento para su uso sólo en España.
-        Si quieres ayudar a ampliar los planes y que se incluyan los de tu país puedes hacerlo visitando
+        <br/><br/> myPlan ist eine kostenlose App mit offenem Quellcode zur Benutzung zur Zeit nur in Spanien.
+        Wenn Sie helfen möchten die Tariflisten zu erweitern und die Tarife Ihres Landes mit einzubeziehen, können Sie dies in meiner Webseite tun. 
         <a href="http://www.github.com/jmsanzg/myPlan">github.com</a>.
-        <br/><br/>Los cálculos de tarifas en esta aplicación se realizan conforme a la
-        información obtenida en la web de cada operador.
-        <br/><br/>El creador de esta aplicación no se hace responsable de la posible
-        inexactitud de los datos mostrados ni del uso que de ellos se pueda hacer.
-        <br/><br/>El uso de esta aplicación implica la aceptación expresa de lo
-        anteriormente expuesto.
+        <br/><br/>Den Tarifberechnungen dieser App liegen die Informationen auf der Webseite des jeweiligen Mobilfunkanbieters zugrunde.
+        <br/><br/> Der Entwickler dieser App ist für eventuelle Ungenauigkeiten der zugrundeliegenden und angezeigten Daten und Konsequenzen aus deren Nutzung nicht verantwortlich.
+        <br/><br/>Die Nutzung dieser App setzt die ausdrückliche Einverständnis  der zuvor beschriebenen Benutzungsbedingungen voraus.
     ]]>
     </string>
     
-    <string name="menu_about">Acerca de</string>
-    <string name="menu_previous_period">Periodo Anterior</string>
-    <string name="menu_following_period">Periodo Siguiente</string>
-    <string name="menu_planurl">Web del plan</string>
-
-    <string name="es.orange.ardilla9.hour">Hora ini. franja reducida</string>
-    <string name="es.movistar.migente.favourites">Números Mi Gente</string>
-</resources>
+    <string name="menu_about">Über</string>
+    <string name="menu_previous_period">Periode davor</string>
+    <string name="menu_following_period">Periode danach</string>
+    <string name="menu_planurl">Webseite der App</string>
+    
+    <string name="es.orange.ardilla9.hour">Anfangszeit des ermäßigten Tarifes</string>
+    <string name="es.movistar.migente.favourites">Telefonnummern Freunde</string>
+ </resources>

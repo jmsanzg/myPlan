@@ -20,7 +20,7 @@
     <string name="settings_plan_settings">Planaren ezarpenak</string>
     <string name="settings_general">Ezarpen orokorrak</string>
 
-    <string name="settings_plansorting">Planen ordenazioa</string>
+    <string name="settings_plansorting">Planen ordenatzea</string>
     <string name="settings_plansorting_price">Prezioaren arabera ordenatu</string>
     <string name="settings_plansorting_operator_price">Konpainia eta prezioaren arabera ordenatu</string>
     <string name="settings_count_sms">SMSak kontabilizatu</string>
@@ -30,7 +30,7 @@
     <string name="settings_trap_after_call_summary">Zenbatekoa erakutsi deia amaitzerakoan</string>
     <string name="settings_crash_report_disabled">Desgaitu erroreen bidalketa</string>
     <string name="settings_crash_report_disabled_summary">Ez da datu pertsonalik bidaltzen</string>
-    <string name="settings_show_plans">Planak erakutsi -Mostrar planes</string>
+    <string name="settings_show_plans">Planak erakutsi</string>
     <string name="settings_show_plans_detail">Aukeratutako planak erakutsiko dira</string>
 
     <string name="stats_missed_calls">Dei galduak</string>

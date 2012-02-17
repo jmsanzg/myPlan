@@ -45,8 +45,8 @@
     <string name="disclaimer">Disclaimer</string>
     <string name="disclaimer_text">
     <![CDATA[
-        <br/><br/>myPlan is a free open source program that, for now, only works in Spain.
-        If you want to add more carrier voice/data plans or add your country carriers and plans, you can do it on
+        <br/><br/>El myPlan és una aplicació gratuïta i de codi obert, de moment per a usar només a Espanya.
+        <br/><br/>Si desitgeu ajudar a ampliar els plans i que s\'hi incloguin els del vostre país, podeu fer-ho visitant
         <a href="http://www.github.com/jmsanzg/myPlan">github.com</a>.
         <br/><br/>Los cálculos de tarifas en esta aplicación se realizan conforme a la
         información obtenida en la web de cada operador.

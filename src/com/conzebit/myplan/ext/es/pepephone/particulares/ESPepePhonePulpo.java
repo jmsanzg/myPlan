@@ -54,7 +54,7 @@ public class ESPepePhonePulpo extends ESPepePhone {
 			ret.type = Type.ZERO;
 		} else {
 			double pricePerSecond = (int) (call.getDuration() / 60);
-			pricePerSecond = (pricePerSecond >= 4) ? 0.049 : pricePerSecond / 100;
+			pricePerSecond = ((pricePerSecond >= 4) ? 0.049 : pricePerSecond / 100) / 60;
 			ret.price = initialPrice + (call.getDuration() * pricePerSecond);
 			ret.type = Type.INSIDE_PLAN;
 		}

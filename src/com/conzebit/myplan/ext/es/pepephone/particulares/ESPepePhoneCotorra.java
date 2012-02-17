@@ -55,15 +55,15 @@ public class ESPepePhoneCotorra extends ESPepePhone {
 		} else {
 			ret.price = initialPrice;
 			if (call.getDuration() < 60) {
-				ret.price += call.getDuration() * 0.05;
+				ret.price += call.getDuration() * (0.05 / 60);
 			} else if (call.getDuration() < 120) {
-				ret.price += 60 * 0.05 + (call.getDuration() - 60) * 0.04;
+				ret.price += 0.05 + (call.getDuration() - 60) * (0.04 / 60);
 			} else if (call.getDuration() < 180) {
-				ret.price += 60 * 0.05 + 60 * 0.04 + (call.getDuration() - 120) * 0.03;
+				ret.price += 0.05 + 0.04 + (call.getDuration() - 120) * (0.03 / 60);
 			} else if (call.getDuration() < 240) {
-				ret.price += 60 * 0.05 + 60 * 0.04 + 60 * 0.03 + (call.getDuration() - 180) * 0.02;
+				ret.price += 0.05 + 0.04 + 0.03 + (call.getDuration() - 180) * (0.02 / 60);
 			} else  {
-				ret.price += 60 * 0.05 + 60 * 0.04 + 60 * 0.03 + 60 * 0.02 + (call.getDuration() - 240) * 0.019;
+				ret.price += 0.05 + 0.04 + 0.03 + 0.02 + (call.getDuration() - 240) * (0.019 / 60);
 			}
 			 
 			ret.type = Type.INSIDE_PLAN;
