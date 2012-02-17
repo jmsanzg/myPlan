@@ -29,6 +29,7 @@ import com.conzebit.myplan.ext.es.eroskimovil.particulares.ESEroskiMovilContigo;
 import com.conzebit.myplan.ext.es.eroskimovil.particulares.ESEroskiMovilConekta;
 import com.conzebit.myplan.ext.es.eroskimovil.particulares.ESEroskiMovilContratoSin;
 import com.conzebit.myplan.ext.es.eroskimovil.particulares.ESEroskiMovilHablaA6;
+import com.conzebit.myplan.ext.es.jazztel.particulares.ESJazztelHablaNavega5;
 import com.conzebit.myplan.ext.es.jazztel.particulares.ESJazztelJazzmovil5;
 import com.conzebit.myplan.ext.es.jazztel.particulares.ESJazztelTarifaPlana100;
 import com.conzebit.myplan.ext.es.jazztel.particulares.ESJazztelTarifaPlana200;
@@ -133,6 +134,9 @@ import com.conzebit.myplan.ext.es.yoigo.particulares.ESYoigoLaDel0;
 import com.conzebit.myplan.ext.es.yoigo.particulares.ESYoigoLaDel4;
 import com.conzebit.myplan.ext.es.yoigo.particulares.ESYoigoLaDel6;
 import com.conzebit.myplan.ext.es.yoigo.particulares.ESYoigoLaDel8;
+import com.conzebit.myplan.ext.es.yoigo.particulares.ESYoigoLaPlanaDel20;
+import com.conzebit.myplan.ext.es.yoigo.particulares.ESYoigoLaPlanaDel30;
+import com.conzebit.myplan.ext.es.yoigo.particulares.ESYoigoLaPlanaDel55;
 
 
 public class PlanService {
@@ -153,6 +157,7 @@ public class PlanService {
 		this.plans.add(new ESEroskiMovilContratoSin());
 		this.plans.add(new ESEroskiMovilHablaA6());
 
+		this.plans.add(new ESJazztelHablaNavega5());
 		this.plans.add(new ESJazztelJazzmovil5());
 		this.plans.add(new ESJazztelTarifaPlana100());
 		this.plans.add(new ESJazztelTarifaPlana200());
@@ -265,6 +270,9 @@ public class PlanService {
 		this.plans.add(new ESYoigoLaDel4());
 		this.plans.add(new ESYoigoLaDel6());
 		this.plans.add(new ESYoigoLaDel8());
+		this.plans.add(new ESYoigoLaPlanaDel20());
+		this.plans.add(new ESYoigoLaPlanaDel30());
+		this.plans.add(new ESYoigoLaPlanaDel55());
 
 		this.process(new ArrayList<Chargeable>());
 	}
