@@ -42,6 +42,11 @@ public class ESPepePhoneEinstein extends ESPepePhone {
 		return "http://www.pepephone.com/promo/tarifaeinstein/";
 	}
 	
+	@Override
+	public Double getMinimumMonthFee() {
+		return 6.9;
+	}
+
 	public ProcessResult processCall(Call call, Map<String, Object> accumulatedData) {
 		if (call.getType() != Call.CALL_TYPE_SENT) {
 			return null;
