@@ -45,7 +45,7 @@ public class ESYoigoLaPlanaDel55 extends ESYoigo {
 	private int maxSecondsMonth = 1200 * 60;
     
 	public String getPlanName() {
-		return "La Plana del 20";
+		return "La Plana del 55";
 	}
 	
 	public String getPlanURL() {

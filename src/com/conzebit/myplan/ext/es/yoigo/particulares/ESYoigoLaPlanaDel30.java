@@ -38,14 +38,14 @@ import com.conzebit.myplan.ext.es.yoigo.ESYoigo;
  */
 public class ESYoigoLaPlanaDel30 extends ESYoigo {
     
-	private double monthFee = 20;
+	private double monthFee = 30;
 	private double initialPrice = 0.15;
 	private double pricePerSecond = 0.12 / 60;
 	private double smsPrice = 0.10;
-	private int maxSecondsMonth = 300 * 60;
+	private int maxSecondsMonth = 360 * 60;
     
 	public String getPlanName() {
-		return "La Plana del 20";
+		return "La Plana del 30";
 	}
 	
 	public String getPlanURL() {
