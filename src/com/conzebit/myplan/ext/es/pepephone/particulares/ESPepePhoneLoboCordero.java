@@ -26,7 +26,7 @@ import com.conzebit.myplan.ext.es.pepephone.ESPepePhone;
 
 
 /**
- * PepePhone Lobo y Cordero.
+ * PepePhone Lobo Feroz & Oveja Negra.
  * 
  * @author sanz
  */
@@ -34,11 +34,11 @@ public class ESPepePhoneLoboCordero extends ESPepePhone {
     
 	private double monthFee = 8.5;
 	private double initialPrice = 0.15;
-	private double pricePerSecond = 0.024 / 60;
+	private double pricePerSecond = 0.022 / 60;
 	private double smsPrice = 0.09;
     
 	public String getPlanName() {
-		return "Lobo&Cordero";
+		return "Lobo Feroz & Oveja Negra";
 	}
 	
 	public String getPlanURL() {
