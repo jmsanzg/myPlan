@@ -54,7 +54,6 @@ public class ESMasMovilTarifaLight300 extends ESMasMovil {
 	public PlanSummary process(ArrayList<Chargeable> data) {
 		PlanSummary ret = new PlanSummary(this);
 		ret.addPlanCall(new PlanChargeable(new ChargeableMessage(ChargeableMessage.MESSAGE_MONTH_FEE), monthFee, this.getCurrency(), Type.MONTH_FEE));
-		double globalPrice = 0;
 		for (Chargeable chargeable : data) {
 			if (chargeable.getChargeableType() == Chargeable.CHARGEABLE_TYPE_CALL) {
 				Call call = (Call) chargeable;
@@ -72,14 +71,12 @@ public class ESMasMovilTarifaLight300 extends ESMasMovil {
 					callPrice = initialPrice + (call.getDuration() * pricePerSecond);
 					type = Type.INSIDE_PLAN;
 				}
-				globalPrice += callPrice;
 				ret.addPlanCall(new PlanChargeable(call, callPrice, this.getCurrency(), type));
 			} else if (chargeable.getChargeableType() == Chargeable.CHARGEABLE_TYPE_SMS) {
 				Sms sms = (Sms) chargeable;
 				if (sms.getType() == Sms.SMS_TYPE_RECEIVED) {
 					continue;
 				}
-				globalPrice += smsPrice;
 				ret.addPlanCall(new PlanChargeable(chargeable, smsPrice, this.getCurrency(), Type.INSIDE_PLAN));
 			}
 		}

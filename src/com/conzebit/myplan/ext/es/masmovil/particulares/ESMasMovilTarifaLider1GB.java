@@ -29,22 +29,22 @@ import com.conzebit.myplan.ext.es.masmovil.ESMasMovil;
 
 
 /**
- * Masmovil Tarifa Light + BONO 1 GB
- * @author DarkEagle82 aka Sergi (sergi at nucl3ar dot net)
+ * Masmovil Tarifa Lider 1GB
+ * @author sanz
  */
-public class ESMasMovilTarifaLight1GB extends ESMasMovil {
+public class ESMasMovilTarifaLider1GB extends ESMasMovil {
     
-	private double monthFee = 14.9;
+	private double monthFee = 13.50;
 	private double initialPrice = 0.15;
-	private double pricePerSecond = 0.024 / 60;
-	private double smsPrice = 0.08;
+	private double pricePerSecond = 0.027 / 60;
+	private double smsPrice = 0.07;
     
 	public String getPlanName() {
-		return "Tarifa @Light + BONO 1GB";
+		return "Tarifa Lider 1GB";
 	}
 	
 	public String getPlanURL() {
-		return "http://promociones.masmovil.es/moviltoday-light";
+		return "http://www.masmovil.es/es/telefonia-movil/tarifa-lider";
 	}
 	
 	public Double getMonthFee() {
