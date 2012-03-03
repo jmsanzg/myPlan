@@ -41,9 +41,10 @@ public class ESPepePhoneEinstein extends ESPepePhone {
 	public String getPlanURL() {
 		return "http://www.pepephone.com/promo/tarifaeinstein/";
 	}
+
 	
 	@Override
-	public Double getMinimumMonthFee() {
+	public Double getMonthFee() {
 		return 6.9;
 	}
 
