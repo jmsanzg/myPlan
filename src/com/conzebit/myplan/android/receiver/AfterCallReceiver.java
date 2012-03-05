@@ -59,10 +59,10 @@ public class AfterCallReceiver extends BroadcastReceiver {
 				incomingCall = true;
 			} else if (TelephonyManager.EXTRA_STATE_IDLE.equals(state)) {
             	if (!incomingCall) {
-            		// Wait 2 seconds to give some time to android to log last call
+            		// Wait 5 seconds to give some time to android to log last call
             		try {
             			synchronized (context) {
-            				context.wait(2000);
+            				context.wait(5000);
             			}
             		} catch (Exception e) {}
                     AndroidMsisdnTypeStore androidMsisdnTypeStore = new AndroidMsisdnTypeStore(context);

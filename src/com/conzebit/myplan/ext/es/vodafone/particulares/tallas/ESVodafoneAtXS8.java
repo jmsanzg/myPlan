@@ -17,11 +17,9 @@
 package com.conzebit.myplan.ext.es.vodafone.particulares.tallas;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 import com.conzebit.myplan.core.Chargeable;
 import com.conzebit.myplan.core.call.Call;
-
 import com.conzebit.myplan.core.message.ChargeableMessage;
 import com.conzebit.myplan.core.msisdn.MsisdnType;
 import com.conzebit.myplan.core.plan.PlanChargeable;
@@ -31,24 +29,26 @@ import com.conzebit.myplan.ext.es.vodafone.ESVodafone;
 
 
 /**
- * Vodafone S.
+ * Vodafone @XS.
  *
  * @author sanz
  */
-public class ESVodafoneS extends ESVodafone {
+public class ESVodafoneAtXS8 extends ESVodafone {
     
-	private double monthFee = 22.0;
+	private double monthFee = 7;
+	private double minimumMonthFee = 8;
 	private double initialPrice = 0.15;
 	private double pricePerSecond = 0.20 / 60;
 	private double smsPrice = 0.15;
-	private int maxSecondsMonth = 200 * 60;
+	private int maxSecondsMonth = 150 * 60;
+	private int maxSMSFree = 200;
     
 	public String getPlanName() {
-		return "S";
+		return "@XS8";
 	}
 	
 	public String getPlanURL() {
-		return "http://www.vodafone.es/particulares/tarifas/movil-contrato/hablar/descripcion/?tab_ulex4l6fxfzd19u5=aidejpqamw6crlrs#i4xkjvgl4t43lpad7";
+		return "http://www.vodafone.es/static/microsites/contratohablarynavegarsmartphonesdescripcion/legales-hablarynavegar.html?hideNavs=yes";
 	}
 	
 	public PlanSummary process(ArrayList<Chargeable> data) {
@@ -56,6 +56,8 @@ public class ESVodafoneS extends ESVodafone {
 		ret.addPlanCall(new PlanChargeable(new ChargeableMessage(ChargeableMessage.MESSAGE_MONTH_FEE), monthFee, this.getCurrency()));
 
 		long secondsTotal = 0;
+		double globalPrice = 0;
+		long smsSent = 0;
 		for (Chargeable chargeable : data) {
 			if (chargeable.getChargeableType() == Chargeable.CHARGEABLE_TYPE_CALL) {
 				Call call = (Call) chargeable;
@@ -68,28 +70,30 @@ public class ESVodafoneS extends ESVodafone {
 				if (call.getContact().getMsisdnType() == MsisdnType.ES_SPECIAL_ZER0) {
 					callPrice = 0;
 				} else {
-					int dayOfWeek = call.getDate().get(Calendar.DAY_OF_WEEK);
-					int hourOfDay = call.getDate().get(Calendar.HOUR_OF_DAY);
-					boolean discount = (dayOfWeek == Calendar.SATURDAY || dayOfWeek == Calendar.SUNDAY || hourOfDay < 8 || hourOfDay >= 18);
-					if (discount) {
-						secondsTotal += call.getDuration();
-						discount =  secondsTotal <= maxSecondsMonth; 
-					}
+					secondsTotal += call.getDuration();
+					boolean discount = secondsTotal <= maxSecondsMonth;
 					if (!discount) {
 						long duration = (secondsTotal > maxSecondsMonth) && (secondsTotal - call.getDuration() <= maxSecondsMonth)? secondsTotal - maxSecondsMonth : call.getDuration();  
 						callPrice += initialPrice + (duration * pricePerSecond);
 					}
-					
 				}
+				globalPrice += callPrice;
 				ret.addPlanCall(new PlanChargeable(call, callPrice, this.getCurrency()));
 			} else if (chargeable.getChargeableType() == Chargeable.CHARGEABLE_TYPE_SMS) {
 				Sms sms = (Sms) chargeable;
 				if (sms.getType() == Sms.SMS_TYPE_RECEIVED) {
 					continue;
 				}
-				ret.addPlanCall(new PlanChargeable(chargeable, smsPrice, this.getCurrency()));
+				smsSent++;
+				double price = (smsSent <= maxSMSFree) ? 0 : smsPrice;
+				globalPrice += smsPrice;
+				ret.addPlanCall(new PlanChargeable(chargeable, price, this.getCurrency()));
 			}
 		}
+		if (globalPrice < minimumMonthFee) {
+			ret.addPlanCall(new PlanChargeable(new ChargeableMessage(ChargeableMessage.MESSAGE_MINIMUM_MONTH_FEE), minimumMonthFee - globalPrice, this.getCurrency()));
+		}
+		
 		return ret;
 	}
 }

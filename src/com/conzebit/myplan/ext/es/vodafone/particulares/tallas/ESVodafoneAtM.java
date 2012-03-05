@@ -40,7 +40,6 @@ public class ESVodafoneAtM extends ESVodafone {
 	private double pricePerSecond = 0.20 / 60;
 	private double smsPrice = 0.15;
 	private int maxSecondsMonth = 350 * 60;
-	private int maxFreeSMS = 350;
 	// 500MB data
     
 	public String getPlanName() {
@@ -56,7 +55,6 @@ public class ESVodafoneAtM extends ESVodafone {
 		ret.addPlanCall(new PlanChargeable(new ChargeableMessage(ChargeableMessage.MESSAGE_MONTH_FEE), monthFee, this.getCurrency()));
 
 		long secondsTotal = 0;
-		int smsSent = 0;
 		for (Chargeable chargeable : data) {
 			if (chargeable.getChargeableType() == Chargeable.CHARGEABLE_TYPE_CALL) {
 				Call call = (Call) chargeable;
@@ -81,8 +79,7 @@ public class ESVodafoneAtM extends ESVodafone {
 				if (sms.getType() == Sms.SMS_TYPE_RECEIVED) {
 					continue;
 				}
-				smsSent++;
-				ret.addPlanCall(new PlanChargeable(chargeable, (smsSent > maxFreeSMS)?smsPrice:0, this.getCurrency()));
+				ret.addPlanCall(new PlanChargeable(chargeable, smsPrice, this.getCurrency()));
 			}
 		}
 		return ret;

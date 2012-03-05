@@ -127,6 +127,7 @@ import com.conzebit.myplan.ext.es.vodafone.particulares.tallas.ESVodafoneAtM;
 import com.conzebit.myplan.ext.es.vodafone.particulares.tallas.ESVodafoneAtS;
 import com.conzebit.myplan.ext.es.vodafone.particulares.tallas.ESVodafoneAtXL;
 import com.conzebit.myplan.ext.es.vodafone.particulares.tallas.ESVodafoneAtXS;
+import com.conzebit.myplan.ext.es.vodafone.particulares.tallas.ESVodafoneAtXS8;
 import com.conzebit.myplan.ext.es.vodafone.particulares.tallas.ESVodafoneL;
 import com.conzebit.myplan.ext.es.vodafone.particulares.tallas.ESVodafoneM;
 import com.conzebit.myplan.ext.es.vodafone.particulares.tallas.ESVodafoneS;
@@ -268,6 +269,7 @@ public class PlanService {
 		this.plans.add(new ESVodafoneAtS());
 		this.plans.add(new ESVodafoneAtXL());
 		this.plans.add(new ESVodafoneAtXS());
+		this.plans.add(new ESVodafoneAtXS8());
 		this.plans.add(new ESVodafoneXS6());
 		this.plans.add(new ESVodafoneXS8());
 		
