@@ -32,19 +32,19 @@ import com.conzebit.myplan.ext.es.pepephone.ESPepePhone;
  */
 public class ESPepePhoneEinstein extends ESPepePhone {
     
+	private double monthFee = 6.9;
 	private double smsPrice = 0.09;
     
+	public Double getMonthFee() {
+		return monthFee;
+	}
+	
 	public String getPlanName() {
 		return "Tarifa Einstein";
 	}
 	
 	public String getPlanURL() {
 		return "http://www.pepephone.com/promo/tarifaeinstein/";
-	}
-	
-	@Override
-	public Double getMinimumMonthFee() {
-		return 6.9;
 	}
 
 	public ProcessResult processCall(Call call, Map<String, Object> accumulatedData) {
