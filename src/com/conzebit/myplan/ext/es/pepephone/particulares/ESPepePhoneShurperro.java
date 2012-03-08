@@ -28,7 +28,7 @@ import com.conzebit.myplan.ext.es.pepephone.ESPepePhone;
 /**
  * PepePhone Ratoncito y elefante.
  * 
- * @author sanz
+ * @author dbenitof
  */
 public class ESPepePhoneShurperro extends ESPepePhone {
     
