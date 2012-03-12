@@ -15,7 +15,7 @@ h1. Planes incluidos
 * **PepePhone** - Tarifa 6cent, Tarifa 7cent, Caballo Loco, Cotorra Pepe, Einstein, Lobo Feroz, Lobo&Cordero, Movilonia 9, Movilonia VIP, Pulpo Pepe, Ratoncito&Elefante, Shurperro, Sin Animal, Tarifa Menguante.
 * **Simyo** - Tarifa 0 y 8 céntimos, Tarifa 3 céntimos, Tarifa 5 céntimos.
 * **Vodafone** - A mi Aire 90x1 24h, A mi Aire 90x1 a Todos, A mi Aire Simple, Contrato 1, Diminuto 8, Mini 24h, Mini a Todos, Plana 24h, Plana a Todos, Super Plana Mini, Super Tarifa Plana, L, M, S, XL, XS, XS6, XS8, @L, @M, @S, @XL, @XS, @XS8.
-* **Yoigo** - La del 0, La del 4, La del 6, La del 8, La plana del 20, La plana del 30, La plana del 55.
+* **Yoigo** - La del 0, La del 4, La del 6, La del 8, La megaplana del 20, La megaplana del 30, La megaplana del 40, La megaplana del 55, La plana del 10, La plana del 20, La plana del 30, La plana del 55.
 
 h1. Permisos necesarios
 
