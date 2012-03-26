@@ -21,10 +21,13 @@ import java.util.Calendar;
 
 import com.conzebit.myplan.core.Chargeable;
 import com.conzebit.myplan.core.call.Call;
+import com.conzebit.myplan.core.contact.Contact;
 
 import com.conzebit.myplan.core.message.ChargeableMessage;
 import com.conzebit.myplan.core.msisdn.MsisdnType;
 import com.conzebit.myplan.core.plan.PlanChargeable;
+import com.conzebit.myplan.core.plan.PlanConfig;
+import com.conzebit.myplan.core.plan.PlanConfigElement;
 import com.conzebit.myplan.core.plan.PlanSummary;
 import com.conzebit.myplan.core.sms.Sms;
 import com.conzebit.myplan.ext.es.vodafone.ESVodafone;
@@ -45,12 +48,33 @@ public class ESVodafoneAtL extends ESVodafone {
 	private int maxSecondsEveningMonth = 350 * 60;
 	private int maxFreeSMS = 350;
     
+	private PlanConfig planConfig;
+	private final static String CONFIG_KEY ="es.vodafone.tallas.vip";
+	
+	public ESVodafoneAtL() {
+		this.planConfig = new PlanConfig();
+		// 3 números VIP
+		PlanConfigElement<String> pce = new PlanConfigElement<String>(CONFIG_KEY, "", "", "", String.class);
+		this.planConfig.addPlanConfigElement(pce);
+	}
+	
 	public String getPlanName() {
 		return "@L";
 	}
 	
 	public String getPlanURL() {
 		return "http://www.vodafone.es/particulares/es/moviles-y-fijo/tarifas/telefonia-movil/para-hablar-y-navegar/smartphones/";
+	}
+	
+	/**
+	 * Evaluate that contact is on my favourite list
+	 * @param contact
+	 * @return
+	 */
+	private boolean isFavouriteContact(Contact contact){
+		PlanConfigElement<String> value = this.planConfig.getPlanConfigElement(CONFIG_KEY);
+		return (value.getValue().indexOf(contact.getMsisdn())>=0);
+		//TODO: Optimizar evaluación
 	}
 	
 	public PlanSummary process(ArrayList<Chargeable> data) {
@@ -70,7 +94,7 @@ public class ESVodafoneAtL extends ESVodafone {
 				double callPrice = 0;
 				if (call.getContact().getMsisdnType() == MsisdnType.ES_SPECIAL_ZER0) {
 					callPrice = 0;
-				} else if (call.getContact().getMsisdnType() == MsisdnType.ES_VODAFONE) {
+				} else if (this.isFavouriteContact(call.getContact())) {
 					callPrice = 0;
 				} else {
 					int hourOfDay = call.getDate().get(Calendar.HOUR_OF_DAY);
