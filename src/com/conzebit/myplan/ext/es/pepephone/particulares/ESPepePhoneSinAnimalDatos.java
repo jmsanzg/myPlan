@@ -38,7 +38,7 @@ public class ESPepePhoneSinAnimalDatos extends ESPepePhone {
 	private double monthFee = 6.9;
     
 	public String getPlanName() {
-		return "Tarifa Sin animal + Datos";
+		return "Sin animal + Datos";
 	}
 	
 	public String getPlanURL() {

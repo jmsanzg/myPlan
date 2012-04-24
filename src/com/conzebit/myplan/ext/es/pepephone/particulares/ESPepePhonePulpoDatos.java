@@ -37,7 +37,7 @@ public class ESPepePhonePulpoDatos extends ESPepePhone {
 	private double monthFee = 6.9;
     
 	public String getPlanName() {
-		return "Tarifa Pulpo Pepe + Datos";
+		return "Pulpo Pepe + Datos";
 	}
 	
 	public String getPlanURL() {
