@@ -34,6 +34,7 @@ public class ESPepePhoneCotorra extends ESPepePhone {
     
 	private double initialPrice = 0.15;
 	private double smsPrice = 0.09;
+	private double monthFee = 6.9;
     
 	public String getPlanName() {
 		return "Tarifa Cotorra Pepe";
@@ -41,6 +42,10 @@ public class ESPepePhoneCotorra extends ESPepePhone {
 	
 	public String getPlanURL() {
 		return "http://www.pepephone.com/promo/elandroidelibre-cotorra/";
+	}
+	
+	public Double getMonthFee() {
+		return monthFee;
 	}
 	
 	public ProcessResult processCall(Call call, Map<String, Object> accumulatedData) {

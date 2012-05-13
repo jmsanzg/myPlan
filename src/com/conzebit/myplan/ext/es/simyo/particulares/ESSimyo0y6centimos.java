@@ -30,18 +30,19 @@ import com.conzebit.myplan.ext.es.simyo.ESSimyo;
 
 
 /**
- * Simyo 5 cents.
- * @author sanz
+ * Simyo 0 y 6 cents.
+ * @author aalmenar
  */
-public class ESSimyo5centimos extends ESSimyo {
+public class ESSimyo0y6centimos extends ESSimyo {
     
-	private double minimumMonthFee = 6.99;
+	private double minimumMonthFee = 3.99;
 	private double initialPrice = 0.15;
-	private double pricePerSecond = 0.05 / 60;
+	private double pricePerSecond = 0.06 / 60;
+	private int maxFreeSeconds = 10 * 60;
 	private double smsPrice = 0.09;
     
 	public String getPlanName() {
-		return "5 céntimos (inc 555MB datos)";
+		return "0 y 6 céntimos";
 	}
 	
 	public String getPlanURL() {
@@ -64,7 +65,15 @@ public class ESSimyo5centimos extends ESSimyo {
 				if (call.getContact().getMsisdnType() == MsisdnType.ES_SPECIAL_ZER0) {
 					callPrice = 0;
 				} else {
-					callPrice = initialPrice + (call.getDuration() * pricePerSecond);
+					if (call.getContact().getMsisdnType() == MsisdnType.ES_SIMYO) {
+						if (call.getDuration() <= maxFreeSeconds) {
+							callPrice = initialPrice;
+						} else {
+							callPrice = initialPrice + ((call.getDuration() - maxFreeSeconds) * pricePerSecond);
+						}
+					} else  {
+						callPrice = initialPrice + (call.getDuration() * pricePerSecond);
+					}
 				}
 				globalPrice += callPrice;
 				ret.addPlanCall(new PlanChargeable(call, callPrice, this.getCurrency()));

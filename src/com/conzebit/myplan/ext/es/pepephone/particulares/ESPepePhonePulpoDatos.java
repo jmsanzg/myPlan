@@ -26,35 +26,41 @@ import com.conzebit.myplan.ext.es.pepephone.ESPepePhone;
 
 
 /**
- * PepePhone Sin Animal + Datos
+ * PepePhone Pulpo + Datos
  * 
  * @author sanz
  */
-public class ESPepePhoneSinAnimal extends ESPepePhone {
+public class ESPepePhonePulpoDatos extends ESPepePhone {
     
 	private double initialPrice = 0.15;
-	private double pricePerSecond = 0.07 / 60;
 	private double smsPrice = 0.09;
+	private double monthFee = 6.9;
     
 	public String getPlanName() {
-		return "Tarifa Sin animal";
+		return "Pulpo Pepe + Datos";
 	}
 	
 	public String getPlanURL() {
-		return "http://pepephone.com/promo/mimovilwindows/";
+		return "http://www.pepephone.com/promo/adslzone-pulpopepe/index.html";
+	}
+	
+	public Double getMonthFee() {
+		return monthFee;
 	}
 	
 	public ProcessResult processCall(Call call, Map<String, Object> accumulatedData) {
 		if (call.getType() != Call.CALL_TYPE_SENT) {
 			return null;
 		}
-		
+
 		ProcessResult ret = new ProcessResult();
 		if (call.getContact().getMsisdnType() == MsisdnType.ES_SPECIAL_ZER0) {
 			ret.price = 0.0;
 			ret.type = Type.ZERO;
 		} else {
-			ret.price = (call.getDuration() < 60 ? 0.0 : initialPrice) + (call.getDuration() * pricePerSecond);
+			double pricePerSecond = (int) (call.getDuration() / 60);
+			pricePerSecond = ((pricePerSecond >= 4) ? 0.040 : pricePerSecond / 100) / 60;
+			ret.price = initialPrice + (call.getDuration() * pricePerSecond);
 			ret.type = Type.INSIDE_PLAN;
 		}
 		return ret;
