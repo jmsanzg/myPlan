@@ -41,7 +41,7 @@ public class ESSimyo5centimos extends ESSimyo {
 	private double smsPrice = 0.09;
     
 	public String getPlanName() {
-		return "5 céntimos";
+		return "5 céntimos (inc 555MB datos)";
 	}
 	
 	public String getPlanURL() {
