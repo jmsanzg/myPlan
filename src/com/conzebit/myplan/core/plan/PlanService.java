@@ -110,6 +110,7 @@ import com.conzebit.myplan.ext.es.pepephone.particulares.ESPepePhoneRatoncitoEle
 import com.conzebit.myplan.ext.es.pepephone.particulares.ESPepePhoneShurperro;
 import com.conzebit.myplan.ext.es.pepephone.particulares.ESPepePhoneSinAnimal;
 import com.conzebit.myplan.ext.es.pepephone.particulares.ESPepePhoneSinAnimalDatos;
+import com.conzebit.myplan.ext.es.simyo.particulares.ESSimyo0y6centimos;
 import com.conzebit.myplan.ext.es.simyo.particulares.ESSimyo0y8centimos;
 import com.conzebit.myplan.ext.es.simyo.particulares.ESSimyo3centimos;
 import com.conzebit.myplan.ext.es.simyo.particulares.ESSimyo5centimos;
@@ -260,6 +261,7 @@ public class PlanService {
 		this.plans.add(new ESSimyo0y8centimos());
 		this.plans.add(new ESSimyo3centimos());
 		this.plans.add(new ESSimyo5centimos());
+		this.plans.add(new ESSimyo0y6centimos());
 
 		this.plans.add(new ESVodafoneAire90x124h());
 		this.plans.add(new ESVodafoneAire90x1ATodos());
