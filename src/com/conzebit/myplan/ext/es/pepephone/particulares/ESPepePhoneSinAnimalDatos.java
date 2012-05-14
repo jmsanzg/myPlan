@@ -26,22 +26,27 @@ import com.conzebit.myplan.ext.es.pepephone.ESPepePhone;
 
 
 /**
- * PepePhone Sin Animal + Datos
+ * PepePhone Sin Animal
  * 
  * @author sanz
  */
-public class ESPepePhoneSinAnimal extends ESPepePhone {
+public class ESPepePhoneSinAnimalDatos extends ESPepePhone {
     
 	private double initialPrice = 0.15;
-	private double pricePerSecond = 0.07 / 60;
+	private double pricePerSecond = 0.06 / 60;
 	private double smsPrice = 0.09;
+	private double monthFee = 6.9;
     
 	public String getPlanName() {
-		return "Tarifa Sin animal";
+		return "Sin animal + Datos";
 	}
 	
 	public String getPlanURL() {
 		return "http://pepephone.com/promo/mimovilwindows/";
+	}
+	
+	public Double getMonthFee() {
+		return monthFee;
 	}
 	
 	public ProcessResult processCall(Call call, Map<String, Object> accumulatedData) {
