@@ -114,6 +114,8 @@ import com.conzebit.myplan.ext.es.simyo.particulares.ESSimyo0y6centimos;
 import com.conzebit.myplan.ext.es.simyo.particulares.ESSimyo0y8centimos;
 import com.conzebit.myplan.ext.es.simyo.particulares.ESSimyo3centimos;
 import com.conzebit.myplan.ext.es.simyo.particulares.ESSimyo5centimos;
+import com.conzebit.myplan.ext.es.tuenti.particulares.ESTuentiBono1GB;
+import com.conzebit.myplan.ext.es.tuenti.particulares.ESTuentiBono3GB;
 import com.conzebit.myplan.ext.es.vodafone.empresas.ESVodafoneConectaVozInternet;
 import com.conzebit.myplan.ext.es.vodafone.empresas.ESVodafoneSencillo;
 import com.conzebit.myplan.ext.es.vodafone.particulares.ESVodafoneAire90x124h;
@@ -264,6 +266,9 @@ public class PlanService {
 		this.plans.add(new ESSimyo3centimos());
 		this.plans.add(new ESSimyo5centimos());
 		this.plans.add(new ESSimyo0y6centimos());
+		
+		this.plans.add(new ESTuentiBono1GB());
+		this.plans.add(new ESTuentiBono3GB());
 
 		this.plans.add(new ESVodafoneAire90x124h());
 		this.plans.add(new ESVodafoneAire90x1ATodos());
