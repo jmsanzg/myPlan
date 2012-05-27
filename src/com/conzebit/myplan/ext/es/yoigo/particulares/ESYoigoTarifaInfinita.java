@@ -32,7 +32,7 @@ import com.conzebit.myplan.ext.es.yoigo.ESYoigo;
 
 
 /**
- * Yoigo la Tarifa Infinita
+ * Yoigo la Infinita
  * @author mcornella
  */
 public class ESYoigoTarifaInfinita extends ESYoigo {
@@ -44,7 +44,7 @@ public class ESYoigoTarifaInfinita extends ESYoigo {
 	private int maxDistinctNumbers = 300;
     
 	public String getPlanName() {
-		return "La Tarifa Infinita";
+		return "La Infinita";
 	}
 	
 	public String getPlanURL() {
