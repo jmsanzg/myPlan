@@ -34,7 +34,7 @@ public class ESPepePhoneLoboCordero extends ESPepePhone {
     
 	private double monthFee = 8.5;
 	private double initialPrice = 0.15;
-	private double pricePerSecond = 0.022 / 60;
+	private double pricePerSecond = 0.019 / 60;
 	private double smsPrice = 0.09;
     
 	public String getPlanName() {
