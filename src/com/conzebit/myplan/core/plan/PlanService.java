@@ -25,8 +25,8 @@ import java.util.HashMap;
 import com.conzebit.myplan.core.Chargeable;
 import com.conzebit.myplan.core.call.Call;
 import com.conzebit.myplan.core.msisdn.MsisdnType;
-import com.conzebit.myplan.ext.es.eroskimovil.particulares.ESEroskiMovilContigo;
 import com.conzebit.myplan.ext.es.eroskimovil.particulares.ESEroskiMovilConekta;
+import com.conzebit.myplan.ext.es.eroskimovil.particulares.ESEroskiMovilContigo;
 import com.conzebit.myplan.ext.es.eroskimovil.particulares.ESEroskiMovilContratoSin;
 import com.conzebit.myplan.ext.es.eroskimovil.particulares.ESEroskiMovilHablaA6;
 import com.conzebit.myplan.ext.es.jazztel.particulares.ESJazztelHablaNavega5;
@@ -43,15 +43,15 @@ import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaLider150
 import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaLider1GB;
 import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaLider300MB;
 import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaLider500MB;
-import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaPlana200;
-import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaTotal;
-import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaSIN300;
-import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaSIN500;
-import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaSIN1GB;
-import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaMovilToday;
+import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaLight1GB;
 import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaLight300;
 import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaLight500;
-import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaLight1GB;
+import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaMovilToday;
+import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaPlana200;
+import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaSIN1GB;
+import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaSIN300;
+import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaSIN500;
+import com.conzebit.myplan.ext.es.masmovil.particulares.ESMasMovilTarifaTotal;
 import com.conzebit.myplan.ext.es.movistar.particulares.ESMovistar6;
 import com.conzebit.myplan.ext.es.movistar.particulares.ESMovistar8;
 import com.conzebit.myplan.ext.es.movistar.particulares.ESMovistarContratoMoviles;
@@ -114,6 +114,8 @@ import com.conzebit.myplan.ext.es.simyo.particulares.ESSimyo0y6centimos;
 import com.conzebit.myplan.ext.es.simyo.particulares.ESSimyo0y8centimos;
 import com.conzebit.myplan.ext.es.simyo.particulares.ESSimyo3centimos;
 import com.conzebit.myplan.ext.es.simyo.particulares.ESSimyo5centimos;
+import com.conzebit.myplan.ext.es.tuenti.particulares.ESTuentiBono1GB;
+import com.conzebit.myplan.ext.es.tuenti.particulares.ESTuentiBono3GB;
 import com.conzebit.myplan.ext.es.vodafone.empresas.ESVodafoneConectaVozInternet;
 import com.conzebit.myplan.ext.es.vodafone.empresas.ESVodafoneSencillo;
 import com.conzebit.myplan.ext.es.vodafone.particulares.ESVodafoneAire90x124h;
@@ -141,6 +143,7 @@ import com.conzebit.myplan.ext.es.vodafone.particulares.tallas.ESVodafoneXS;
 import com.conzebit.myplan.ext.es.vodafone.particulares.tallas.ESVodafoneXS6;
 import com.conzebit.myplan.ext.es.vodafone.particulares.tallas.ESVodafoneXS8;
 import com.conzebit.myplan.ext.es.yoigo.particulares.ESYoigoLaDel0;
+import com.conzebit.myplan.ext.es.yoigo.particulares.ESYoigoLaDel2;
 import com.conzebit.myplan.ext.es.yoigo.particulares.ESYoigoLaDel4;
 import com.conzebit.myplan.ext.es.yoigo.particulares.ESYoigoLaDel6;
 import com.conzebit.myplan.ext.es.yoigo.particulares.ESYoigoLaDel8;
@@ -152,6 +155,7 @@ import com.conzebit.myplan.ext.es.yoigo.particulares.ESYoigoLaPlanaDel10;
 import com.conzebit.myplan.ext.es.yoigo.particulares.ESYoigoLaPlanaDel20;
 import com.conzebit.myplan.ext.es.yoigo.particulares.ESYoigoLaPlanaDel30;
 import com.conzebit.myplan.ext.es.yoigo.particulares.ESYoigoLaPlanaDel55;
+import com.conzebit.myplan.ext.es.yoigo.particulares.ESYoigoTarifaInfinita;
 
 
 public class PlanService {
@@ -262,6 +266,9 @@ public class PlanService {
 		this.plans.add(new ESSimyo3centimos());
 		this.plans.add(new ESSimyo5centimos());
 		this.plans.add(new ESSimyo0y6centimos());
+		
+		this.plans.add(new ESTuentiBono1GB());
+		this.plans.add(new ESTuentiBono3GB());
 
 		this.plans.add(new ESVodafoneAire90x124h());
 		this.plans.add(new ESVodafoneAire90x1ATodos());
@@ -292,6 +299,7 @@ public class PlanService {
 		this.plans.add(new ESVodafoneSencillo());
 
 		this.plans.add(new ESYoigoLaDel0());
+		this.plans.add(new ESYoigoLaDel2());
 		this.plans.add(new ESYoigoLaDel4());
 		this.plans.add(new ESYoigoLaDel6());
 		this.plans.add(new ESYoigoLaDel8());
@@ -303,6 +311,7 @@ public class PlanService {
 		this.plans.add(new ESYoigoLaPlanaDel20());
 		this.plans.add(new ESYoigoLaPlanaDel30());
 		this.plans.add(new ESYoigoLaPlanaDel55());
+		this.plans.add(new ESYoigoTarifaInfinita());
 
 		this.process(new ArrayList<Chargeable>());
 	}

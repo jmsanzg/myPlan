@@ -25,6 +25,7 @@ public enum MsisdnType {
     ES_PEPEPHONE ("PepePhone", true),
     ES_ORANGE ("Orange", true),
     ES_SIMYO ("Simyo", true),
+    ES_TUENTI ("Tuenti", true),
     ES_VODAFONE ("Vodafone", true),
     ES_YOIGO ("Yoigo", true),
     UNKNOWN ("Móvil Desconocido", true),
