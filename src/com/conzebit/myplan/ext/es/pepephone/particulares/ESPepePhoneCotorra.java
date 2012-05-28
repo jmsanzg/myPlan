@@ -44,6 +44,7 @@ public class ESPepePhoneCotorra extends ESPepePhone {
 		return "http://www.pepephone.com/promo/elandroidelibre-cotorra/";
 	}
 	
+	@Override
 	public Double getMonthFee() {
 		return monthFee;
 	}

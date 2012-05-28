@@ -99,10 +99,12 @@ public class AfterCallReceiver extends BroadcastReceiver {
 		String lastCallPrice = Formatter.formatDecimal(last.getPrice()) + " " + last.getCurrency();
 		String totalPrice = Formatter.formatDecimal(summary.getTotalPrice()) + " " + last.getCurrency();
 		String text = lastCallPrice + " / " + totalPrice;
+		
 		Notification notification = new Notification(R.drawable.app_icon, text, System.currentTimeMillis());
 		notification.flags = Notification.FLAG_AUTO_CANCEL;
 		
-		PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, null, 0);
+		
+		PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, new Intent(), 0);
 		
 		notification.setLatestEventInfo(context, context.getString(R.string.app_name), text, pendingIntent);
 		notificationManager.notify(NOTIFICATION_ID, notification);
