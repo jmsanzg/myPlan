@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">myPlan</string>
-    <string name="app_version">2.0.26</string>
+    <string name="app_version">2.0.27</string>
 
     <string name="main_comparePlans">Compare plans</string>
     <string name="main_viewstats">Statistics</string>
