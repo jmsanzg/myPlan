@@ -37,6 +37,8 @@ public class AndroidResourcesUtil {
 				return R.drawable.logo_pepephone;
 			case ES_SIMYO:
 				return R.drawable.logo_simyo;
+			case ES_TUENTI:
+				return R.drawable.logo_tuenti;
 			case ES_VODAFONE:
 				return R.drawable.logo_vodafone;
 			case ES_YOIGO:
