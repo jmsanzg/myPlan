@@ -33,7 +33,7 @@ public class ESYoigoLaDel2 extends ESYoigo {
     
 	private double monthFee = 9.0;
 	private double initialPrice = 0.15;
-	private double pricePerSecond = 0.08 / 60;
+	private double pricePerSecond = 0.02 / 60;
 	private double smsPrice = 0.10;
 
     
