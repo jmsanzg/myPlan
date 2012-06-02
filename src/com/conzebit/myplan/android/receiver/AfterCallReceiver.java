@@ -87,27 +87,29 @@ public class AfterCallReceiver extends BroadcastReceiver {
 		//long totalDuration = 0;
 		//long totalCalls = 0;
 		
-		for (PlanChargeable planChargeable : summary.getPlanCalls()) {
-			if (planChargeable.getChargeable() != null && planChargeable.getChargeable().getChargeableType() == Chargeable.CHARGEABLE_TYPE_CALL) {
-				//totalCalls++;
-				//Call call = (Call) planChargeable.getChargeable();
-				//totalDuration += call.getDuration();
-				last = planChargeable;
+		if (summary != null) {
+			for (PlanChargeable planChargeable : summary.getPlanCalls()) {
+				if (planChargeable.getChargeable() != null && planChargeable.getChargeable().getChargeableType() == Chargeable.CHARGEABLE_TYPE_CALL) {
+					//totalCalls++;
+					//Call call = (Call) planChargeable.getChargeable();
+					//totalDuration += call.getDuration();
+					last = planChargeable;
+				}
 			}
+			//totalDuration = (long) totalDuration / 60; // show the value in minutes
+			String lastCallPrice = Formatter.formatDecimal(last.getPrice()) + " " + last.getCurrency();
+			String totalPrice = Formatter.formatDecimal(summary.getTotalPrice()) + " " + last.getCurrency();
+			String text = lastCallPrice + " / " + totalPrice;
+			
+			Notification notification = new Notification(R.drawable.app_icon, text, System.currentTimeMillis());
+			notification.flags = Notification.FLAG_AUTO_CANCEL;
+			
+			
+			PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, new Intent(), 0);
+			
+			notification.setLatestEventInfo(context, context.getString(R.string.app_name), text, pendingIntent);
+			notificationManager.notify(NOTIFICATION_ID, notification);
 		}
-		//totalDuration = (long) totalDuration / 60; // show the value in minutes
-		String lastCallPrice = Formatter.formatDecimal(last.getPrice()) + " " + last.getCurrency();
-		String totalPrice = Formatter.formatDecimal(summary.getTotalPrice()) + " " + last.getCurrency();
-		String text = lastCallPrice + " / " + totalPrice;
-		
-		Notification notification = new Notification(R.drawable.app_icon, text, System.currentTimeMillis());
-		notification.flags = Notification.FLAG_AUTO_CANCEL;
-		
-		
-		PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, new Intent(), 0);
-		
-		notification.setLatestEventInfo(context, context.getString(R.string.app_name), text, pendingIntent);
-		notificationManager.notify(NOTIFICATION_ID, notification);
 	}
 	
 }

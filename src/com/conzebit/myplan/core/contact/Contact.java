@@ -70,6 +70,10 @@ public class Contact {
 		if (another instanceof ContactValue) {
 			anotherContact = ((ContactValue) another).getContact();
 		}
+		if (this.getMsisdn() == null || anotherContact == null || anotherContact.getMsisdn() == null) {
+			return false;
+		}
+		
 		return this.getMsisdn().equals(anotherContact.getMsisdn());
 	}
 	
