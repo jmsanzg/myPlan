@@ -38,9 +38,8 @@ public class ESVodafoneAtXS8 extends ESVodafone {
 	private double monthFee = 7;
 	private double minimumMonthFee = 8;
 	private double initialPrice = 0.15;
-	private double pricePerSecond = 0.20 / 60;
-	private double smsPrice = 0.15;
-	private int maxSecondsMonth = 150 * 60;
+	private double pricePerSecond = 0.08 / 60;
+	private double smsPrice = 0.08;
 	private int maxSMSFree = 200;
     
 	public String getPlanName() {
@@ -55,7 +54,6 @@ public class ESVodafoneAtXS8 extends ESVodafone {
 		PlanSummary ret = new PlanSummary(this);
 		ret.addPlanCall(new PlanChargeable(new ChargeableMessage(ChargeableMessage.MESSAGE_MONTH_FEE), monthFee, this.getCurrency()));
 
-		long secondsTotal = 0;
 		double globalPrice = 0;
 		long smsSent = 0;
 		for (Chargeable chargeable : data) {
@@ -70,12 +68,8 @@ public class ESVodafoneAtXS8 extends ESVodafone {
 				if (call.getContact().getMsisdnType() == MsisdnType.ES_SPECIAL_ZER0) {
 					callPrice = 0;
 				} else {
-					secondsTotal += call.getDuration();
-					boolean discount = secondsTotal <= maxSecondsMonth;
-					if (!discount) {
-						long duration = (secondsTotal > maxSecondsMonth) && (secondsTotal - call.getDuration() <= maxSecondsMonth)? secondsTotal - maxSecondsMonth : call.getDuration();  
-						callPrice += initialPrice + (duration * pricePerSecond);
-					}
+					long duration = (secondsTotal > maxSecondsMonth) && (secondsTotal - call.getDuration() <= maxSecondsMonth)? secondsTotal - maxSecondsMonth : call.getDuration();  
+					callPrice += initialPrice + (duration * pricePerSecond);
 				}
 				globalPrice += callPrice;
 				ret.addPlanCall(new PlanChargeable(call, callPrice, this.getCurrency()));
