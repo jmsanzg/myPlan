@@ -30,10 +30,10 @@ import com.conzebit.myplan.ext.es.eroskimovil.ESEroskiMovil;
  */
 public class ESEroskiMovilConekta extends ESEroskiMovil {
     
-	private double monthFee = 8;
+	private double monthFee = 5.99;
 	private double initialPrice = 0.15;
 	private double pricePerSecond = 0.025 / 60;
-	private double smsPrice = 0.09;
+	private double smsPrice = 0.08;
 
 	public String getPlanName() {
 		return "Tarifa Conekta";
