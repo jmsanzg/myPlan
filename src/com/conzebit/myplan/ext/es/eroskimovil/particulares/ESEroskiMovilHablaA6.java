@@ -32,7 +32,7 @@ public class ESEroskiMovilHablaA6 extends ESEroskiMovil {
     
 	private double initialPrice = 0.15;
 	private double pricePerSecond = 0.06 / 60;
-	private double smsPrice = 0.09;
+	private double smsPrice = 0.08;
     
 	public String getPlanName() {
 		return "Tarifa Habla a 6";
