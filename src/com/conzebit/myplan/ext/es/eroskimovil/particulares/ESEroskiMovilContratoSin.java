@@ -31,8 +31,8 @@ import com.conzebit.myplan.ext.es.eroskimovil.ESEroskiMovil;
 public class ESEroskiMovilContratoSin extends ESEroskiMovil {
     
 	private double initialPrice = 0;
-	private double pricePerSecond = 0.15 / 60;
-	private double smsPrice = 0.10;
+	private double pricePerSecond = 0.12 / 60;
+	private double smsPrice = 0.08;
     
 	public String getPlanName() {
 		return "Tarifa Contrato Sin";
