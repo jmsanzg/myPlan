@@ -25,6 +25,8 @@ public class AndroidResourcesUtil {
 		switch (msisdnType) {
 			case ES_EROSKIMOVIL:
 				return R.drawable.logo_eroskimovil;
+			case ES_HAPPYMOVIL:
+				return R.drawable.logo_happymovil;
 			case ES_JAZZTEL:
 				return R.drawable.logo_jazztel;
 			case ES_MASMOVIL:
