@@ -26,7 +26,7 @@ import com.conzebit.myplan.ext.es.happymovil.ESHappymovil;
 
 
 /**
- * Happym—vil Habla y Navega 700
+ * Happymovil Habla y Navega 700
  * 
  * @author aalmenar
  */
