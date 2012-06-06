@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       android:installLocation="auto"
       package="com.conzebit.myplan"
-      android:versionCode="168"
+      android:versionCode="169"
       android:versionName="@string/app_version">
     <supports-screens
           android:largeScreens="true"

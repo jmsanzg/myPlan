@@ -68,8 +68,7 @@ public class ESVodafoneAtXS8 extends ESVodafone {
 				if (call.getContact().getMsisdnType() == MsisdnType.ES_SPECIAL_ZER0) {
 					callPrice = 0;
 				} else {
-					long duration = (secondsTotal > maxSecondsMonth) && (secondsTotal - call.getDuration() <= maxSecondsMonth)? secondsTotal - maxSecondsMonth : call.getDuration();  
-					callPrice += initialPrice + (duration * pricePerSecond);
+					callPrice += initialPrice + (call.getDuration() * pricePerSecond);
 				}
 				globalPrice += callPrice;
 				ret.addPlanCall(new PlanChargeable(call, callPrice, this.getCurrency()));
