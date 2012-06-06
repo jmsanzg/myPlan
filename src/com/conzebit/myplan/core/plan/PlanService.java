@@ -29,7 +29,10 @@ import com.conzebit.myplan.ext.es.eroskimovil.particulares.ESEroskiMovilConekta;
 import com.conzebit.myplan.ext.es.eroskimovil.particulares.ESEroskiMovilContigo;
 import com.conzebit.myplan.ext.es.eroskimovil.particulares.ESEroskiMovilContratoSin;
 import com.conzebit.myplan.ext.es.eroskimovil.particulares.ESEroskiMovilHablaA6;
+import com.conzebit.myplan.ext.es.happymovil.particulares.ESHappymovilHablayNavega250;
 import com.conzebit.myplan.ext.es.happymovil.particulares.ESHappymovilHablayNavega700;
+import com.conzebit.myplan.ext.es.happymovil.particulares.ESHappymovilSmartplan12;
+import com.conzebit.myplan.ext.es.happymovil.particulares.ESHappymovilSmartplan19;
 import com.conzebit.myplan.ext.es.jazztel.particulares.ESJazztelHablaNavega5;
 import com.conzebit.myplan.ext.es.jazztel.particulares.ESJazztelJazzmovil5;
 import com.conzebit.myplan.ext.es.jazztel.particulares.ESJazztelTarifaPlana100;
@@ -179,7 +182,10 @@ public class PlanService {
 		this.plans.add(new ESEroskiMovilContratoSin());
 		this.plans.add(new ESEroskiMovilHablaA6());
 
+		this.plans.add(new ESHappymovilHablayNavega250());
 		this.plans.add(new ESHappymovilHablayNavega700());
+		this.plans.add(new ESHappymovilSmartplan12());
+		this.plans.add(new ESHappymovilSmartplan19());
 		
 		this.plans.add(new ESJazztelHablaNavega5());
 		this.plans.add(new ESJazztelJazzmovil5());
