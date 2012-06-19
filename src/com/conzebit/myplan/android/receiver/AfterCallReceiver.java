@@ -96,8 +96,9 @@ public class AfterCallReceiver extends BroadcastReceiver {
 			}
 		}
 		//totalDuration = (long) totalDuration / 60; // show the value in minutes
-		String lastCallPrice = Formatter.formatDecimal(last.getPrice()) + " " + last.getCurrency();
-		String totalPrice = Formatter.formatDecimal(summary.getTotalPrice()) + " " + last.getCurrency();
+		boolean vat = Settings.isVAT(context);
+		String lastCallPrice = Formatter.formatDecimal(last.getPrice() * (vat?Settings.getVATValue():1)) + " " + last.getCurrency();
+		String totalPrice = Formatter.formatDecimal(summary.getTotalPrice() * (vat?Settings.getVATValue():1)) + " " + last.getCurrency();
 		String text = lastCallPrice + " / " + totalPrice;
 		
 		Notification notification = new Notification(R.drawable.app_icon, text, System.currentTimeMillis());
