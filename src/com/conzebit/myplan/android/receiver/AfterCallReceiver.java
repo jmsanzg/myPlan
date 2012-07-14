@@ -110,6 +110,20 @@ public class AfterCallReceiver extends BroadcastReceiver {
 			notification.setLatestEventInfo(context, context.getString(R.string.app_name), text, pendingIntent);
 			notificationManager.notify(NOTIFICATION_ID, notification);
 		}
+
+		boolean vat = Settings.isVAT(context);
+		String lastCallPrice = Formatter.formatDecimal(last.getPrice() * (vat?Settings.getVATValue():1)) + " " + last.getCurrency();
+		String totalPrice = Formatter.formatDecimal(summary.getTotalPrice() * (vat?Settings.getVATValue():1)) + " " + last.getCurrency();
+		String text = lastCallPrice + " / " + totalPrice;
+		
+		Notification notification = new Notification(R.drawable.app_icon, text, System.currentTimeMillis());
+		notification.flags = Notification.FLAG_AUTO_CANCEL;
+		
+		
+		PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, new Intent(), 0);
+		
+		notification.setLatestEventInfo(context, context.getString(R.string.app_name), text, pendingIntent);
+		notificationManager.notify(NOTIFICATION_ID, notification);
 	}
 	
 }
