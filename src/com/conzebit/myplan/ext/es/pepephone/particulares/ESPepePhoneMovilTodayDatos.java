@@ -33,7 +33,7 @@ import com.conzebit.myplan.ext.es.pepephone.ESPepePhone;
 public class ESPepePhoneMovilTodayDatos extends ESPepePhone {
     
     private double monthFee = 6.9;
-    private double initialPrice = 0.75;
+    private double initialPrice = 0.075;
     private double pricePerSecond = 0.05 / 60;
     private double smsPrice = 0.09;
     
