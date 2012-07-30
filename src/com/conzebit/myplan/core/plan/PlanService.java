@@ -25,6 +25,8 @@ import java.util.HashMap;
 import com.conzebit.myplan.core.Chargeable;
 import com.conzebit.myplan.core.call.Call;
 import com.conzebit.myplan.core.msisdn.MsisdnType;
+import com.conzebit.myplan.ext.es.amena.particulares.ESAmenaConDatos;
+import com.conzebit.myplan.ext.es.amena.particulares.ESAmenaSinDatos;
 import com.conzebit.myplan.ext.es.eroskimovil.particulares.ESEroskiMovilConekta;
 import com.conzebit.myplan.ext.es.eroskimovil.particulares.ESEroskiMovilContigo;
 import com.conzebit.myplan.ext.es.eroskimovil.particulares.ESEroskiMovilContratoSin;
@@ -177,6 +179,9 @@ public class PlanService {
 	
 	private PlanService() {
 		this.plans = new ArrayList<AbstractPlan>();
+
+		this.plans.add(new ESAmenaConDatos());
+		this.plans.add(new ESAmenaSinDatos());
 
 		this.plans.add(new ESEroskiMovilContigo());
 		this.plans.add(new ESEroskiMovilConekta());
