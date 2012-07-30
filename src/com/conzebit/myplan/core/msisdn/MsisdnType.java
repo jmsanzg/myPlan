@@ -18,6 +18,7 @@ package com.conzebit.myplan.core.msisdn;
 
 
 public enum MsisdnType {
+    ES_AMENA ("Amena", true),
 	ES_EROSKIMOVIL ("Eroski", true),
 	ES_HAPPYMOVIL ("Happymovil", true),
 	ES_JAZZTEL ("Jazztel", true),
