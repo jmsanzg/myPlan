@@ -41,7 +41,9 @@ public class ESAmenaSinDatos extends ESAmena {
 	private double initialPrice = 0.15;
 	private double pricePerSecond = 0.08 / 60;
 	private double smsPrice = 0.15;
+	private int maxSecondsMonth = 3600 * 60;
 	private int maxDistinctNumbersCalls = 150;
+	private int maxSmsMonth = 1000;
     private int maxDistinctNumbersSMS = 100;
 
 	public String getPlanName() {
@@ -56,6 +58,7 @@ public class ESAmenaSinDatos extends ESAmena {
 		PlanSummary ret = new PlanSummary(this);
 		ret.addPlanCall(new PlanChargeable(new ChargeableMessage(ChargeableMessage.MESSAGE_MONTH_FEE), monthFee, this.getCurrency(), Type.MONTH_FEE));
 
+		int secondsTotal = 0;
 		Set<String> msisdns = new HashSet<String>();
 		for (Chargeable chargeable : data) {
 			if (chargeable.getChargeableType() == Chargeable.CHARGEABLE_TYPE_CALL) {
@@ -71,12 +74,14 @@ public class ESAmenaSinDatos extends ESAmena {
 					callPrice = 0;
 					type = Type.ZERO;
 				} else {
+					secondsTotal += call.getDuration();
 					msisdns.add(call.getContact().getMsisdn());
-					boolean insidePlan = msisdns.size() <= maxDistinctNumbersCalls;
+					boolean insidePlan = secondsTotal <= maxSecondsMonth && msisdns.size() <= maxDistinctNumbersCalls;
 					if (insidePlan) {
 						type = Type.INSIDE_PLAN;
 					} else {
-						callPrice += initialPrice + (call.getDuration() * pricePerSecond);
+						long duration = (secondsTotal > maxSecondsMonth) && (secondsTotal - call.getDuration() <= maxSecondsMonth)? secondsTotal - maxSecondsMonth : call.getDuration();  
+						callPrice += initialPrice + (duration * pricePerSecond);
 						type = Type.OUTSIDE_PLAN;
 					}
 				}
