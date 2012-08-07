@@ -80,9 +80,13 @@ public class StatisticsHelper {
         long shortestCallSeconds = -1;
         long longestCallSeconds = -1;
         long averageCallSeconds = 0;
-        
+        long averageCallSecondsOutbound = 0;
+        long averageCallSecondsInbound = 0;
+
         long callsToCountAverage = 0;
-        
+        long callsToCountAverageOutbound = 0;
+        long callsToCountAverageInbound = 0;
+
         for (Chargeable chargeable : calls) {
         	Call call = (Call) chargeable;
         	long duration = call.getDuration();
@@ -99,7 +103,9 @@ public class StatisticsHelper {
 	        		totalAnswered++;
 	        		totalInboundSeconds += duration;
 	        		averageCallSeconds += duration;
+	        		averageCallSecondsInbound += duration;
 	        		callsToCountAverage++;
+	        		callsToCountAverageInbound++;
 	        		break;
 	        	case Call.CALL_TYPE_RECEIVED_MISSED:
 	        		totalInbound++;
@@ -110,7 +116,9 @@ public class StatisticsHelper {
 	        		totalAnswered++;
 	        		totalOutboundSeconds += duration;
 	        		averageCallSeconds += duration;
+	        		averageCallSecondsOutbound += duration;
 	        		callsToCountAverage++;
+	        		callsToCountAverageOutbound++;
 	        		break;
 	        	case Call.CALL_TYPE_SENT_MISSED:
 	        		totalOutbound++;
@@ -122,7 +130,15 @@ public class StatisticsHelper {
         if (callsToCountAverage > 0) {
         	averageCallSeconds = averageCallSeconds / callsToCountAverage;
         }
+
+        if (callsToCountAverageOutbound > 0) {
+        	averageCallSecondsOutbound = averageCallSecondsOutbound / callsToCountAverageOutbound;
+        }
         
+        if (callsToCountAverageInbound > 0) {
+        	averageCallSecondsInbound = averageCallSecondsInbound / callsToCountAverageInbound;
+        }
+
         ArrayList<CallStat> ret = new ArrayList<CallStat>();
         ret.add(new CallStat(activity.getString(R.string.stats_missed_calls), "" + totalMissed));
         ret.add(new CallStat(activity.getString(R.string.stats_answered_calls), "" + totalAnswered));
@@ -136,6 +152,8 @@ public class StatisticsHelper {
         ret.add(new CallStat(activity.getString(R.string.stats_shortest_call), Formatter.formatDurationAsString(shortestCallSeconds)));
         ret.add(new CallStat(activity.getString(R.string.stats_longest_call), Formatter.formatDurationAsString(longestCallSeconds)));
         ret.add(new CallStat(activity.getString(R.string.stats_average_call), Formatter.formatDurationAsString(averageCallSeconds)));
+        ret.add(new CallStat(activity.getString(R.string.stats_average_call_inbound), Formatter.formatDurationAsString(averageCallSecondsInbound)));
+        ret.add(new CallStat(activity.getString(R.string.stats_average_call_outbound), Formatter.formatDurationAsString(averageCallSecondsOutbound)));
         return ret;
 	}
 
