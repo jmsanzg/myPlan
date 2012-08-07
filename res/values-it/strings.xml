@@ -40,7 +40,9 @@
     <string name="stats_total_calls">Totale chiamate</string>
     <string name="stats_shortest_call">Chiamata piú breve</string>
     <string name="stats_longest_call">Chiamate piú lunga</string>
-    <string name="stats_average_call">Tempo medio di chiamata</string>
+    <string name="stats_average_call">Tempo medio di chiamata (Totale)</string>
+    <string name="stats_average_call_inbound">Tempo medio di chiamata (entranti)</string>
+    <string name="stats_average_call_outbound">Tempo medio di chiamata (uscenti)</string>
     <string name="stats_menu_general_data">Dati generali</string>
     <string name="stats_menu_top_caller_calls">Numeri piú chiamati (quantitá)</string>
     <string name="stats_menu_top_caller_duration">Numeri piú chiamati (tempo)</string>

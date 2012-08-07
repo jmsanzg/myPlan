@@ -40,10 +40,12 @@
     <string name="stats_total_calls">Total calls</string>
     <string name="stats_shortest_call">Shortest call</string>
     <string name="stats_longest_call">Longest call</string>
-    <string name="stats_average_call">Average call</string>
-    <string name="stats_menu_general_data">Datos generales</string>
-    <string name="stats_menu_top_caller_calls">Números más llamados (cantidad)</string>
-    <string name="stats_menu_top_caller_duration">Números más llamados (tiempo)</string>
+    <string name="stats_average_call">Average call (Total)</string>
+    <string name="stats_average_call_inbound">Average call (Inbound)</string>
+    <string name="stats_average_call_outbound">Average call (Outbound)</string>
+    <string name="stats_menu_general_data">General Data</string>
+    <string name="stats_menu_top_caller_calls">Most called numbers (quantity)</string>
+    <string name="stats_menu_top_caller_duration">Most called numbers (time)</string>
 
     <string name="disclaimer">Disclaimer</string>
     <string name="disclaimer_text">
