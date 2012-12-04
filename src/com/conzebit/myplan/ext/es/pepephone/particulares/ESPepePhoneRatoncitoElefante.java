@@ -34,7 +34,7 @@ public class ESPepePhoneRatoncitoElefante extends ESPepePhone {
     
 	private double monthFee = 6.9;
 	private double initialPrice = 0.15;
-	private double pricePerSecond = 0.019 / 60;
+	private double pricePerSecond = 0.009 / 60;
 	private double smsPrice = 0.09;
 	
 	public Double getMonthFee() {
